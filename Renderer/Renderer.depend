@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1425672135 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.cpp
+1425672786 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.cpp
+	"BasicWindow.h"
 
 1425672137 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\main.cpp
 	<SDL.h>
@@ -1021,7 +1022,7 @@
 1425672136 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1425672136 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1425672776 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
@@ -1270,4 +1271,8 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1425672808 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.h
+	<SDL.h>
+	<stdio.h>
 

@@ -56,4 +56,10 @@ void Line::draw(){
     glEnd();
 }
 
+void Square::draw(){
 
+}
+
+void Square::drawBorder(){
+
+}

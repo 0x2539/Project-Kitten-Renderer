@@ -43,7 +43,7 @@ class Square : Shape{
     Square();
     Square(Point leftTop, Point leftBottom, Point rightBottom, Point rightTop);
     void drawBorder();
-    void drawFilled();
+    void draw();
 };
 
 #endif // SHAPES_H

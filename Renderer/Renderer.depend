@@ -2,9 +2,9 @@
 1425672786 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.cpp
 	"BasicWindow.h"
 
-1425672137 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\main.cpp
-	<SDL.h>
+1425674316 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\main.cpp
 	<stdio.h>
+	"BasicWindow.h"
 
 1394253593 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\sdl2-2.0.3\include\sdl.h
 	"SDL_main.h"

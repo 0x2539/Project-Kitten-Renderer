@@ -57,9 +57,20 @@ void Line::draw(){
 }
 
 void Square::draw(){
-
+    glBegin(GL_QUADS)
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+        glVertex2f(_leftBottom.getX(), _leftBottom.getY());
+        glVertex2f(_rightBottom.getX(), _rightBottom.getY());
+        glVertex2f(_rightTop.getX(), _rightTop.getY());
+    glEnd();
 }
 
 void Square::drawBorder(){
-
+    glBegin(GL_LINES)
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+        glVertex2f(_leftBottom.getX(), _leftBottom.getY());
+        glVertex2f(_rightBottom.getX(), _rightBottom.getY());
+        glVertex2f(_rightTop.getX(), _rightTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+    glEnd();
 }

@@ -32,19 +32,18 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="libs/i686-w64-mingw32/include/SDL2" />
-			<Add directory="include" />
+			<Add directory="libs/glew-1.12.0/include/GL" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lopengl32 -lglu32 -lSDL2main -lSDL2" />
+			<Add option="-lmingw32 -lglew32 -lopengl32 -lglu32 -lSDL2main -lSDL2" />
 			<Add directory="libs/i686-w64-mingw32/lib" />
+			<Add directory="libs/glew-1.12.0/lib/Release/Win32" />
 		</Linker>
-		<Unit filename="include/BasicWindow.h" />
-		<Unit filename="include/ShapeRenderer.h" />
-		<Unit filename="include/Shapes.h" />
-		<Unit filename="src/BasicWindow.cpp" />
-		<Unit filename="src/ShapeRenderer.cpp" />
-		<Unit filename="src/Shapes.cpp" />
-		<Unit filename="src/main.cpp" />
+		<Unit filename="BasicWindow.cpp" />
+		<Unit filename="BasicWindow.h" />
+		<Unit filename="GLUtils.cpp" />
+		<Unit filename="GLUtils.h" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

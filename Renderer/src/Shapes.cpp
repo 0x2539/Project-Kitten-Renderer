@@ -30,7 +30,7 @@ void Point::setCoord(Point p){
 }
 
 void Point::draw(){
-    glBegin(GL_POINT);
+    glBegin(GL_POINTS);
         glVertex2f(_x, _y);
     glEnd();
 }
@@ -50,8 +50,10 @@ Line::Line(Point p1, Point p2){
 }
 
 void Line::draw(){
-    glBegin(GL_LINE);
+    glBegin(GL_LINES);
       glVertex2f(_p1.getX(), _p1.getY());
       glVertex2f(_p2.getX(), _p2.getY());
     glEnd();
 }
+
+

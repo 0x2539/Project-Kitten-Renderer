@@ -1276,9 +1276,12 @@
 	<SDL.h>
 	<stdio.h>
 
-1425682567 source:e:\documents\project-kitten-renderer\renderer\src\main.cpp
+1425684708 source:e:\documents\project-kitten-renderer\renderer\src\main.cpp
 	<SDL.h>
+	<SDL_opengl.h>
+	<GL\GLU.h>
 	<stdio.h>
+	<string>
 	"Shapes.h"
 
 1425680535 e:\documents\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl.h
@@ -1605,7 +1608,7 @@
 
 1425682567 e:\documents\project-kitten-renderer\renderer\include\shaperenderer.h
 
-1425682567 source:e:\documents\project-kitten-renderer\renderer\src\shapes.cpp
+1425684670 source:e:\documents\project-kitten-renderer\renderer\src\shapes.cpp
 	"Shapes.h"
 	<SDL_opengl.h>
 	<GL\GLU.h>
@@ -1623,4 +1626,11 @@
 	<stdint.h>
 	<stdint.h>
 	<inttypes.h>
+
+1425682769 source:e:\documents\project-kitten-renderer\renderer\src\basicwindow.cpp
+	"BasicWindow.h"
+
+1425682567 e:\documents\project-kitten-renderer\renderer\include\basicwindow.h
+	<SDL.h>
+	<stdio.h>
 

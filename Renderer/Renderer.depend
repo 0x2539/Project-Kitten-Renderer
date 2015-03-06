@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1425672786 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.cpp
+1425674616 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.cpp
 	"BasicWindow.h"
 
-1425674316 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\main.cpp
+1425676442 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\main.cpp
 	<stdio.h>
 	"BasicWindow.h"
 
@@ -1022,7 +1022,7 @@
 1425672136 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1425672776 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1425674616 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
@@ -1272,7 +1272,40 @@
 	"begin_code.h"
 	"close_code.h"
 
-1425672808 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.h
+1425677418 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\basicwindow.h
 	<SDL.h>
 	<stdio.h>
+
+1425672136 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	<windows.h>
+	<stddef.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1425682183 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\glutils.cpp
+	"GLUtils.h"
+
+1425682017 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\glutils.h
+	<iostream>
+	<glew.h>
+	<SDL_opengl.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1422361094 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\glew-1.12.0\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
 

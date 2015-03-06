@@ -10,6 +10,7 @@ class BasicWindow
 //Screen dimension constants
 static const int SCREEN_WIDTH = 640;
 static const int SCREEN_HEIGHT = 480;
+static const int SCREEN_FPS = 60;
 
 public:
     static void initWindow();

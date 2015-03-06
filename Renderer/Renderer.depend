@@ -1276,7 +1276,7 @@
 	<SDL.h>
 	<stdio.h>
 
-1425684708 source:e:\documents\project-kitten-renderer\renderer\src\main.cpp
+1425685012 source:e:\documents\project-kitten-renderer\renderer\src\main.cpp
 	<SDL.h>
 	<SDL_opengl.h>
 	<GL\GLU.h>
@@ -1601,7 +1601,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1425682567 e:\documents\project-kitten-renderer\renderer\include\shapes.h
+1425685503 e:\documents\project-kitten-renderer\renderer\include\shapes.h
 
 1425682567 source:e:\documents\project-kitten-renderer\renderer\src\shaperenderer.cpp
 	"ShapeRenderer.h"
@@ -1630,7 +1630,26 @@
 1425682769 source:e:\documents\project-kitten-renderer\renderer\src\basicwindow.cpp
 	"BasicWindow.h"
 
-1425682567 e:\documents\project-kitten-renderer\renderer\include\basicwindow.h
+1425685511 e:\documents\project-kitten-renderer\renderer\include\basicwindow.h
 	<SDL.h>
 	<stdio.h>
+
+1425685511 source:e:\documents\project-kitten-renderer\renderer\src\glutils.cpp
+	"GLUtils.h"
+
+1425685511 e:\documents\project-kitten-renderer\renderer\include\glutils.h
+	<iostream>
+	<glew.h>
+	<SDL_opengl.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1425685511 e:\documents\project-kitten-renderer\renderer\libs\glew-1.12.0\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
 

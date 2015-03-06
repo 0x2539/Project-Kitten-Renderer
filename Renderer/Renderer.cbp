@@ -31,15 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="C:/Users/Alexandru/Desktop/Git/Project-Kitten-Renderer/Renderer/libs/SDL2-2.0.3/include" />
+			<Add directory="libs/i686-w64-mingw32/include/SDL2" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2" />
-			<Add directory="C:/Users/Alexandru/Desktop/Git/Project-Kitten-Renderer/Renderer/libs/SDL2-2.0.3/lib/x86" />
+			<Add option="-lmingw32 -lopengl32 -lglu32 -lSDL2main -lSDL2" />
+			<Add directory="libs/i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="BasicWindow.cpp" />
-		<Unit filename="BasicWindow.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="include/BasicWindow.h" />
+		<Unit filename="include/ShapeRenderer.h" />
+		<Unit filename="include/Shapes.h" />
+		<Unit filename="src/BasicWindow.cpp" />
+		<Unit filename="src/ShapeRenderer.cpp" />
+		<Unit filename="src/Shapes.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

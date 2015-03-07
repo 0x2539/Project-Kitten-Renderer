@@ -32,17 +32,28 @@ class Line : Shape{
     void draw();
 };
 
+class Rectangle1 : Shape{
+  private:
+    Point _leftTop;
+    float _xSideLength;
+    float _ySideLength;
+
+  public:
+    Rectangle1();
+    Rectangle1(Point leftTop, float xSideLength, float ySideLength);
+    void drawBorder(float lineWidth);
+    void draw();
+};
+
 class Square : Shape{
   private:
     Point _leftTop;
-    Point _leftBottom;
-    Point _rightBottom;
-    Point _rightTop;
+    float _sideLength;
 
   public:
     Square();
-    Square(Point leftTop, Point leftBottom, Point rightBottom, Point rightTop);
-    void drawBorder();
+    Square(Point leftTop, float sideLength);
+    void drawBorder(float lineWidth);
     void draw();
 };
 

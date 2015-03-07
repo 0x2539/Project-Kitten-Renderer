@@ -1,5 +1,31 @@
 #include "GLUtils.h"
 
+ShaderUtils shaderUtils;
+SDL_Window* _gWindow;
+
+SDL_Window* GLUtils::getWindow()
+{
+    return _gWindow;
+}
+
+void GLUtils::setWindow(SDL_Window *gWindow)
+{
+    _gWindow = gWindow;
+}
+
+bool GLUtils::initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT)
+{
+    if( BasicWindow::initWindow() )
+    {
+        initGL(SCREEN_WIDTH, SCREEN_HEIGHT);
+        loadGP();
+        loadMedia();
+
+        return true;
+    }
+    return false;
+}
+
 bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
     //Initialize GLEW
@@ -32,7 +58,7 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     glLoadIdentity();
 
     //Initialize clear color
-    glClearColor( 0.f, 0.f, 0.f, 1.f );
+    glClearColor( 0.f, 0.f, 1.f, 1.f );
 
     //Enable texturing
     glEnable( GL_TEXTURE_2D );
@@ -66,3 +92,25 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
     return true;
 }
+
+bool GLUtils::loadGP()
+{
+	//Load basic shader program
+	if( !shaderUtils.loadProgram() )
+	{
+	    cout << "Unable to load basic shader!\n";
+//		printf( "Unable to load basic shader!\n" );
+		return false;
+	}
+
+	//Bind basic shader program
+	shaderUtils.bind();
+
+    return true;
+}
+
+bool GLUtils::loadMedia()
+{
+    return true;
+}
+

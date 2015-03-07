@@ -2,18 +2,26 @@
 #define GLUTILS_H_INCLUDED
 
 #include <iostream>
-#define GLEW_STATIC
-#include <glew.h>
-#include <SDL_opengl.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include "BasicWindow.h"
+#include "ShaderUtils.h"
 
 using namespace std;
 
+extern SDL_Window* _gWindow;
+
 class GLUtils
 {
-public:
+private:
+
     static bool initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT);
+    static bool loadGP();
+    static bool loadMedia();
+
+public:
+    static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
+    static SDL_Window* getWindow();
+
+    static void setWindow(SDL_Window *gWindow);
 };
 
 

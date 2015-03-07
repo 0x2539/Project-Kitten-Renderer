@@ -4,6 +4,7 @@
 //Using SDL and standard IO
 #include <SDL.h>
 #include <stdio.h>
+#include "GLUtils.h"
 
 class BasicWindow
 {
@@ -13,7 +14,7 @@ static const int SCREEN_HEIGHT = 480;
 static const int SCREEN_FPS = 60;
 
 public:
-    static void initWindow();
+    static bool initWindow();
 };
 
 #endif // BASICWINDOW_H_INCLUDED

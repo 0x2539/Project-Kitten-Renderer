@@ -36,7 +36,8 @@ void Point::draw(){
 }
 
 Line::Line(){
-
+    _p1.setCoord(0.f, 0.f);
+    _p2.setCoord(0.f, 0.f);
 }
 
 Line::Line(float px1, float py1, float px2, float py2){
@@ -56,21 +57,64 @@ void Line::draw(){
     glEnd();
 }
 
-void Square::draw(){
+Rectangle1::Rectangle1(){
+    _leftTop.setCoord(0.0f, 0.0f);
+    _xSideLength = 0.0f;
+    _ySideLength = 0.0f;
+}
+
+Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
+    _leftTop.setCoord(leftTop);
+    _xSideLength = xSideLength;
+    _ySideLength = ySideLength;
+}
+
+void Rectangle1::draw(){
     glBegin(GL_QUADS);
         glVertex2f(_leftTop.getX(), _leftTop.getY());
-        glVertex2f(_leftBottom.getX(), _leftBottom.getY());
-        glVertex2f(_rightBottom.getX(), _rightBottom.getY());
-        glVertex2f(_rightTop.getX(), _rightTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY() + _ySideLength);
+        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY() + _ySideLength);
+        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY());
     glEnd();
 }
 
-void Square::drawBorder(){
-    glBegin(GL_LINES);
+void Rectangle1::drawBorder(float lineWidth){
+    glLineWidth(lineWidth);
+    glBegin(GL_LINE_STRIP);
         glVertex2f(_leftTop.getX(), _leftTop.getY());
-        glVertex2f(_leftBottom.getX(), _leftBottom.getY());
-        glVertex2f(_rightBottom.getX(), _rightBottom.getY());
-        glVertex2f(_rightTop.getX(), _rightTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY() + _ySideLength);
+        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY() + _ySideLength);
+        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+    glEnd();
+}
+
+Square::Square(){
+    _leftTop.setCoord(0.0f, 0.0f);
+    _sideLength = 0.0f;
+}
+
+Square::Square(Point leftTop, float sideLength){
+    _leftTop.setCoord(leftTop);
+    _sideLength = sideLength;
+}
+
+void Square::draw(){
+    glBegin(GL_QUADS);
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY() + _sideLength);
+        glVertex2f(_leftTop.getX() + _sideLength, _leftTop.getY() + _sideLength);
+        glVertex2f(_leftTop.getX() + _sideLength, _leftTop.getY());
+    glEnd();
+}
+
+void Square::drawBorder(float lineWidth){
+    glLineWidth(lineWidth);
+    glBegin(GL_LINE_STRIP);
+        glVertex2f(_leftTop.getX(), _leftTop.getY());
+        glVertex2f(_leftTop.getX(), _leftTop.getY() + _sideLength);
+        glVertex2f(_leftTop.getX() + _sideLength, _leftTop.getY() + _sideLength);
+        glVertex2f(_leftTop.getX() + _sideLength, _leftTop.getY());
         glVertex2f(_leftTop.getX(), _leftTop.getY());
     glEnd();
 }

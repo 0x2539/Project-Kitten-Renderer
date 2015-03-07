@@ -157,11 +157,18 @@ void render()
 	glClear( GL_COLOR_BUFFER_BIT );
 
     Point P(0.5f, 0.5f);
-    Point Q(0.9f, 0.9f);
-    Line L(P,Q);
+    Point R(0.5f, 0.9f);
+    Point S(0.9f, 0.9f);
+    Point T(0.9f, 0.5f);
+    //Line L(P,Q);
     glColor4f(1.0f, 1.0f, 1.0f, 1.f);
-    P.draw();
-    Q.draw();
+    //P.draw();
+    //Q.draw();
+    Square SQ(T, 0.1f);
+    SQ.drawBorder(0.1f);
+
+    Rectangle1 RC(P, 0.1f, 0.1f);
+    RC.drawBorder(2);
 
     //L.draw();
     //glColor4f(1.0f, 1.0f, 1.0f, 1.f);

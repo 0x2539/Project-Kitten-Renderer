@@ -1,7 +1,7 @@
 #ifndef SHADERUTILS_H_INCLUDED
 #define SHADERUTILS_H_INCLUDED
 
-#include "ShaderProgram.h"
+#include "Shaders/ShaderProgram.h"
 #include <glm/glm.hpp>
 
 class ShaderUtils : public ShaderProgram

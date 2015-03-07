@@ -2,7 +2,7 @@
 and may not be redistributed without written permission.*/
 //Version: 001
 
-#include "ShaderProgram.h"
+#include "Shaders/ShaderProgram.h"
 #include <fstream>
 
 ShaderProgram::ShaderProgram()

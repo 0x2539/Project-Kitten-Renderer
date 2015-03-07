@@ -2,7 +2,7 @@
 and may not be redestributed without written permission.*/
 //Version: 002
 
-#include "ShaderUtils.h"
+#include "Shaders/ShaderUtils.h"
 #include <glm/gtc/type_ptr.hpp>
 
 ShaderUtils::ShaderUtils()
@@ -65,11 +65,11 @@ bool ShaderUtils::loadProgram()
         return false;
     }
 
+    loadUniforms();
+
 	//Clean up excess shader references
     glDeleteShader( vertexShader );
     glDeleteShader( fragmentShader );
-
-    loadUniforms();
 
 	return true;
 }

@@ -1653,15 +1653,15 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1425719037 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
+1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
 	"BasicWindow.h"
 
-1425719171 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\glutils.cpp
+1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\glutils.cpp
 	"GLUtils.h"
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 
-1425719341 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\main.cpp
+1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\main.cpp
 	<SDL.h>
 	<stdio.h>
 	<string>
@@ -1685,17 +1685,17 @@
 1425685946 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaperenderer.cpp
 	"ShapeRenderer.h"
 
-1425719094 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shapes.cpp
+1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shapes.cpp
 	"Shapes.h"
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 
-1425719020 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\basicwindow.h
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\basicwindow.h
 	<SDL.h>
 	<stdio.h>
 	"GLUtils.h"
 
-1425718873 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
 	<iostream>
 	"BasicWindow.h"
 	"ShaderUtils.h"
@@ -1709,7 +1709,7 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1425718911 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shapes.h
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shapes.h
 	"OpenglHeaders.h"
 	"GLUtils.h"
 
@@ -1752,7 +1752,7 @@
 	<SDL_opengl.h>
 	<GL/glu.h>
 
-1425718427 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderutils.h
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderutils.h
 	"ShaderProgram.h"
 	<glm/glm.hpp>
 
@@ -1764,11 +1764,11 @@
 	"ShaderProgram.h"
 	<fstream>
 
-1425719416 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderutils.cpp
+1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderutils.cpp
 	"ShaderUtils.h"
 	<glm/gtc/type_ptr.hpp>
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\glm.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\glm.hpp
 	"detail/_fixes.hpp"
 	<cmath>
 	<climits>
@@ -1797,21 +1797,21 @@
 	"vector_relational.hpp"
 	"integer.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_fixes.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_fixes.hpp
 	<cmath>
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\fwd.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\fwd.hpp
 	"detail/type_int.hpp"
 	"detail/type_float.hpp"
 	"detail/type_vec.hpp"
 	"detail/type_mat.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_int.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_int.hpp
 	"setup.hpp"
 	<type_traits>
 	<cstdint>
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\setup.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\setup.hpp
 	<cassert>
 	<cstddef>
 	<cuda.h>
@@ -1822,50 +1822,50 @@
 	<pmmintrin.h>
 	<emmintrin.h>
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_float.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_float.hpp
 	"setup.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec.hpp
 	"precision.hpp"
 	"type_int.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\precision.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\precision.hpp
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat.hpp
 	"precision.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec2.hpp
 	"detail/type_vec2.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec2.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec2.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_swizzle.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_swizzle.hpp
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_swizzle_func.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_swizzle_func.hpp
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec2.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec3.hpp
 	"detail/type_vec3.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec3.hpp
 	"type_vec.hpp"
 	"_swizzle.hpp"
 	"_swizzle_func.hpp"
 	<cstddef>
 	"type_vec3.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec3.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec3.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vec4.hpp
 	"detail/type_vec4.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4.hpp
 	"setup.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -1873,21 +1873,21 @@
 	<cstddef>
 	"type_vec4.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4.inl
 	"type_vec4_sse2.inl"
 	"type_vec4_avx.inl"
 	"type_vec4_avx2.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_sse2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_sse2.inl
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_avx.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_avx.inl
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_avx2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec4_avx2.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x2.hpp
 	"detail/type_mat2x2.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_mat.hpp"
@@ -1895,12 +1895,12 @@
 	<cstddef>
 	"type_mat2x2.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x2.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x3.hpp
 	"detail/type_mat2x3.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x3.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -1909,12 +1909,12 @@
 	<cstddef>
 	"type_mat2x3.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x3.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x3.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat2x4.hpp
 	"detail/type_mat2x4.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x4.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -1923,12 +1923,12 @@
 	<cstddef>
 	"type_mat2x4.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x4.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat2x4.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x2.hpp
 	"detail/type_mat3x2.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -1937,12 +1937,12 @@
 	<cstddef>
 	"type_mat3x2.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x2.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x3.hpp
 	"detail/type_mat3x3.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_mat.hpp"
@@ -1950,12 +1950,12 @@
 	<cstddef>
 	"type_mat3x3.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x3.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x3.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat3x4.hpp
 	"detail/type_mat3x4.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x4.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -1964,12 +1964,12 @@
 	<cstddef>
 	"type_mat3x4.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x4.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat3x4.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x2.hpp
 	"detail/type_mat4x2.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x2.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x2.hpp
 	"../fwd.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
@@ -1978,12 +1978,12 @@
 	<cstddef>
 	"type_mat4x2.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x2.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x2.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x3.hpp
 	"detail/type_mat4x3.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x3.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x3.hpp
 	"../fwd.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -1992,12 +1992,12 @@
 	<cstddef>
 	"type_mat4x3.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x3.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x3.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\mat4x4.hpp
 	"detail/type_mat4x4.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x4.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x4.hpp
 	"../fwd.hpp"
 	"type_vec4.hpp"
 	"type_mat.hpp"
@@ -2005,28 +2005,28 @@
 	<cstddef>
 	"type_mat4x4.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x4.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_mat4x4.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\trigonometric.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\trigonometric.hpp
 	"detail/func_trigonometric.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_trigonometric.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_trigonometric.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"func_trigonometric.inl"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_trigonometric.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_trigonometric.inl
 	"_vectorize.hpp"
 	<cmath>
 	<limits>
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_vectorize.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\_vectorize.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec1.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec1.hpp
 	"../fwd.hpp"
 	"type_vec.hpp"
 	"_swizzle.hpp"
@@ -2034,12 +2034,12 @@
 	<cstddef>
 	"type_vec1.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec1.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_vec1.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\exponential.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\exponential.hpp
 	"detail/func_exponential.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_exponential.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_exponential.hpp
 	"type_vec1.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -2047,32 +2047,32 @@
 	<cmath>
 	"func_exponential.inl"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_exponential.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_exponential.inl
 	"func_vector_relational.hpp"
 	"_vectorize.hpp"
 	<limits>
 	<cmath>
 	<cassert>
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_vector_relational.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_vector_relational.hpp
 	"precision.hpp"
 	"setup.hpp"
 	"func_vector_relational.inl"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_vector_relational.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_vector_relational.inl
 	<limits>
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\common.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\common.hpp
 	"detail/func_common.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_common.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_common.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"type_int.hpp"
 	"_fixes.hpp"
 	"func_common.inl"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_common.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_common.inl
 	"func_vector_relational.hpp"
 	"type_vec2.hpp"
 	"type_vec3.hpp"
@@ -2080,43 +2080,43 @@
 	"_vectorize.hpp"
 	<limits>
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\packing.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\packing.hpp
 	"detail/func_packing.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_packing.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_packing.hpp
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"func_packing.inl"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_packing.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_packing.inl
 	"func_common.hpp"
 	"type_half.hpp"
 	"../fwd.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_half.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_half.hpp
 	"setup.hpp"
 	"type_half.inl"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_half.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\type_half.inl
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\geometric.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\geometric.hpp
 	"detail/func_geometric.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_geometric.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_geometric.hpp
 	"type_vec3.hpp"
 	"func_geometric.inl"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_geometric.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_geometric.inl
 	"func_exponential.hpp"
 	"func_common.hpp"
 	"type_vec2.hpp"
 	"type_vec4.hpp"
 	"type_float.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\matrix.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\matrix.hpp
 	"detail/func_matrix.hpp"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_matrix.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_matrix.hpp
 	"../detail/precision.hpp"
 	"../detail/setup.hpp"
 	"../detail/type_mat.hpp"
@@ -2134,24 +2134,24 @@
 	"../mat4x4.hpp"
 	"func_matrix.inl"
 
-1425717430 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_matrix.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_matrix.inl
 	"../geometric.hpp"
 	<limits>
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vector_relational.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\vector_relational.hpp
 	"detail/func_vector_relational.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\integer.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\integer.hpp
 	"detail/func_integer.hpp"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_integer.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_integer.hpp
 	"setup.hpp"
 	"precision.hpp"
 	"func_common.hpp"
 	"func_vector_relational.hpp"
 	"func_integer.inl"
 
-1425717429 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_integer.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\detail\func_integer.inl
 	"type_vec2.hpp"
 	"type_vec3.hpp"
 	"type_vec4.hpp"
@@ -2160,7 +2160,7 @@
 	<intrin.h>
 	<limits>
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\type_ptr.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\type_ptr.hpp
 	"../gtc/quaternion.hpp"
 	"../vec2.hpp"
 	"../vec3.hpp"
@@ -2177,7 +2177,7 @@
 	<cstring>
 	"type_ptr.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\quaternion.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\quaternion.hpp
 	"../mat3x3.hpp"
 	"../mat4x4.hpp"
 	"../vec3.hpp"
@@ -2185,28 +2185,28 @@
 	"../gtc/constants.hpp"
 	"quaternion.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\constants.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\constants.hpp
 	"../detail/setup.hpp"
 	"constants.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\constants.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\constants.inl
 	<limits>
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\quaternion.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\quaternion.inl
 	"../trigonometric.hpp"
 	"../geometric.hpp"
 	"../exponential.hpp"
 	<limits>
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\type_ptr.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\type_ptr.inl
 	<cstring>
 
-1425717433 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtx\transform.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtx\transform.hpp
 	"../glm.hpp"
 	"../gtc/matrix_transform.hpp"
 	"transform.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\matrix_transform.hpp
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\matrix_transform.hpp
 	"../mat4x4.hpp"
 	"../vec2.hpp"
 	"../vec3.hpp"
@@ -2214,10 +2214,26 @@
 	"../gtc/constants.hpp"
 	"matrix_transform.inl"
 
-1425717431 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\matrix_transform.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtc\matrix_transform.inl
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"../matrix.hpp"
 
-1425717433 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtx\transform.inl
+1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtx\transform.inl
+
+1425720046 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderutils.cpp
+	"Shaders/ShaderUtils.h"
+	<glm/gtc/type_ptr.hpp>
+
+1425720143 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderutils.h
+	"Shaders/ShaderProgram.h"
+	<glm/glm.hpp>
+
+1425694378 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderprogram.h
+	<iostream>
+	<OpenglHeaders.h>
+
+1425720111 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderprogram.cpp
+	"Shaders/ShaderProgram.h"
+	<fstream>
 

@@ -5,9 +5,8 @@ and may not be redistributed without written permission.*/
 #include <SDL.h>
 #include <stdio.h>
 #include <string>
-#include "Shapes.h"
-
 #include "GLUtils.h"
+#include "Shapes.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -164,15 +163,18 @@ void render()
 //    Q.draw();
 
     //Reset transformations
-    glLoadIdentity();
-    glTranslatef( SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f, 0.f );
-    glBegin( GL_QUADS );
-        glColor3f( 0.f, 1.f, 1.f );
-        glVertex2f( -50.f, -50.f );
-        glVertex2f(  50.f, -50.f );
-        glVertex2f(  50.f,  50.f );
-        glVertex2f( -50.f,  50.f );
-    glEnd();
+//    glLoadIdentity();
+//    glTranslatef( SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f, 0.f );
+//    glBegin( GL_QUADS );
+//        glColor3f( 0.f, 1.f, 1.f );
+//        glVertex2f( -50.f, -50.f );
+//        glVertex2f(  50.f, -50.f );
+//        glVertex2f(  50.f,  50.f );
+//        glVertex2f( -50.f,  50.f );
+//    glEnd();
+
+    Rectangle1 rect(Point(50, 50), 100, 100);
+    rect.draw();
 
 //    L.draw();
     //glColor4f(1.0f, 1.0f, 1.0f, 1.f);

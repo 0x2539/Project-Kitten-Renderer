@@ -1653,18 +1653,18 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1425694294 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
+1425694378 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
 	"BasicWindow.h"
 
-1425694294 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\glutils.cpp
+1425694378 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\glutils.cpp
 	"GLUtils.h"
 
-1425692890 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\main.cpp
+1425695138 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\main.cpp
 	<SDL.h>
 	<stdio.h>
 	<string>
-	"Shapes.h"
 	"GLUtils.h"
+	"Shapes.h"
 
 1425685939 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\i686-w64-mingw32\include\sdl2\sdl_opengl.h
 	"SDL_config.h"
@@ -1683,17 +1683,15 @@
 1425685946 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaperenderer.cpp
 	"ShapeRenderer.h"
 
-1425694298 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shapes.cpp
+1425695194 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shapes.cpp
 	"Shapes.h"
-	<SDL_opengl.h>
-	<GL\GLU.h>
 
-1425694294 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\basicwindow.h
+1425694378 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\basicwindow.h
 	<SDL.h>
 	<stdio.h>
 	"GLUtils.h"
 
-1425694294 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
+1425694823 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
 	<iostream>
 	"BasicWindow.h"
 	"ShaderUtils.h"
@@ -1707,7 +1705,8 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1425694298 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shapes.h
+1425695463 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shapes.h
+	"OpenglHeaders.h"
 
 1425685945 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaperenderer.h
 
@@ -1743,22 +1742,22 @@
 	<X11/Xmd.h>
 	<GL/glew.h>
 
-1425694294 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\openglheaders.h
+1425694823 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\openglheaders.h
 	<glew.h>
 	<SDL_opengl.h>
 	<GL/glu.h>
 
-1425694294 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderutils.h
+1425695054 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderutils.h
 	"ShaderProgram.h"
 
-1425694294 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderprogram.h
+1425694378 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaderprogram.h
 	<iostream>
 	<OpenglHeaders.h>
 
-1425694294 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderprogram.cpp
+1425694378 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderprogram.cpp
 	"ShaderProgram.h"
 	<fstream>
 
-1425694294 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderutils.cpp
+1425694378 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaderutils.cpp
 	"ShaderUtils.h"
 

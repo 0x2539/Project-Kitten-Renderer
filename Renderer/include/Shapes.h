@@ -1,10 +1,26 @@
 #ifndef SHAPES_H
 #define SHAPES_H
 
+#include "OpenglHeaders.h"
+
 class Shape
 {
     public:
         virtual void draw() = 0;
+        void setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a );
+};
+
+class GLPoint{
+  private:
+    float _x,_y;
+
+  public:
+    GLPoint();
+    GLPoint(GLfloat x, GLfloat y);
+    GLfloat getX();
+    GLfloat getY();
+    void setCoord(GLfloat x, GLfloat y);
+    void setCoord(GLPoint p);
 };
 
 class Point : Shape{
@@ -37,6 +53,12 @@ class Rectangle1 : Shape{
     Point _leftTop;
     float _xSideLength;
     float _ySideLength;
+
+    GLPoint quadVertices[ 4 ];
+    GLuint indices[ 4 ];
+    GLuint gVBO = NULL;
+    GLuint gIBO = NULL;
+
 
   public:
     Rectangle1();

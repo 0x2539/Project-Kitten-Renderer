@@ -1,6 +1,31 @@
 #include "Shapes.h"
-#include <SDL_opengl.h>
-#include <GL\GLU.h>
+
+GLPoint::GLPoint(){
+    _x = 0.f;
+    _y = 0.f;
+}
+
+GLPoint::GLPoint(GLfloat x, GLfloat y){
+    _x = x;
+    _y = y;
+}
+
+GLfloat GLPoint::getX(){
+    return _x;
+}
+
+GLfloat GLPoint::getY(){
+    return _y;
+}
+
+void GLPoint::setCoord(GLfloat x, GLfloat y){
+    _x = x;
+    _y = y;
+}
+void GLPoint::setCoord(GLPoint p){
+    _x = p.getX();
+    _y = p.getY();
+}
 
 Point::Point(){
     _x = 0.f;
@@ -64,18 +89,61 @@ Rectangle1::Rectangle1(){
 }
 
 Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
+
+    quadVertices[ 0 ].setCoord(leftTop.getX(), leftTop.getY());
+
+    quadVertices[ 1 ].setCoord(leftTop.getX() + xSideLength, leftTop.getY());
+
+    quadVertices[ 2 ].setCoord(leftTop.getX() + xSideLength, leftTop.getY() + ySideLength);
+
+    quadVertices[ 3 ].setCoord(leftTop.getX(), leftTop.getY() + ySideLength);
+
+    //Set rendering indices
+    indices[ 0 ] = 0;
+    indices[ 1 ] = 1;
+    indices[ 2 ] = 2;
+    indices[ 3 ] = 3;
+
+    //Create VBO
+    glGenBuffers( 1, &gVBO );
+    glBindBuffer( GL_ARRAY_BUFFER, gVBO );
+    glBufferData( GL_ARRAY_BUFFER, 4 * sizeof(GLPoint), quadVertices, GL_STATIC_DRAW );
+
+    //Create IBO
+    glGenBuffers( 1, &gIBO );
+    glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
+    glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW );
+
     _leftTop.setCoord(leftTop);
     _xSideLength = xSideLength;
     _ySideLength = ySideLength;
 }
 
 void Rectangle1::draw(){
-    glBegin(GL_QUADS);
-        glVertex2f(_leftTop.getX(), _leftTop.getY());
-        glVertex2f(_leftTop.getX(), _leftTop.getY() + _ySideLength);
-        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY() + _ySideLength);
-        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY());
-    glEnd();
+    setColor(0.5f, 1.f, 0.5f, 1.0f);
+
+    glLoadIdentity();
+
+    //Enable vertex arrays
+    glEnableClientState( GL_VERTEX_ARRAY );
+
+        //Set vertex data
+        glBindBuffer( GL_ARRAY_BUFFER, gVBO );
+        glVertexPointer( 2, GL_FLOAT, 0, NULL );
+
+        //Draw quad using vertex data and index data
+        glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
+        glDrawElements( GL_QUADS, 4, GL_UNSIGNED_INT, NULL );
+
+    //Disable vertex arrays
+    glDisableClientState( GL_VERTEX_ARRAY );
+
+//    glBegin(GL_QUADS);
+//        glVertex2f(_leftTop.getX(), _leftTop.getY());
+//        glVertex2f(_leftTop.getX(), _leftTop.getY() + _ySideLength);
+//        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY() + _ySideLength);
+//        glVertex2f(_leftTop.getX() + _xSideLength, _leftTop.getY());
+//    glEnd();
 }
 
 void Rectangle1::drawBorder(float lineWidth){
@@ -117,4 +185,10 @@ void Square::drawBorder(float lineWidth){
         glVertex2f(_leftTop.getX() + _sideLength, _leftTop.getY());
         glVertex2f(_leftTop.getX(), _leftTop.getY());
     glEnd();
+}
+
+void Shape::setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a )
+{
+    //Update color in shader
+//    glUniform4f( mPolygonColorLocation, r, g, b, a );
 }

@@ -11,18 +11,7 @@
 
 using namespace std;
 
-extern ShaderUtils shaderUtils;;
-
-class Statica
-{
-public:
-  static void f();
-};
-
-void Statica::f()
-{
-  printf ("Ceva\n");
-}
+extern ShaderUtils shaderUtils;
 
 class GLUtils
 {

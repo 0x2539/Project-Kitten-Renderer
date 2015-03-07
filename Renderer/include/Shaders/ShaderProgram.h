@@ -4,7 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include "OpenglHeaders.h"
-#include <GL/freeglut.h>
+#ifdef _WIN32
+#else
+    #include <GL/freeglut.h>
+#endif
 using namespace std;
 
 class ShaderProgram

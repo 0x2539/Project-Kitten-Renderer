@@ -2,12 +2,7 @@
 and may not be redistributed without written permission.*/
 
 //Using SDL, SDL OpenGL, standard IO, and, strings
-#ifdef _WIN32
-    #include <SDL.h>
-#else
-    #include "SDL2/SDL.h"
-#endif
-
+#include "SDL2/SDL.h"
 #include <stdio.h>
 #include <string>
 #include "GLUtils.h"

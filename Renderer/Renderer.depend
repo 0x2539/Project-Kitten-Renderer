@@ -1653,7 +1653,7 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
+1425727789 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\basicwindow.cpp
 	"BasicWindow.h"
 
 1425719586 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\glutils.cpp
@@ -1695,10 +1695,10 @@
 	<stdio.h>
 	"GLUtils.h"
 
-1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
+1425723921 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glutils.h
 	<iostream>
 	"BasicWindow.h"
-	"ShaderUtils.h"
+	"Shaders/ShaderUtils.h"
 
 1425685946 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\libs\glew-1.12.0\include\gl\glew.h
 	<stddef.h>
@@ -1747,8 +1747,8 @@
 	<X11/Xmd.h>
 	<GL/glew.h>
 
-1425694823 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\openglheaders.h
-	<glew.h>
+1425727797 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\openglheaders.h
+	<GL/glew.h>
 	<SDL_opengl.h>
 	<GL/glu.h>
 
@@ -2221,19 +2221,33 @@
 
 1425719586 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\glm\gtx\transform.inl
 
-1425720046 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderutils.cpp
+1425721356 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderutils.cpp
 	"Shaders/ShaderUtils.h"
 	<glm/gtc/type_ptr.hpp>
 
-1425720143 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderutils.h
+1425721356 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderutils.h
 	"Shaders/ShaderProgram.h"
 	<glm/glm.hpp>
 
-1425694378 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderprogram.h
+1425721356 c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\include\shaders\shaderprogram.h
 	<iostream>
 	<OpenglHeaders.h>
 
-1425720111 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderprogram.cpp
+1425721356 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\shaders\shaderprogram.cpp
 	"Shaders/ShaderProgram.h"
 	<fstream>
+
+1422132350 source:c:\users\alexandru\desktop\git\project-kitten-renderer\renderer\src\gl\glew.c
+	<GL/glew.h>
+	<GL/wglew.h>
+	<GL/glxew.h>
+	<stddef.h>
+	<dlfcn.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	<string.h>
+	<AvailabilityMacros.h>
+	<dlfcn.h>
+	<mach-o/dyld.h>
 

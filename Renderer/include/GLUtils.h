@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "BasicWindow.h"
-#include "ShaderUtils.h"
+#include "Shaders/ShaderUtils.h"
 
 using namespace std;
 

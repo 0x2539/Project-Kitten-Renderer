@@ -3,7 +3,7 @@
 
 
 #define GLEW_STATIC
-#include <glew.h>
+#include <GL/glew.h>
 #include <SDL_opengl.h>
 #include <GL/glu.h>
 

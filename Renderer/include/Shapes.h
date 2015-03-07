@@ -2,6 +2,7 @@
 #define SHAPES_H
 
 #include "OpenglHeaders.h"
+#include "GLUtils.h"
 
 class Shape
 {

@@ -3,6 +3,14 @@ and may not be redestributed without written permission.*/
 //Version: 002
 
 #include "ShaderUtils.h"
+#include <glm/gtc/type_ptr.hpp>
+
+ShaderUtils::ShaderUtils()
+{
+    mPolygonColorLocation = 0;
+    mProjectionMatrixLocation = 0;
+    mModelViewMatrixLocation = 0;
+}
 
 bool ShaderUtils::loadProgram()
 {
@@ -61,7 +69,46 @@ bool ShaderUtils::loadProgram()
     glDeleteShader( vertexShader );
     glDeleteShader( fragmentShader );
 
+    loadUniforms();
+
 	return true;
+}
+
+void ShaderUtils::loadUniforms()
+{
+    mPolygonColorLocation = loadUniform("PolygonColor");
+    mProjectionMatrixLocation = loadUniform("ProjectionMatrix");
+    mModelViewMatrixLocation = loadUniform("ModelViewMatrix");
+}
+
+void ShaderUtils::setProjection( glm::mat4 matrix )
+{
+    mProjectionMatrix = matrix;
+}
+
+void ShaderUtils::setModelView( glm::mat4 matrix )
+{
+    mModelViewMatrix = matrix;
+}
+
+void ShaderUtils::leftMultProjection( glm::mat4 matrix )
+{
+    mProjectionMatrix = matrix * mProjectionMatrix;
+}
+
+void ShaderUtils::leftMultModelView( glm::mat4 matrix )
+{
+    mModelViewMatrix = matrix * mModelViewMatrix;
+}
+
+void ShaderUtils::updateProjection()
+{
+    glUniformMatrix4fv( mProjectionMatrixLocation, 1, GL_FALSE, glm::value_ptr( mProjectionMatrix ) );
+}
+
+void ShaderUtils::updateModelView()
+{
+    glUniformMatrix4fv( mModelViewMatrixLocation, 1, GL_FALSE, glm::value_ptr( mModelViewMatrix ) );
 }
 
 GLint ShaderUtils::loadUniform(std::string uniformName)

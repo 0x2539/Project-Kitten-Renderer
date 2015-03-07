@@ -1,5 +1,10 @@
 #include "BasicWindow.h"
 
+//Screen dimension constants
+const int BasicWindow::SCREEN_WIDTH;
+const int BasicWindow::SCREEN_HEIGHT;
+const int BasicWindow::SCREEN_FPS;
+
 bool BasicWindow::initWindow()
 {
     //OpenGL context

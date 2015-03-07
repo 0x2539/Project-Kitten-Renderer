@@ -173,7 +173,7 @@ void render()
 //        glVertex2f( -50.f,  50.f );
 //    glEnd();
 
-    Rectangle1 rect(Point(50, 50), 100, 100);
+    Rectangle1 rect(Point(-50, -50), 100, 100);
     rect.draw();
 
 //    L.draw();

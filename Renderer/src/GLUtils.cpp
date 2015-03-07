@@ -1,7 +1,11 @@
 #include "GLUtils.h"
+#include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
 
 ShaderUtils shaderUtils;
-SDL_Window* _gWindow;
+SDL_Window* GLUtils::_gWindow;
+int GLUtils::_SCREEN_WIDTH;
+int GLUtils::_SCREEN_HEIGHT;
 
 SDL_Window* GLUtils::getWindow()
 {
@@ -17,6 +21,8 @@ bool GLUtils::initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
     if( BasicWindow::initWindow() )
     {
+        _SCREEN_WIDTH = SCREEN_WIDTH;
+        _SCREEN_HEIGHT = SCREEN_HEIGHT;
         initGL(SCREEN_WIDTH, SCREEN_HEIGHT);
         loadGP();
         loadMedia();
@@ -105,6 +111,14 @@ bool GLUtils::loadGP()
 
 	//Bind basic shader program
 	shaderUtils.bind();
+
+    //Initialize projection
+    shaderUtils.setProjection( glm::ortho<GLfloat>( 0.0, BasicWindow::SCREEN_WIDTH, BasicWindow::SCREEN_HEIGHT, 0.0, 1.0, -1.0 ) );
+    shaderUtils.updateProjection();
+
+    //Initialize modelview
+    shaderUtils.setModelView( glm::mat4() );
+    shaderUtils.updateModelView();
 
     return true;
 }

@@ -1,4 +1,6 @@
 #include "Shapes.h"
+#include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
 
 GLPoint::GLPoint(){
     _x = 0.f;
@@ -122,7 +124,10 @@ Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
 void Rectangle1::draw(){
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 
-    glLoadIdentity();
+    //glLoadIdentity();
+
+    shaderUtils.setModelView( glm::translate<GLfloat>( glm::vec3( BasicWindow::SCREEN_WIDTH / 2.f, BasicWindow::SCREEN_HEIGHT / 2.f, 0.f ) ) );
+    shaderUtils.updateModelView();
 
     //Enable vertex arrays
     glEnableClientState( GL_VERTEX_ARRAY );
@@ -133,7 +138,7 @@ void Rectangle1::draw(){
 
         //Draw quad using vertex data and index data
         glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
-        glDrawElements( GL_QUADS, 4, GL_UNSIGNED_INT, NULL );
+        glDrawElements( GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL );
 
     //Disable vertex arrays
     glDisableClientState( GL_VERTEX_ARRAY );

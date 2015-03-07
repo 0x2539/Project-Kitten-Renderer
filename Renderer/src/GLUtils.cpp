@@ -12,7 +12,7 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     }
 
     //Make sure OpenGL 2.1 is supported
-//    if( !GLEW_VERSION_2_1 )
+    if( !GLEW_VERSION_2_1 )
     {
         cout << "OpenGL 2.1 not supported!\n";
 //        printf( "OpenGL 2.1 not supported!\n" );

@@ -1,0 +1,22 @@
+CC		= g++ -g -c  -Wall -std=c++11 -lSDL2 -lSDL2main -lGL -lGLU -lglut -iquote $(THIS_DIR) -I../include/ -I../../include/ 
+CFLAGS		= 
+LDFLAGS		=
+SOURCES		= main.cpp $(GENERALFIS) 
+OBJECTS		= $(SOURCES:.cpp=.o)
+EXECUTABLE	= Main
+GENERALDIR	= 
+GENERALFIS	= ShapeRenderer.cpp Shapes.cpp Shaders/ShaderProgram.cpp Shaders/ShaderUtils.cpp BasicWindow.cpp GLUtils.cpp 
+THIS_MAKEFILE_PATH = $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_DIR	= $(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)/
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm -rf *o $(EXECUTABLE)	
+	rm -rf -d $(GENERALDIR)*.o

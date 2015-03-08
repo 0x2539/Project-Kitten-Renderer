@@ -1,0 +1,9 @@
+CC=g++
+CFLAGS= -Wall -Iinclude/ 
+LDFLAGS= -lSDL2 -lSDL2main -lGL -lGLU -lglut
+SOURCES=src/main.cpp 
+OBJECTS=obj/glew.o
+EXECUTABLE=Main
+
+all:
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $(EXECUTABLE) $(SOURCES) $(OBJECTS)

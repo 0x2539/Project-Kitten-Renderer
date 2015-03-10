@@ -6,6 +6,7 @@
 #include "Shaders/ShaderUtils.h"
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
+#include <SOIL.h>
 
 
 
@@ -24,6 +25,7 @@ private:
 
 public:
     static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
+    static void loadTexture(string path);
 };
 
 ShaderUtils shaderUtils;
@@ -140,6 +142,25 @@ bool GLUtils::loadGP()
 bool GLUtils::loadMedia()
 {
     return true;
+}
+
+void GLUtils::loadTexture(string path)
+{
+    /* load an image file directly as a new OpenGL texture */
+    GLuint tex_2d = SOIL_load_OGL_texture
+        (
+            path.c_str(),
+            SOIL_LOAD_AUTO,
+            SOIL_CREATE_NEW_ID,
+            SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+        );
+        
+    /* check for an error during the load process */
+    if( 0 == tex_2d )
+    {
+        cout << "SOIL loading " << path <<" error: " << SOIL_last_result() << '\n';
+        // printf( "SOIL loading error: '%s'\n", SOIL_last_result() );
+    }
 }
 
 

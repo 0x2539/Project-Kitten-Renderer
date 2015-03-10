@@ -1,11 +1,11 @@
 CC=g++
-CFLAGS= -Wall -Iinclude/ -Ilibs/i686-w64-mingw32/include/
+CFLAGS= -Wall -Iinclude/ -Ilibs/i686-w64-mingw32/include/ -Ilibs/SOIL/src
 SOURCES=src/main.cpp 
 
 ifeq ($(OS),Windows_NT)
 	EXECUTABLE=Main.exe
-	CC += -Llibs/i686-w64-mingw32/lib
-	LDFLAGS = -lmingw32 -lopengl32 -lglu32
+	CC += -Llibs/i686-w64-mingw32/lib -Llibs/SOIL/lib
+	LDFLAGS = -lSOIL -lmingw32 -lopengl32 -lglu32
 	OBJECTS=obj/Win32/glew.o
 else
 	EXECUTABLE=Main

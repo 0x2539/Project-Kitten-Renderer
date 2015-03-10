@@ -77,6 +77,8 @@ int main( int argc, char* args[] )
       
       //Enable text input
       SDL_StartTextInput();
+
+      GLUtils::loadTexture("img.png");
       
       //While application is running
       while( !quit )

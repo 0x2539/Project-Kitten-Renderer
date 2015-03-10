@@ -2,11 +2,18 @@
 and may not be redestributed without written permission.*/
 
 #version 120
+//Texture Color
+uniform vec4 TextureColor;
 
-uniform vec4 PolygonColor = vec4( 1.0, 1.0, 1.0, 1.0 );
+//Texture Unit
+uniform sampler2D TextureUnit;
+
+//Texture coordinate
+varying vec2 texCoord;
 
 void main()
 {
 	//Set fragment
-	gl_FragColor = PolygonColor;
+    gl_FragColor = texture2D( TextureUnit, texCoord ) * TextureColor;
+	//gl_FragColor = PolygonColor;
 }

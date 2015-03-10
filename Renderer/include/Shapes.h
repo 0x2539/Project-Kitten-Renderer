@@ -12,17 +12,41 @@ class Shape
         void setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a );
 };
 
-class GLPoint{
+class GLVertexCoord{
   private:
     float _x,_y;
 
   public:
-    GLPoint();
-    GLPoint(GLfloat x, GLfloat y);
+    GLVertexCoord();
+    GLVertexCoord(GLfloat x, GLfloat y);
     GLfloat getX();
     GLfloat getY();
     void setCoord(GLfloat x, GLfloat y);
-    void setCoord(GLPoint p);
+    void setCoord(GLVertexCoord p);
+};
+
+class GLTexCoord{
+private:
+    GLfloat _s;
+    GLfloat _t;
+public:
+    GLTexCoord();
+    GLTexCoord(GLfloat x, GLfloat y);
+    GLfloat getS();
+    GLfloat getT();
+    void setCoord(GLfloat s, GLfloat t);
+    void setCoord(GLTexCoord p);
+};
+
+class GLTexturedVertex{
+private:
+public:
+    GLVertexCoord _vertexCoord;
+    GLTexCoord _textureCoord;
+    GLTexturedVertex();
+    GLTexturedVertex(GLVertexCoord vertexCoord, GLTexCoord textureCoord);
+    void setVertexCoord(GLVertexCoord vertexCoord);
+    void setTextureCoord(GLTexCoord textureCoord);
 };
 
 class Point : Shape{
@@ -56,7 +80,8 @@ class Rectangle1 : Shape{
     float _xSideLength;
     float _ySideLength;
 
-    GLPoint quadVertices[ 4 ];
+    GLTexturedVertex vertices[ 4 ];
+    //GLVertexCoord quadVertices[ 4 ];
     GLuint indices[ 4 ];
     GLuint gVBO = NULL;
     GLuint gIBO = NULL;
@@ -83,31 +108,79 @@ class Square : Shape{
 
 
 
-GLPoint::GLPoint(){
+GLVertexCoord::GLVertexCoord(){
     _x = 0.f;
     _y = 0.f;
 }
 
-GLPoint::GLPoint(GLfloat x, GLfloat y){
+GLVertexCoord::GLVertexCoord(GLfloat x, GLfloat y){
     _x = x;
     _y = y;
 }
 
-GLfloat GLPoint::getX(){
+GLfloat GLVertexCoord::getX(){
     return _x;
 }
 
-GLfloat GLPoint::getY(){
+GLfloat GLVertexCoord::getY(){
     return _y;
 }
 
-void GLPoint::setCoord(GLfloat x, GLfloat y){
+void GLVertexCoord::setCoord(GLfloat x, GLfloat y){
     _x = x;
     _y = y;
 }
-void GLPoint::setCoord(GLPoint p){
+void GLVertexCoord::setCoord(GLVertexCoord p){
     _x = p.getX();
     _y = p.getY();
+}
+
+GLTexCoord::GLTexCoord(){
+    _s = 0.f;
+    _t = 0.f;
+}
+
+GLTexCoord::GLTexCoord(GLfloat s, GLfloat t){
+    _s = s;
+    _t = t;
+}
+
+GLfloat GLTexCoord::getS(){
+    return _s;
+}
+
+GLfloat GLTexCoord::getT(){
+    return _t;
+}
+
+void GLTexCoord::setCoord(GLfloat s, GLfloat t){
+    _s = s;
+    _t = t;
+}
+void GLTexCoord::setCoord(GLTexCoord p){
+    _s = p.getS();
+    _t = p.getT();
+}
+
+GLTexturedVertex::GLTexturedVertex()
+{
+
+}
+
+GLTexturedVertex::GLTexturedVertex(GLVertexCoord vertexCoord, GLTexCoord textureCoord)
+{
+    _vertexCoord = vertexCoord;
+    _textureCoord = textureCoord;
+}
+
+void GLTexturedVertex::setVertexCoord(GLVertexCoord vertexCoord)
+{
+    _vertexCoord = vertexCoord;
+}
+
+void GLTexturedVertex::setTextureCoord(GLTexCoord textureCoord)
+{
+    _textureCoord = textureCoord;
 }
 
 Point::Point(){
@@ -173,7 +246,22 @@ Rectangle1::Rectangle1(){
 
 Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
 
-    quadVertices[ 0 ].setCoord(leftTop.getX(), leftTop.getY());
+    GLfloat texLeft = 0;
+    GLfloat texTop = 0;
+    GLfloat texRight = 1;
+    GLfloat texBottom = 1;
+
+    vertices[ 0 ].setVertexCoord( GLVertexCoord( 0, 0 ) );
+    vertices[ 1 ].setVertexCoord( GLVertexCoord( xSideLength, 0 ) );
+    vertices[ 2 ].setVertexCoord( GLVertexCoord( xSideLength, ySideLength ) );
+    vertices[ 3 ].setVertexCoord( GLVertexCoord( 0, ySideLength ) );
+
+    vertices[ 0 ].setTextureCoord( GLTexCoord( texLeft, texTop ) );
+    vertices[ 1 ].setTextureCoord( GLTexCoord( texRight, texTop ) );
+    vertices[ 2 ].setTextureCoord( GLTexCoord( texRight, texBottom ) );
+    vertices[ 3 ].setTextureCoord( GLTexCoord( texLeft, texBottom ) );
+
+    /*quadVertices[ 0 ].setCoord(leftTop.getX(), leftTop.getY());
 
     quadVertices[ 1 ].setCoord(leftTop.getX() + xSideLength, leftTop.getY());
 
@@ -181,21 +269,31 @@ Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
 
     quadVertices[ 3 ].setCoord(leftTop.getX(), leftTop.getY() + ySideLength);
 
+        vData[ 0 ].texCoord.s =  texLeft; vData[ 0 ].texCoord.t =    texTop;
+        vData[ 1 ].texCoord.s = texRight; vData[ 1 ].texCoord.t =    texTop;
+        vData[ 2 ].texCoord.s = texRight; vData[ 2 ].texCoord.t = texBottom;
+        vData[ 3 ].texCoord.s =  texLeft; vData[ 3 ].texCoord.t = texBottom;*/
+
     //Set rendering indices
     indices[ 0 ] = 0;
     indices[ 1 ] = 1;
     indices[ 2 ] = 2;
     indices[ 3 ] = 3;
 
+    //glBindTexture( GL_TEXTURE_2D, GLUtils::texture );
     //Create VBO
     glGenBuffers( 1, &gVBO );
     glBindBuffer( GL_ARRAY_BUFFER, gVBO );
-    glBufferData( GL_ARRAY_BUFFER, 4 * sizeof(GLPoint), quadVertices, GL_STATIC_DRAW );
+    glBufferData( GL_ARRAY_BUFFER, 4 * sizeof(GLTexturedVertex), vertices, GL_DYNAMIC_DRAW );
 
     //Create IBO
     glGenBuffers( 1, &gIBO );
     glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
-    glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW );
+    glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_DYNAMIC_DRAW );
+
+    //Unbind buffers
+    glBindBuffer( GL_ARRAY_BUFFER, NULL );
+    glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, NULL );
 
     _leftTop.setCoord(leftTop);
     _xSideLength = xSideLength;
@@ -210,19 +308,36 @@ void Rectangle1::draw(){
     shaderUtils.setModelView( glm::translate<GLfloat>( glm::vec3( BasicWindow::SCREEN_WIDTH / 2.f, BasicWindow::SCREEN_HEIGHT / 2.f, 0.f ) ) );
     shaderUtils.updateModelView();
 
+    //Set texture ID
+    glBindTexture( GL_TEXTURE_2D, GLUtils::texture );
+
+        shaderUtils.enableVertexPointer();
+        shaderUtils.enableTexCoordPointer();
     //Enable vertex arrays
-    glEnableClientState( GL_VERTEX_ARRAY );
+    //glEnableClientState( GL_VERTEX_ARRAY );
 
         //Set vertex data
         glBindBuffer( GL_ARRAY_BUFFER, gVBO );
-        glVertexPointer( 2, GL_FLOAT, 0, NULL );
+        //glVertexPointer( 2, GL_FLOAT, 0, NULL );
+            //Update vertex buffer data
+            glBufferSubData( GL_ARRAY_BUFFER, 0, 4 * sizeof(GLTexturedVertex), vertices );
+
+            //Set texture coordinate data
+            shaderUtils.setTexCoordPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _textureCoord ) );
+
+            //Set vertex data
+            shaderUtils.setVertexPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _vertexCoord ) );
+
 
         //Draw quad using vertex data and index data
         glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
         glDrawElements( GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL );
 
     //Disable vertex arrays
-    glDisableClientState( GL_VERTEX_ARRAY );
+    //glDisableClientState( GL_VERTEX_ARRAY );
+    //Disable vertex and texture coordinate arrays
+    shaderUtils.disableVertexPointer();
+    shaderUtils.disableTexCoordPointer();
 
 //    glBegin(GL_QUADS);
 //        glVertex2f(_leftTop.getX(), _leftTop.getY());

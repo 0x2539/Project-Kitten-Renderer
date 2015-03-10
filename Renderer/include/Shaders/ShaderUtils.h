@@ -5,11 +5,25 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+class ColorRGBA
+{
+public:
+    GLfloat r, g, b, a;
+};
+
 class ShaderUtils : public ShaderProgram
 {
 private:
-    //Color uniform location
-    GLint mPolygonColorLocation;
+
+    //Attribute locations
+    GLint mVertexPos2DLocation;
+    GLint mTexCoordLocation;
+
+    //Coloring location
+    GLint mTextureColorLocation;
+
+    //Texture unit location
+    GLint mTextureUnitLocation;
 
     //Projection matrix
     glm::mat4 mProjectionMatrix;
@@ -19,12 +33,14 @@ private:
     glm::mat4 mModelViewMatrix;
     GLint mModelViewMatrixLocation;
 
+
     void loadUniforms();
 
 public:
     ShaderUtils();
     bool loadProgram();
     GLint loadUniform(std::string uniformName);
+    GLint loadAttrib(std::string attribName);
 
         void setProjection( glm::mat4 matrix );
         /*
@@ -85,6 +101,86 @@ public:
         Side Effects:
          -None
         */
+
+        void setVertexPointer( GLsizei stride, const GLvoid* data );
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Sets vertex position attribute pointer
+        Side Effects:
+         -None
+        */
+
+        void setTexCoordPointer( GLsizei stride, const GLvoid* data );
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Sets texture coordinate attribute pointer
+        Side Effects:
+         -None
+        */
+
+        void enableVertexPointer();
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Enables vertex position attribute
+        Side Effects:
+         -None
+        */
+
+        void disableVertexPointer();
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Disables vertex position attribute
+        Side Effects:
+         -None
+        */
+
+        void enableTexCoordPointer();
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Enables texture coordinate attribute
+        Side Effects:
+         -None
+        */
+
+        void disableTexCoordPointer();
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Enables texture coordinate attribute
+        Side Effects:
+         -None
+        */
+
+        void setTextureColor( ColorRGBA color );
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Updates shader program textured polygon color
+        Side Effects:
+         -None
+        */
+
+        void setTextureUnit( GLuint unit );
+        /*
+        Pre Condition:
+         -Bound LTexturedPolygonProgram2D
+        Post Condition:
+         -Updates shader program multitexture unit
+        Side Effects:
+         -None
+        */
 };
 
 
@@ -95,9 +191,13 @@ and may not be redestributed without written permission.*/
 
 ShaderUtils::ShaderUtils()
 {
-    mPolygonColorLocation = 0;
+    mVertexPos2DLocation = 0;
+    mTexCoordLocation = 0;
+
     mProjectionMatrixLocation = 0;
     mModelViewMatrixLocation = 0;
+    mTextureColorLocation = 0;
+    mTextureUnitLocation = 0;
 }
 
 bool ShaderUtils::loadProgram()
@@ -164,7 +264,12 @@ bool ShaderUtils::loadProgram()
 
 void ShaderUtils::loadUniforms()
 {
-    mPolygonColorLocation = loadUniform("PolygonColor");
+    mVertexPos2DLocation = loadAttrib("VertexPos2D");
+    mTexCoordLocation = loadAttrib("TexCoord");
+
+    mTextureColorLocation = loadUniform("TextureColor");
+    mTextureUnitLocation = loadUniform("TextureUnit");
+
     mProjectionMatrixLocation = loadUniform("ProjectionMatrix");
     mModelViewMatrixLocation = loadUniform("ModelViewMatrix");
 }
@@ -199,6 +304,46 @@ void ShaderUtils::updateModelView()
     glUniformMatrix4fv( mModelViewMatrixLocation, 1, GL_FALSE, glm::value_ptr( mModelViewMatrix ) );
 }
 
+void ShaderUtils::setVertexPointer( GLsizei stride, const GLvoid* data )
+{
+    glVertexAttribPointer( mVertexPos2DLocation, 2, GL_FLOAT, GL_FALSE, stride, data );
+}
+
+void ShaderUtils::setTexCoordPointer( GLsizei stride, const GLvoid* data )
+{
+    glVertexAttribPointer( mTexCoordLocation, 2, GL_FLOAT, GL_FALSE, stride, data );
+}
+
+void ShaderUtils::enableVertexPointer()
+{
+    glEnableVertexAttribArray( mVertexPos2DLocation );
+}
+
+void ShaderUtils::disableVertexPointer()
+{
+    glDisableVertexAttribArray( mVertexPos2DLocation );
+}
+
+void ShaderUtils::enableTexCoordPointer()
+{
+    glEnableVertexAttribArray( mTexCoordLocation );
+}
+
+void ShaderUtils::disableTexCoordPointer()
+{
+    glDisableVertexAttribArray( mTexCoordLocation );
+}
+
+void ShaderUtils::setTextureColor( ColorRGBA color )
+{
+    glUniform4f( mTextureColorLocation, color.r, color.g, color.b, color.a );
+}
+
+void ShaderUtils::setTextureUnit( GLuint unit )
+{
+    glUniform1i( mTextureUnitLocation, unit );
+}
+
 GLint ShaderUtils::loadUniform(std::string uniformName)
 {
     //Get variable location
@@ -209,6 +354,17 @@ GLint ShaderUtils::loadUniform(std::string uniformName)
 //        printf( "%s is not a valid glsl program variable!\n", "PolygonColor" );
     }
     return uniform;
+}
+
+GLint ShaderUtils::loadAttrib(std::string attribName)
+{
+    GLint attrib = glGetAttribLocation( mProgramID, attribName.c_str() );
+    if( attrib == -1 )
+    {
+        cout << attribName << " is not a valid glsl program variable!\n";
+        //printf( "%s is not a valid glsl program variable!\n", "LTexCoord" );
+    }
+    return attrib;
 }
 
 #endif // SHADERUTILS_H_INCLUDED

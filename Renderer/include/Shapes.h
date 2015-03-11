@@ -9,6 +9,8 @@ class Shape
 {
     public:
         virtual void draw() = 0;
+        GLuint texture;
+        void setTexture( GLuint newTexture );
         void setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a );
 };
 
@@ -49,7 +51,7 @@ public:
     void setTextureCoord(GLTexCoord textureCoord);
 };
 
-class Point : Shape{
+class Point : public Shape{
   private:
     float _x,_y;
 
@@ -63,7 +65,7 @@ class Point : Shape{
     void setCoord(Point p);
 };
 
-class Line : Shape{
+class Line : public Shape{
   private:
       Point _p1, _p2;
 
@@ -74,7 +76,7 @@ class Line : Shape{
     void draw();
 };
 
-class Rectangle1 : Shape{
+class Rectangle1 : public Shape{
   private:
     Point _leftTop;
     float _xSideLength;
@@ -94,7 +96,7 @@ class Rectangle1 : Shape{
     void draw();
 };
 
-class Square : Shape{
+class Square : public Shape{
   private:
     Point _leftTop;
     float _sideLength;
@@ -106,7 +108,9 @@ class Square : Shape{
     void draw();
 };
 
-
+void Shape::setTexture(GLuint newTexture){
+    texture = newTexture;
+}
 
 GLVertexCoord::GLVertexCoord(){
     _x = 0.f;
@@ -309,7 +313,7 @@ void Rectangle1::draw(){
     shaderUtils.updateModelView();
 
     //Set texture ID
-    glBindTexture( GL_TEXTURE_2D, GLUtils::texture );
+    glBindTexture( GL_TEXTURE_2D, texture );
 
         shaderUtils.enableVertexPointer();
         shaderUtils.enableTexCoordPointer();

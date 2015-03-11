@@ -1,16 +1,12 @@
 #ifndef GLUTILS_H_INCLUDED
 #define GLUTILS_H_INCLUDED
 
-#include <iostream>
 #include "BasicWindow.h"
 #include "Shaders/ShaderUtils.h"
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <SOIL.h>
-
-
-
-using namespace std;
+#include "Logger.h"
 
 extern ShaderUtils shaderUtils;
 
@@ -56,16 +52,15 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     GLenum glewError = glewInit();
     if( glewError != GLEW_OK )
     {
-        cout << "Error initializing GLEW!\n" << glewGetErrorString( glewError );
-//        printf( "Error initializing GLEW! %s\n", glewGetErrorString( glewError ) );
+        Logger::write("Error initializing GLEW!\n");
+        Logger::write(gluErrorString( glewError ));
         return false;
     }
 
     //Make sure OpenGL 2.1 is supported
     if( !GLEW_VERSION_2_1 )
     {
-        cout << "OpenGL 2.1 not supported!\n";
-//        printf( "OpenGL 2.1 not supported!\n" );
+        Logger::write("OpenGL 2.1 not supported!\n");
         return false;
     }
 
@@ -96,8 +91,8 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     GLenum error = glGetError();
     if( error != GL_NO_ERROR )
     {
-        cout << "Error initializing OpenGL!\n" << gluErrorString( error );
-//        printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
+        Logger::write("Error initializing OpenGL!\n");
+        Logger::write(gluErrorString( error ));
         return false;
     }
 
@@ -122,8 +117,7 @@ bool GLUtils::loadGP()
 	//Load basic shader program
 	if( !shaderUtils.loadProgram() )
 	{
-	    cout << "Unable to load basic shader!\n";
-//		printf( "Unable to load basic shader!\n" );
+	    Logger::write("Unable to load basic shader!\n");
 		return false;
 	}
 
@@ -156,10 +150,10 @@ bool GLUtils::loadMedia()
 {
     return true;
 }
-
+/*
 GLuint GLUtils::loadTexture(string path)
 {
-    /* load an image file directly as a new OpenGL texture */
+    // load an image file directly as a new OpenGL texture 
     GLuint tex_2d = SOIL_load_OGL_texture
         (
             path.c_str(),
@@ -173,7 +167,7 @@ GLuint GLUtils::loadTexture(string path)
     //glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, DEFAULT_TEXTURE_WRAP );
     //glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, DEFAULT_TEXTURE_WRAP );
 
-    /* check for an error during the load process */
+    // check for an error during the load process 
     if( 0 == tex_2d )
     {
         cout << "SOIL loading " << path <<" error: " << SOIL_last_result() << '\n';
@@ -186,7 +180,6 @@ GLuint GLUtils::loadTexture(string path)
     }
     return tex_2d;
 }
-
-
+*/
 
 #endif // GLUTILS_H_INCLUDED

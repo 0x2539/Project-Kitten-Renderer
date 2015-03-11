@@ -3,7 +3,9 @@
 
 //Using SDL and standard IO
 #include "SDL2/SDL.h"
-#include <stdio.h>
+#include "Logger.h"
+//#include <stdio.h>
+
 
 class BasicWindow
 {
@@ -49,7 +51,7 @@ bool BasicWindow::initWindow()
 	//Initialize SDL
 	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 	{
-		printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
+		//printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
 		success = false;
 	}
 	else
@@ -62,7 +64,9 @@ bool BasicWindow::initWindow()
 		setWindow(SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN ));
 		if( getWindow() == NULL )
 		{
-			printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
+			Logger::write("Window could not be created! SDL Error: ");
+			Logger::write(SDL_GetError());
+			//printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
 			success = false;
 		}
 		else
@@ -71,7 +75,9 @@ bool BasicWindow::initWindow()
 			gContext = SDL_GL_CreateContext( getWindow() );
 			if( gContext == NULL )
 			{
-				printf( "OpenGL context could not be created! SDL Error: %s\n", SDL_GetError() );
+				Logger::write("OpenGL context could not be created! SDL Error: ");
+				Logger::write(SDL_GetError());
+				//printf( "OpenGL context could not be created! SDL Error: %s\n", SDL_GetError() );
 				success = false;
 			}
 			else
@@ -79,12 +85,15 @@ bool BasicWindow::initWindow()
 				//Use Vsync
 				if( SDL_GL_SetSwapInterval( 1 ) < 0 )
 				{
-					printf( "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
+					Logger::write("Warning: Unable to set VSync! SDL Error: ");
+					Logger::write(SDL_GetError());
+					//printf( "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
 				}
 
 				//Initialize OpenGL
 //				if( !initGL() )
 //				{
+//					Logger::write("Unable to initialize OpenGL!\n");
 //					printf( "Unable to initialize OpenGL!\n" );
 //					success = false;
 //				}

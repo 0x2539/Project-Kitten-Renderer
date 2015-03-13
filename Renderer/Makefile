@@ -13,11 +13,11 @@ ifeq ($(OS),Windows_NT)
 	OBJECTS=obj/Win32/glew.o
 
 	ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
-		LIBS += -L"libs/irrKlang/irrKlang-32bit-1.5.0/lib/Win32-gcc/"
+		LIB_SO += -libs/irrKlang/irrKlang-64bit-1.5.0/bin.winx64-visualStudio/irrKlang.dll
 		INCLUDES += -I"libs/irrKlang/irrKlang-64bit-1.5.0/include/"
 	endif
 
-	LIBS += -L"libs/irrKlang/irrKlang-32bit-1.5.0/lib/Win32-gcc/"
+	LIB_SO += libs/irrKlang/irrKlang-32bit-1.5.0/bin/Win32-gcc/irrKlang.dll
 	INCLUDES += -I"libs/irrKlang/irrKlang-32bit-1.5.0/include/"
 else
 	EXECUTABLE=Main

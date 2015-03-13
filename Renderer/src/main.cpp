@@ -9,6 +9,7 @@ and may not be redistributed without written permission.*/
 #include "Shapes.h"
 #include "TextureLoader.h"
 #include "Logger.h"
+#include "AudioEngine.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -92,6 +93,8 @@ int main( int argc, char* args[] )
       TextureLoader *TL = TextureLoader::getInstance();
       TL -> addTexture(path);
       tx = TL -> getTexture(path);
+      AudioEngine AE;
+      AE.doStuff("libs/irrKlang/irrKlang-32bit-1.5.0/media/2.flac");
       //GLUtils::loadTexture("img.png");
       
       //While application is running

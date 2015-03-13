@@ -94,7 +94,7 @@ int main( int argc, char* args[] )
       TL -> addTexture(path);
       tx = TL -> getTexture(path);
       AudioEngine AE;
-      AE.doStuff("libs/irrKlang/irrKlang-32bit-1.5.0/media/2.flac");
+      AE.playSound("libs/irrKlang/irrKlang-32bit-1.5.0/media/2.flac");
       //GLUtils::loadTexture("img.png");
       
       //While application is running
@@ -111,7 +111,7 @@ int main( int argc, char* args[] )
 	      //Handle keypress with current mouse position
 	      else if( e.type == SDL_TEXTINPUT )
 		{
-		  int x = 0, y = 0;
+		      int x = 0, y = 0;
 					SDL_GetMouseState( &x, &y );
 					handleKeys( e.text.text[ 0 ], x, y );
 		}

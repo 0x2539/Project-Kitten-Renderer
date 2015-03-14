@@ -13,7 +13,7 @@ ifeq ($(OS),Windows_NT)
 	OBJECTS=obj/Win32/glew.o
 
 	ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
-		LIB_SO += -libs/irrKlang/irrKlang-64bit-1.5.0/bin.winx64-visualStudio/irrKlang.dll
+		LIBS += -L"libs/irrKlang/irrKlang-64bit-1.5.0/bin/winx64-visualStudio/"
 		INCLUDES += -I"libs/irrKlang/irrKlang-64bit-1.5.0/include/"
 	endif
 
@@ -27,7 +27,7 @@ else
 	LBITS := $(shell getconf LONG_BIT)
 	ifeq ($(LBITS),64)
 		OBJECTS=obj/Unix/x64/glew.o 
-		LIB_SO += libs/irrKlang/irrKlang-64bit-1.5.0/bin/linux-gcc-64/libIrrKlang.so
+		LIBS += -L"libs/irrKlang/irrKlang-64bit-1.5.0/bin/linux-gcc-64/"
 		INCLUDES += -I"libs/irrKlang/irrKlang-64bit-1.5.0/include/"
 	else
 		OBJECTS=obj/Unix/x86/glew.o 
@@ -35,7 +35,7 @@ else
 		INCLUDES += -I"libs/irrKlang/irrKlang-32bit-1.5.0/include/"
 	endif
 	
-	LDFLAGS += -pthread
+	LDFLAGS += -pthread -lIrrKlang
 endif
 
 LDFLAGS += -lSDL2main -lSDL2 

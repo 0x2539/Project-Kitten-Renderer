@@ -11,26 +11,39 @@ using namespace irrklang;
 class AudioEngine{
 
 private:
-	ISoundEngine* engine;
+	static ISoundEngine* engine;
 
 public:
 
-	void playSound(const char *path){
-		engine = createIrrKlangDevice();
+	static void playSound(const string path, float defaulVolume = 1.0f){
 
-		ISoundSource* someSound = engine->addSoundSourceFromFile(path);
-
-		// TO DO: Make SOUNDS.h LOAD ISoundSource instead of path to songs
+		if(!engine) engine = createIrrKlangDevice();
+		
+		ISoundSource* soundtrack = engine->addSoundSourceFromFile(path.c_str());
+		soundtrack -> setDefaultVolume(defaulVolume);
 
 		if (!engine)
 		{
 			Logger::write("Could not startup engine\n"); 
 			return ;
 		}
-		engine->play2D(someSound);
-		//Logger::write(Sounds::COOL_FLAC);
+		
+		engine->play2D(soundtrack);
+	}
+
+	static void stopAllSounds(){
+
+		if (!engine)
+		{
+			Logger::write("Could not startup engine\n"); 
+			return ;
+		}
+
+		engine -> stopAllSounds();
 	}
 
 };
+
+ISoundEngine* AudioEngine::engine = NULL;
 
 #endif // AUDIO_ENGINE_H

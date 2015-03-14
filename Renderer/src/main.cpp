@@ -93,8 +93,8 @@ int main( int argc, char* args[] )
       TextureLoader *TL = TextureLoader::getInstance();
       TL -> addTexture(path);
       tx = TL -> getTexture(path);
-      AudioEngine AE;
-      AE.playSound("libs/irrKlang/irrKlang-32bit-1.5.0/media/2.flac");
+      //AudioEngine::playSound(Sounds::COOL_FLAC);
+      AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
       //GLUtils::loadTexture("img.png");
       
       //While application is running

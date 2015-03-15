@@ -21,15 +21,11 @@ private:
 
 public:
     static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
-    static GLuint loadTexture(string path);
-    static GLuint texture;
 };
 
 ShaderUtils shaderUtils;
 int GLUtils::_SCREEN_WIDTH;
 int GLUtils::_SCREEN_HEIGHT;
-GLuint GLUtils::texture;
-
 
 bool GLUtils::initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {

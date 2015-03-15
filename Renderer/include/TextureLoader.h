@@ -12,6 +12,7 @@ class TextureLoader{
 private:
 	static TextureLoader *_instance;
 	unordered_map<string, GLuint> textures;
+	static string placeholderPath;
 
 public:
 	TextureLoader()
@@ -21,7 +22,12 @@ public:
 
 	static TextureLoader* getInstance()
 	{
-		if(_instance == NULL) _instance = new TextureLoader();
+		if(_instance == NULL) {
+			_instance = new TextureLoader();
+			
+			//load the placeholder
+			_instance -> addTexture(placeholderPath);
+		}
 		return _instance;
 	}
 
@@ -38,21 +44,27 @@ public:
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 
-    	if( newTexture == 0 ) 
+    	if( newTexture == 0 ) {
     		Logger::write("SOIL loading " + path + " error: " + SOIL_last_result());
-	    else 
+    	}
+	    else {
 	    	Logger::write("SOIL loaded " + path);
+	    }
 
 		textures.insert(make_pair(path, newTexture));
 	}
 
 	GLuint getTexture(string path)
 	{
-		// TO DO: Placeholder when texture is not found in map
+		//show placeholder if the texture does not exist
+		if(textures[path] == NULL || textures[path] == 0){
+			return textures[placeholderPath];
+		}
 		return textures[path];
 	}
 };
 
 TextureLoader* TextureLoader::_instance = NULL;
+string TextureLoader::placeholderPath = "Assets/placeholder.png";
 
 #endif // TEXTURE_LOADER_H

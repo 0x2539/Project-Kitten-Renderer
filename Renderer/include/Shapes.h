@@ -33,7 +33,7 @@ private:
     GLfloat _t;
 public:
     GLTexCoord();
-    GLTexCoord(GLfloat x, GLfloat y);
+    GLTexCoord(GLfloat s, GLfloat t);
     GLfloat getS();
     GLfloat getT();
     void setCoord(GLfloat s, GLfloat t);
@@ -135,8 +135,7 @@ void GLVertexCoord::setCoord(GLfloat x, GLfloat y){
     _y = y;
 }
 void GLVertexCoord::setCoord(GLVertexCoord p){
-    _x = p.getX();
-    _y = p.getY();
+    setCoord(p.getX(), p.getY());
 }
 
 GLTexCoord::GLTexCoord(){
@@ -162,8 +161,7 @@ void GLTexCoord::setCoord(GLfloat s, GLfloat t){
     _t = t;
 }
 void GLTexCoord::setCoord(GLTexCoord p){
-    _s = p.getS();
-    _t = p.getT();
+    setCoord(p.getS(), p.getT());
 }
 
 GLTexturedVertex::GLTexturedVertex()

@@ -89,7 +89,7 @@ int main( int argc, char* args[] )
       Logger::write("Sample message");
 
       // This is the usage of TextureLoader class
-      string path = "img.png";
+      string path = "imgs.png";
       TextureLoader *TL = TextureLoader::getInstance();
       TL -> addTexture(path);
       tx = TL -> getTexture(path);

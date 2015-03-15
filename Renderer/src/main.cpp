@@ -78,7 +78,9 @@ void TestingMethod(){
   rect1 -> setTexture(tx);
   rect2 -> setTexture(tx2);
 
-  testAnimation = new Animation(rect2, 1, 8, 5, true);
+
+  testAnimation = new Animation(rect2, 1000, 8, 5, true);
+  testAnimation -> start();
 }
 
 void close()

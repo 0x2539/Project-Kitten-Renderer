@@ -36,8 +36,7 @@ public:
 	Animation(Rectangle1 *rect, float totalDuration,
 		int nrRows, int nrColumns, bool loop = false){
 
-		_rect = new Rectangle1(rect -> getLeftTop(), rect -> getXSideLength(), rect -> getYSideLength());
-		_rect -> setTexture(rect -> getTexture());
+		_rect = rect;
 		_totalDuration = totalDuration;
 		_nrRows = nrRows;
 		_nrColumns = nrColumns;
@@ -51,7 +50,7 @@ public:
 		_currentTextureYPos = _currentTextureXPos = 0;
 		_xTextureFrameLength = 1.0f / (float) (_nrColumns);
 		_yTextureFrameLength = 1.0f / (float) (_nrRows);
-		_millisecondPerFrame = (int) (1000 * _totalDuration) / (_nrRows * _nrColumns);
+		_millisecondPerFrame = (int) (_totalDuration / (_nrRows * _nrColumns));
 	}
 
 	void switchToNextFrame(){
@@ -73,14 +72,16 @@ public:
 		}
 	}
 
-	void play(){
-
+	void start(){
 		if(!_started) {
 			_lastTime = Timer::getTime(); // Sets last_time variable on first animation play
 			_started = true;              
 		}
+	}
+	
+	void play(){	
 
-		if(_completedOneCicle && !_loop) return ; // if is not looped we play only one animation cicle
+		if(!_started || (_started && _completedOneCicle && !_loop)) return ; // if is not looped we play only one animation cicle
 
 		switchToNextFrame(); // check if we should move to next frame in the sprite sheed
 							 // actualy we move the coordinates on texture

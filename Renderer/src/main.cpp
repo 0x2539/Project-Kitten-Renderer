@@ -6,20 +6,22 @@ and may not be redistributed without written permission.*/
 #include <stdio.h>
 #include <string>
 #include "GLUtils.h"
-#include "Shapes.h"
+#include "Shapes/ShapeRectangle.h"
 #include "TextureLoader.h"
 #include "Logger.h"
 #include "AudioEngine.h"
 #include "Timer.h"
 #include "Animation.h"
+#include "TransformAnimations/ScaleAnimation.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 GLuint tx,tx2;
-Rectangle1 *rect1, *rect2;
+ShapeRectangle *rect1, *rect2;
 TextureLoader *TL;
 Animation *testAnimation;
+ScaleAnimation *sA;
 //Input handler
 void handleKeys( unsigned char key, int x, int y );
 
@@ -54,15 +56,17 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
+  rect1 -> update();
   rect1 -> draw();
   testAnimation -> play();
+
 }
 
 void TestingMethod(){
   Logger::write("Sample message");
 
   // This is the usage of TextureLoader class
-  string path = "img.png";
+  string path = "imgs.png";
   TL = TextureLoader::getInstance();
   TL -> addTexture(path);
   TL -> addTexture("effect6.png");
@@ -72,12 +76,19 @@ void TestingMethod(){
   //AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
   //GLUtils::loadTexture("img.png");
 
-  rect1 = new Rectangle1(Point(0, 0), 100, 100);
-  rect2 = new Rectangle1(Point(-100, -100), 100, 100);
+  rect1 = new ShapeRectangle(Point(0, 0), 100, 100);
+  rect2 = new ShapeRectangle(Point(200, 200), 100, 100);
   
   rect1 -> setTexture(tx);
   rect2 -> setTexture(tx2);
 
+
+  sA = new ScaleAnimation();
+  sA -> setScale(1, 1.0f/3.0f, 1, 1.0f/3.0f);
+  sA -> setDuration(1000);
+  sA -> setFillAfter(false);
+
+  rect1 -> addAndStartAnimation(sA);
 
   testAnimation = new Animation(rect2, 1000, 8, 5, true);
   testAnimation -> start();

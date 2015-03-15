@@ -1,12 +1,12 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
-#include "Shapes.h"
+#include "Shapes/ShapeRectangle.h"
 #include "Timer.h"
 
 class Animation{
 private:
 
-	Rectangle1 *_rect;
+	ShapeRectangle *_rect;
 	float _totalDuration;
 	int _nrRows;
 	int _nrColumns;
@@ -27,13 +27,13 @@ private:
 public:
 
 	Animation(){
-		_rect = new Rectangle1();
+		_rect = new ShapeRectangle();
 		_nrColumns = _nrRows = 1;
 		_totalDuration = 1000;
 		init();
 	}
 
-	Animation(Rectangle1 *rect, float totalDuration,
+	Animation(ShapeRectangle *rect, float totalDuration,
 		int nrRows, int nrColumns, bool loop = false){
 
 		_rect = rect;

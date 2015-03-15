@@ -8,43 +8,6 @@
 #include "Shapes/Point.h"
 
 
-class GLVertexCoord{
-  private:
-    float _x,_y;
-
-  public:
-    GLVertexCoord();
-    GLVertexCoord(GLfloat x, GLfloat y);
-    GLfloat getX();
-    GLfloat getY();
-    void setCoord(GLfloat x, GLfloat y);
-    void setCoord(GLVertexCoord p);
-};
-
-class GLTexCoord{
-private:
-    GLfloat _s;
-    GLfloat _t;
-public:
-    GLTexCoord();
-    GLTexCoord(GLfloat s, GLfloat t);
-    GLfloat getS();
-    GLfloat getT();
-    void setCoord(GLfloat s, GLfloat t);
-    void setCoord(GLTexCoord p);
-};
-
-class GLTexturedVertex{
-private:
-public:
-    GLVertexCoord _vertexCoord;
-    GLTexCoord _textureCoord;
-    GLTexturedVertex();
-    GLTexturedVertex(GLVertexCoord vertexCoord, GLTexCoord textureCoord);
-    void setVertexCoord(GLVertexCoord vertexCoord);
-    void setTextureCoord(GLTexCoord textureCoord);
-};
-
 class Line : public Shape{
   private:
       Point _p1, _p2;
@@ -67,79 +30,6 @@ class Square : public Shape{
     void drawBorder(float lineWidth);
     void draw();
 };
-
-GLVertexCoord::GLVertexCoord(){
-    _x = 0.f;
-    _y = 0.f;
-}
-
-GLVertexCoord::GLVertexCoord(GLfloat x, GLfloat y){
-    _x = x;
-    _y = y;
-}
-
-GLfloat GLVertexCoord::getX(){
-    return _x;
-}
-
-GLfloat GLVertexCoord::getY(){
-    return _y;
-}
-
-void GLVertexCoord::setCoord(GLfloat x, GLfloat y){
-    _x = x;
-    _y = y;
-}
-void GLVertexCoord::setCoord(GLVertexCoord p){
-    setCoord(p.getX(), p.getY());
-}
-
-GLTexCoord::GLTexCoord(){
-    _s = 0.f;
-    _t = 0.f;
-}
-
-GLTexCoord::GLTexCoord(GLfloat s, GLfloat t){
-    _s = s;
-    _t = t;
-}
-
-GLfloat GLTexCoord::getS(){
-    return _s;
-}
-
-GLfloat GLTexCoord::getT(){
-    return _t;
-}
-
-void GLTexCoord::setCoord(GLfloat s, GLfloat t){
-    _s = s;
-    _t = t;
-}
-void GLTexCoord::setCoord(GLTexCoord p){
-    setCoord(p.getS(), p.getT());
-}
-
-GLTexturedVertex::GLTexturedVertex()
-{
-
-}
-
-GLTexturedVertex::GLTexturedVertex(GLVertexCoord vertexCoord, GLTexCoord textureCoord)
-{
-    _vertexCoord = vertexCoord;
-    _textureCoord = textureCoord;
-}
-
-void GLTexturedVertex::setVertexCoord(GLVertexCoord vertexCoord)
-{
-    _vertexCoord = vertexCoord;
-}
-
-void GLTexturedVertex::setTextureCoord(GLTexCoord textureCoord)
-{
-    _textureCoord = textureCoord;
-}
 
 Line::Line(){
     _p1.setLocation(0.f, 0.f);

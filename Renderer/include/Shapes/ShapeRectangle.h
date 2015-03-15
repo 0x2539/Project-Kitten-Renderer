@@ -58,6 +58,7 @@ class ShapeRectangle : public Shape{
     float getHeight();
 
     void addAndStartAnimation(BasicTransformAnimation *animation);
+    void setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom);
 };
 
 
@@ -121,6 +122,13 @@ void ShapeRectangle::updateVertices()
     vertices[ 1 ].setVertexCoord( GLVertexCoord( getWidth(), 0 ) );
     vertices[ 2 ].setVertexCoord( GLVertexCoord( getWidth(), getHeight() ) );
     vertices[ 3 ].setVertexCoord( GLVertexCoord( 0, getHeight() ) );   
+}
+
+void ShapeRectangle::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom){
+    vertices[ 0 ].setTextureCoord( GLTexCoord( texLeft, texTop ) );
+    vertices[ 1 ].setTextureCoord( GLTexCoord( texRight, texTop ) );
+    vertices[ 2 ].setTextureCoord( GLTexCoord( texRight, texBottom ) );
+    vertices[ 3 ].setTextureCoord( GLTexCoord( texLeft, texBottom ) );
 }
 
 void ShapeRectangle::draw(){

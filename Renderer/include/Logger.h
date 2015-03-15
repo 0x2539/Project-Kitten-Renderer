@@ -27,6 +27,10 @@ public:
 	static void write(char* message){
 		cout << message << '\n';
 	}
+
+	static void write(int value){
+		cout << value << '\n';
+	}
 };
 
 #endif // LOGGER_H

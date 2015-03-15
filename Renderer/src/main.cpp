@@ -7,20 +7,19 @@ and may not be redistributed without written permission.*/
 #include <string>
 #include "GLUtils.h"
 #include "Shapes.h"
-#include "Shapes/ShapeRectangle.h"
 #include "TextureLoader.h"
 #include "Logger.h"
 #include "AudioEngine.h"
-#include "TransformAnimations/ScaleAnimation.h"
+#include "Timer.h"
+#include "Animation.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-GLuint tx;
-
-ScaleAnimation *anim;
-ShapeRectangle *rect;
-
+GLuint tx,tx2;
+Rectangle1 *rect1, *rect2;
+TextureLoader *TL;
+Animation *testAnimation;
 //Input handler
 void handleKeys( unsigned char key, int x, int y );
 
@@ -55,13 +54,33 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
+  rect1 -> draw();
+  testAnimation -> play();
+}
+
+void TestingMethod(){
+  Logger::write("Sample message");
+
+  // This is the usage of TextureLoader class
+  string path = "img.png";
+  TL = TextureLoader::getInstance();
+  TL -> addTexture(path);
+  TL -> addTexture("effect6.png");
+  tx = TL -> getTexture(path);
+  tx2 = TL -> getTexture("effect6.png");
+  //AudioEngine::playSound(Sounds::COOL_FLAC);
+  //AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
+  //GLUtils::loadTexture("img.png");
+
+  rect1 = new Rectangle1(Point(0, 0), 100, 100);
+  rect2 = new Rectangle1(Point(-100, -100), 100, 100);
   
-  rect->setTexture(tx);
-  rect->draw();
-  rect->update();
+  rect1 -> setTexture(tx);
+  rect2 -> setTexture(tx2);
 
-  //anim->update();
 
+  testAnimation = new Animation(rect2, 1000, 8, 5, true);
+  testAnimation -> start();
 }
 
 void close()
@@ -76,6 +95,12 @@ void close()
 
 int main( int argc, char* args[] )
 {
+    //The timer starting time
+    Uint32 start = 0;
+
+    //The timer start/stop flag
+    bool running = true;
+
   //Start up SDL and create window
   if( !GLUtils::initGraphics(SCREEN_WIDTH, SCREEN_HEIGHT)) //init() )
     {
@@ -92,51 +117,38 @@ int main( int argc, char* args[] )
       //Enable text input
       SDL_StartTextInput();
 
-      // Get Logger instance for tracking error and warning messages
-      Logger::write("Sample message");
-
-      // This is the usage of TextureLoader class
-      string path = "imgs.png";
-      TextureLoader *TL = TextureLoader::getInstance();
-      TL -> addTexture(path);
-      tx = TL -> getTexture(path);
-
-      anim = new ScaleAnimation();
-      anim->setDuration(3000);
-      anim->setScale(1, 3, 1, 3);
-      anim->setFillAfter(true);
-      rect = new ShapeRectangle(Point(0, 0), 100, 100);
-      rect->addAndStartAnimation(anim);
-      //AudioEngine::playSound(Sounds::COOL_FLAC);
-      AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
-      //GLUtils::loadTexture("img.png");
+      // *************
       
-      //While application is running
-      while( !quit )
-	{
-	  //Handle events on queue
-	  while( SDL_PollEvent( &e ) != 0 )
-	    {
-	      //User requests quit
-	      if( e.type == SDL_QUIT )
-		{
-		  quit = true;
-		}
-	      //Handle keypress with current mouse position
-	      else if( e.type == SDL_TEXTINPUT )
-		{
-		      int x = 0, y = 0;
-					SDL_GetMouseState( &x, &y );
-					handleKeys( e.text.text[ 0 ], x, y );
-		}
-	    }
+      TestingMethod();
+
+      start = SDL_GetTicks();
+
+       //While application is running
+       while( !quit )
+	     {
+	       //Handle evens on queue
+	       while( SDL_PollEvent( &e ) != 0 )
+	       {
+    	      //User requests quit
+    	      if( e.type == SDL_QUIT )
+            {
+        		  quit = true;
+        		}
+    	      //Handle keypress with current mouse position
+    	      else if( e.type == SDL_TEXTINPUT )
+        		{
+        		      int x = 0, y = 0;
+        					SDL_GetMouseState( &x, &y );
+        					handleKeys( e.text.text[ 0 ], x, y );
+        		}
+	       }
 	  
-	  //Render quad
-	  render();
+	     //Render quad
+	     render();
 	  
-	  //Update screen
-	  SDL_GL_SwapWindow( BasicWindow::getWindow() );
-	}
+	     //Update screen
+	     SDL_GL_SwapWindow( BasicWindow::getWindow() );
+	     }
       
       //Disable text input
       SDL_StopTextInput();

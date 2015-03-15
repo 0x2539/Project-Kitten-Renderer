@@ -11,11 +11,15 @@ and may not be redistributed without written permission.*/
 #include "TextureLoader.h"
 #include "Logger.h"
 #include "AudioEngine.h"
+#include "TransformAnimations/ScaleAnimation.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 GLuint tx;
+
+ScaleAnimation *anim;
+ShapeRectangle *rect;
 
 //Input handler
 void handleKeys( unsigned char key, int x, int y );
@@ -51,10 +55,12 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
-  ShapeRectangle rect(Point(0, 0), 100, 100);
-  rect.setTexture(tx);
-  rect.draw();
+  
+  rect->setTexture(tx);
+  rect->draw();
+  rect->update();
 
+  //anim->update();
 
 }
 
@@ -94,6 +100,13 @@ int main( int argc, char* args[] )
       TextureLoader *TL = TextureLoader::getInstance();
       TL -> addTexture(path);
       tx = TL -> getTexture(path);
+
+      anim = new ScaleAnimation();
+      anim->setDuration(3000);
+      anim->setScale(1, 3, 1, 3);
+      anim->setFillAfter(true);
+      rect = new ShapeRectangle(Point(0, 0), 100, 100);
+      rect->addAndStartAnimation(anim);
       //AudioEngine::playSound(Sounds::COOL_FLAC);
       AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
       //GLUtils::loadTexture("img.png");

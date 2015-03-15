@@ -3,10 +3,18 @@
 
 #include "Shapes/Shapes.h"
 #include "Shapes/GLTexturedVertex.h"
+#include "TransformAnimations/ScaleAnimation.h"
+#include "vector"
+#include "Utils/Utils.h"
+#include "Logger.h"
+
+using namespace std;
 
 class ShapeRectangle : public Shape{
   private:
     Point _location;
+    float _initialWidth;
+    float _initialHeight;
     float _width;
     float _height;
 
@@ -20,11 +28,16 @@ class ShapeRectangle : public Shape{
 
     void setGraphicBuffers();
 
+    vector<BasicTransformAnimation*> animations;
+    void updateAnimations();
+    void updateVertices();
+
   public:
     ShapeRectangle();
     ShapeRectangle(Point location, float width, float height);
     void drawBorder(float lineWidth);
     void draw();
+    void update();
 
     void setLocation(Point location);
     void setLocation(float xCoordinate, float yCoordinate);
@@ -43,6 +56,8 @@ class ShapeRectangle : public Shape{
     
     void setHeight(float height);
     float getHeight();
+
+    void addAndStartAnimation(BasicTransformAnimation *animation);
 };
 
 
@@ -60,6 +75,7 @@ ShapeRectangle::ShapeRectangle(Point location, float width, float height){
 
     setGraphicBuffers();
 }
+
 void ShapeRectangle::setGraphicBuffers()
 {
     GLfloat texLeft = 0;
@@ -99,6 +115,14 @@ void ShapeRectangle::setGraphicBuffers()
     glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, NULL );
 }
 
+void ShapeRectangle::updateVertices()
+{
+    vertices[ 0 ].setVertexCoord( GLVertexCoord( 0, 0 ) );
+    vertices[ 1 ].setVertexCoord( GLVertexCoord( getWidth(), 0 ) );
+    vertices[ 2 ].setVertexCoord( GLVertexCoord( getWidth(), getHeight() ) );
+    vertices[ 3 ].setVertexCoord( GLVertexCoord( 0, getHeight() ) );   
+}
+
 void ShapeRectangle::draw(){
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 
@@ -134,6 +158,11 @@ void ShapeRectangle::draw(){
     //Disable vertex and texture coordinate arrays
     basicTexturedPolygonShader->disableVertexPointer();
     basicTexturedPolygonShader->disableTexCoordPointer();
+}
+
+void ShapeRectangle::update()
+{
+    updateAnimations();
 }
 
 void ShapeRectangle::drawBorder(float lineWidth){
@@ -193,6 +222,7 @@ void ShapeRectangle::setSize(float width, float height)
 void ShapeRectangle::setWidth(float width)
 {
 	_width = width;
+    _initialWidth = width;
 }
 
 float ShapeRectangle::getWidth()
@@ -202,6 +232,7 @@ float ShapeRectangle::getWidth()
 
 void ShapeRectangle::setHeight(float height)
 {
+    _initialHeight = height;
 	_height = height;
 }
 
@@ -209,5 +240,36 @@ float ShapeRectangle::getHeight()
 {
 	return _height;
 }
+
+void ShapeRectangle::addAndStartAnimation(BasicTransformAnimation *animation)
+{
+    animations.push_back(animation);
+}
+
+void ShapeRectangle::updateAnimations()
+{
+    vector<BasicTransformAnimation*>::iterator it;
+
+    for ( it = animations.begin(); it != animations.end(); )
+    {
+        (*it)->update();
+        _width = ((ScaleAnimation*)(*it))->getScaleX() * _initialWidth;
+        _height = ((ScaleAnimation*)(*it))->getScaleY() * _initialHeight;
+        // setGraphicBuffers();
+        updateVertices();
+        Logger::write(toString(getWidth()));
+
+        if( (*it)->isFinished())
+        {
+            delete * it;  
+            it = animations.erase(it);
+        }
+        else 
+        {
+            ++it;
+        }
+    }
+}
+
 
 #endif // SHAPERECTANGLE_H

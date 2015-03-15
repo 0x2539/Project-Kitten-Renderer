@@ -13,18 +13,15 @@ private:
 	static TextureLoader *_instance;
 	unordered_map<string, GLuint> textures;
 	static string placeholderPath;
+	TextureLoader(){}
 
 public:
-	TextureLoader()
-	{
-		//_instance = getInstance();
-	}
 
 	static TextureLoader* getInstance()
 	{
 		if(_instance == NULL) {
 			_instance = new TextureLoader();
-			
+
 			//load the placeholder
 			_instance -> addTexture(placeholderPath);
 		}

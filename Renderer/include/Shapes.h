@@ -88,6 +88,7 @@ class Rectangle1 : public Shape{
     GLuint gVBO = NULL;
     GLuint gIBO = NULL;
 
+    BasicTexturedPolygonShader *basicTexturedPolygonShader;
 
   public:
     Rectangle1();
@@ -248,6 +249,8 @@ Rectangle1::Rectangle1(){
 
 Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
 
+    basicTexturedPolygonShader = BasicTexturedPolygonShader::getInstance();
+
     GLfloat texLeft = 0;
     GLfloat texTop = 0;
     GLfloat texRight = 1;
@@ -307,14 +310,14 @@ void Rectangle1::draw(){
 
     //glLoadIdentity();
 
-    shaderUtils.setModelView( glm::translate<GLfloat>( glm::vec3( BasicWindow::SCREEN_WIDTH / 2.f, BasicWindow::SCREEN_HEIGHT / 2.f, 0.f ) ) );
-    shaderUtils.updateModelView();
+    basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( glm::vec3( BasicWindow::SCREEN_WIDTH / 2.f, BasicWindow::SCREEN_HEIGHT / 2.f, 0.f ) ) );
+    basicTexturedPolygonShader->updateModelView();
 
     //Set texture ID
     glBindTexture( GL_TEXTURE_2D, texture );
 
-        shaderUtils.enableVertexPointer();
-        shaderUtils.enableTexCoordPointer();
+        basicTexturedPolygonShader->enableVertexPointer();
+        basicTexturedPolygonShader->enableTexCoordPointer();
     //Enable vertex arrays
     //glEnableClientState( GL_VERTEX_ARRAY );
 
@@ -325,10 +328,10 @@ void Rectangle1::draw(){
             glBufferSubData( GL_ARRAY_BUFFER, 0, 4 * sizeof(GLTexturedVertex), vertices );
 
             //Set texture coordinate data
-            shaderUtils.setTexCoordPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _textureCoord ) );
+            basicTexturedPolygonShader->setTexCoordPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _textureCoord ) );
 
             //Set vertex data
-            shaderUtils.setVertexPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _vertexCoord ) );
+            basicTexturedPolygonShader->setVertexPointer( sizeof(GLTexturedVertex), (GLvoid*)offsetof( GLTexturedVertex, _vertexCoord ) );
 
 
         //Draw quad using vertex data and index data
@@ -338,8 +341,8 @@ void Rectangle1::draw(){
     //Disable vertex arrays
     //glDisableClientState( GL_VERTEX_ARRAY );
     //Disable vertex and texture coordinate arrays
-    shaderUtils.disableVertexPointer();
-    shaderUtils.disableTexCoordPointer();
+    basicTexturedPolygonShader->disableVertexPointer();
+    basicTexturedPolygonShader->disableTexCoordPointer();
 
 //    glBegin(GL_QUADS);
 //        glVertex2f(_leftTop.getX(), _leftTop.getY());

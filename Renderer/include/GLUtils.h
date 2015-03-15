@@ -2,13 +2,11 @@
 #define GLUTILS_H_INCLUDED
 
 #include "BasicWindow.h"
-#include "Shaders/ShaderUtils.h"
+#include "Shaders/BasicTexturedPolygonShader.h"
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <SOIL.h>
 #include "Logger.h"
-
-extern ShaderUtils shaderUtils;
 
 class GLUtils
 {
@@ -23,7 +21,6 @@ public:
     static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
 };
 
-ShaderUtils shaderUtils;
 int GLUtils::_SCREEN_WIDTH;
 int GLUtils::_SCREEN_HEIGHT;
 
@@ -110,34 +107,32 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
 bool GLUtils::loadGP()
 {
+    BasicTexturedPolygonShader *basicTexturedPolygonShader = BasicTexturedPolygonShader::getInstance();
+
 	//Load basic shader program
-	if( !shaderUtils.loadProgram() )
+	if( !basicTexturedPolygonShader->loadProgram() )
 	{
 	    Logger::write("Unable to load basic shader!\n");
 		return false;
 	}
 
 	//Bind basic shader program
-	shaderUtils.bind();
+	basicTexturedPolygonShader->bind();
 
-    ColorRGBA color;
-    color.r = 1.0;
-    color.g = 1.0;
-    color.b = 1.0;
-    color.a = 1.0;
+    ColorRGBA color(1.0, 1.0, 1.0, 1.0);
 
-    shaderUtils.setTextureColor( color );
+    basicTexturedPolygonShader->setTextureColor( color );
 
     //Initialize projection
-    shaderUtils.setProjection( glm::ortho<GLfloat>( 0.0, BasicWindow::SCREEN_WIDTH, BasicWindow::SCREEN_HEIGHT, 0.0, 1.0, -1.0 ) );
-    shaderUtils.updateProjection();
+    basicTexturedPolygonShader->setProjection( glm::ortho<GLfloat>( 0.0, BasicWindow::SCREEN_WIDTH, BasicWindow::SCREEN_HEIGHT, 0.0, 1.0, -1.0 ) );
+    basicTexturedPolygonShader->updateProjection();
 
     //Initialize modelview
-    shaderUtils.setModelView( glm::mat4() );
-    shaderUtils.updateModelView();
+    basicTexturedPolygonShader->setModelView( glm::mat4() );
+    basicTexturedPolygonShader->updateModelView();
 
     //Set texture unit
-    shaderUtils.setTextureUnit( 0 );
+    basicTexturedPolygonShader->setTextureUnit( 0 );
 
     return true;
 }
@@ -146,36 +141,5 @@ bool GLUtils::loadMedia()
 {
     return true;
 }
-/*
-GLuint GLUtils::loadTexture(string path)
-{
-    // load an image file directly as a new OpenGL texture 
-    GLuint tex_2d = SOIL_load_OGL_texture
-        (
-            path.c_str(),
-            SOIL_LOAD_AUTO,
-            SOIL_CREATE_NEW_ID,
-            SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
-        );
- 
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-    //glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, DEFAULT_TEXTURE_WRAP );
-    //glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, DEFAULT_TEXTURE_WRAP );
-
-    // check for an error during the load process 
-    if( 0 == tex_2d )
-    {
-        cout << "SOIL loading " << path <<" error: " << SOIL_last_result() << '\n';
-        // printf( "SOIL loading error: '%s'\n", SOIL_last_result() );
-    }
-    else
-    {
-        texture = tex_2d;
-        cout << "SOIL loaded " << path <<'\n';
-    }
-    return tex_2d;
-}
-*/
 
 #endif // GLUTILS_H_INCLUDED

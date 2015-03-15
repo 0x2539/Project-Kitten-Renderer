@@ -7,6 +7,7 @@ and may not be redistributed without written permission.*/
 #include <string>
 #include "GLUtils.h"
 #include "Shapes.h"
+#include "Shapes/ShapeRectangle.h"
 #include "TextureLoader.h"
 #include "Logger.h"
 #include "AudioEngine.h"
@@ -50,7 +51,7 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
-  Rectangle1 rect(Point(-50, -50), 100, 100);
+  ShapeRectangle rect(Point(0, 0), 100, 100);
   rect.setTexture(tx);
   rect.draw();
 

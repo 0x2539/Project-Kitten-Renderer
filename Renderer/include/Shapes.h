@@ -12,6 +12,9 @@ class Shape
         GLuint texture;
         void setTexture( GLuint newTexture );
         void setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a );
+        GLuint getTexture(){
+            return texture;
+        }
 };
 
 class GLVertexCoord{
@@ -81,12 +84,12 @@ class Rectangle1 : public Shape{
     Point _leftTop;
     float _xSideLength;
     float _ySideLength;
-
+/*
     GLfloat _texLeft;
     GLfloat _texTop;
     GLfloat _texRight;
     GLfloat _texBottom;
-
+*/
     GLTexturedVertex vertices[ 4 ];
     //GLVertexCoord quadVertices[ 4 ];
     GLuint indices[ 4 ];
@@ -101,7 +104,7 @@ class Rectangle1 : public Shape{
     float getYSideLength();
     Point getLeftTop();
     void setCoord(Point leftTop, float xSideLength, float ySideLength);
-    void SetTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom);
+    void setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom);
     void drawBorder(float lineWidth);
     void draw();
     void setUp(Point leftTop, float xSideLength, float ySideLength);
@@ -265,11 +268,11 @@ float Rectangle1::getYSideLength(){
     return _ySideLength;
 }
 
-void Rectangle1::SetTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom){
-    _texLeft = texLeft;
-    _texTop = texTop;
-    _texRight = texRight;
-    _texBottom = texBottom;
+void Rectangle1::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom){
+    vertices[ 0 ].setTextureCoord( GLTexCoord( texLeft, texTop ) );
+    vertices[ 1 ].setTextureCoord( GLTexCoord( texRight, texTop ) );
+    vertices[ 2 ].setTextureCoord( GLTexCoord( texRight, texBottom ) );
+    vertices[ 3 ].setTextureCoord( GLTexCoord( texLeft, texBottom ) );
 }
 
 Rectangle1::Rectangle1(){
@@ -286,7 +289,7 @@ Rectangle1::Rectangle1(Point leftTop, float xSideLength, float ySideLength){
 
 void Rectangle1::setUp(Point leftTop, float xSideLength, float ySideLength){
 
-    SetTextCoord(0, 0, 1, 1);
+    setTextCoord(0, 0, 1, 1);
     _leftTop.setCoord(leftTop);
     _xSideLength = xSideLength;
     _ySideLength = ySideLength;
@@ -296,10 +299,7 @@ void Rectangle1::setUp(Point leftTop, float xSideLength, float ySideLength){
     vertices[ 2 ].setVertexCoord( GLVertexCoord( _leftTop.getX() + _xSideLength, _leftTop.getY() + _ySideLength ) );
     vertices[ 3 ].setVertexCoord( GLVertexCoord( _leftTop.getX(), _leftTop.getY() + _ySideLength ) );
 
-    vertices[ 0 ].setTextureCoord( GLTexCoord( _texLeft, _texTop ) );
-    vertices[ 1 ].setTextureCoord( GLTexCoord( _texRight, _texTop ) );
-    vertices[ 2 ].setTextureCoord( GLTexCoord( _texRight, _texBottom ) );
-    vertices[ 3 ].setTextureCoord( GLTexCoord( _texLeft, _texBottom ) );
+    setTextCoord(0.0f, 0.0f, 1.0f, 1.0f);
 
     /*quadVertices[ 0 ].setCoord(leftTop.getX(), leftTop.getY());
 

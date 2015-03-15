@@ -10,12 +10,16 @@ and may not be redistributed without written permission.*/
 #include "TextureLoader.h"
 #include "Logger.h"
 #include "AudioEngine.h"
+#include "Timer.h"
+#include "Animation.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-GLuint tx;
-
+GLuint tx,tx2;
+Rectangle1 *rect1, *rect2;
+TextureLoader *TL;
+Animation *testAnimation;
 //Input handler
 void handleKeys( unsigned char key, int x, int y );
 
@@ -50,11 +54,31 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
-  Rectangle1 rect(Point(-50, -50), 100, 100);
-  rect.setTexture(tx);
-  rect.draw();
+  rect1 -> draw();
+  testAnimation -> play();
+}
 
+void TestingMethod(){
+  Logger::write("Sample message");
 
+  // This is the usage of TextureLoader class
+  string path = "img.png";
+  TL = TextureLoader::getInstance();
+  TL -> addTexture(path);
+  TL -> addTexture("effect6.png");
+  tx = TL -> getTexture(path);
+  tx2 = TL -> getTexture("effect6.png");
+  //AudioEngine::playSound(Sounds::COOL_FLAC);
+  //AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
+  //GLUtils::loadTexture("img.png");
+
+  rect1 = new Rectangle1(Point(0, 0), 100, 100);
+  rect2 = new Rectangle1(Point(-100, -100), 100, 100);
+  
+  rect1 -> setTexture(tx);
+  rect2 -> setTexture(tx2);
+
+  testAnimation = new Animation(rect2, 1, 8, 5, true);
 }
 
 void close()
@@ -69,6 +93,12 @@ void close()
 
 int main( int argc, char* args[] )
 {
+    //The timer starting time
+    Uint32 start = 0;
+
+    //The timer start/stop flag
+    bool running = true;
+
   //Start up SDL and create window
   if( !GLUtils::initGraphics(SCREEN_WIDTH, SCREEN_HEIGHT)) //init() )
     {
@@ -85,44 +115,38 @@ int main( int argc, char* args[] )
       //Enable text input
       SDL_StartTextInput();
 
-      // Get Logger instance for tracking error and warning messages
-      Logger::write("Sample message");
-
-      // This is the usage of TextureLoader class
-      string path = "img.png";
-      TextureLoader *TL = TextureLoader::getInstance();
-      TL -> addTexture(path);
-      tx = TL -> getTexture(path);
-      //AudioEngine::playSound(Sounds::COOL_FLAC);
-      AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
-      //GLUtils::loadTexture("img.png");
+      // *************
       
-      //While application is running
-      while( !quit )
-	{
-	  //Handle events on queue
-	  while( SDL_PollEvent( &e ) != 0 )
-	    {
-	      //User requests quit
-	      if( e.type == SDL_QUIT )
-		{
-		  quit = true;
-		}
-	      //Handle keypress with current mouse position
-	      else if( e.type == SDL_TEXTINPUT )
-		{
-		      int x = 0, y = 0;
-					SDL_GetMouseState( &x, &y );
-					handleKeys( e.text.text[ 0 ], x, y );
-		}
-	    }
+      TestingMethod();
+
+      start = SDL_GetTicks();
+
+       //While application is running
+       while( !quit )
+	     {
+	       //Handle evens on queue
+	       while( SDL_PollEvent( &e ) != 0 )
+	       {
+    	      //User requests quit
+    	      if( e.type == SDL_QUIT )
+            {
+        		  quit = true;
+        		}
+    	      //Handle keypress with current mouse position
+    	      else if( e.type == SDL_TEXTINPUT )
+        		{
+        		      int x = 0, y = 0;
+        					SDL_GetMouseState( &x, &y );
+        					handleKeys( e.text.text[ 0 ], x, y );
+        		}
+	       }
 	  
-	  //Render quad
-	  render();
+	     //Render quad
+	     render();
 	  
-	  //Update screen
-	  SDL_GL_SwapWindow( BasicWindow::getWindow() );
-	}
+	     //Update screen
+	     SDL_GL_SwapWindow( BasicWindow::getWindow() );
+	     }
       
       //Disable text input
       SDL_StopTextInput();

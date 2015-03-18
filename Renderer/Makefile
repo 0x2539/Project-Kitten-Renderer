@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS= -Wall -Iinclude/ -Ilibs/i686-w64-mingw32/include/
+CFLAGS= -Wall -std=c++11 -Iinclude/ -Ilibs/i686-w64-mingw32/include/
 SOURCES=src/main.cpp 
 
 ifeq ($(OS),Windows_NT)

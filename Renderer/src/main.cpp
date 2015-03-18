@@ -2,18 +2,21 @@
 and may not be redistributed without written permission.*/
 
 //Using SDL, SDL OpenGL, standard IO, and, strings
-#include "SDL2/SDL.h"
+#ifdef _WIN32
+    #include <SDL.h>
+#else
+    #include "SDL2/SDL.h"
+#endif
+
 #include <stdio.h>
 #include <string>
 #include "GLUtils.h"
 #include "Shapes.h"
+#include "Input.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-
-//Input handler
-void handleKeys( unsigned char key, int x, int y );
 
 //Per frame update
 void update();
@@ -62,6 +65,13 @@ void close()
 
 int main( int argc, char* args[] )
 {
+  Input i;
+
+  i += {SDLK_w, {[](){ cout << "Ai apasat w\n"; }, "w"}};
+  i += {SDLK_a, {[](){ cout << "Ai apasat a\n"; }, "a"}};
+  i += {SDLK_s, {[](){ cout << "Ai apasat s\n"; }, "s"}};
+  i += {SDLK_d, {[](){ cout << "Ai apasat d\n"; }, "d"}};
+  
   //Start up SDL and create window
   if( !GLUtils::initGraphics(SCREEN_WIDTH, SCREEN_HEIGHT)) //init() )
     {
@@ -90,13 +100,12 @@ int main( int argc, char* args[] )
 		  quit = true;
 		}
 	      //Handle keypress with current mouse position
-	      else if( e.type == SDL_TEXTINPUT )
+	      else if( e.type == SDL_KEYDOWN )
 		{
-		  int x = 0, y = 0;
-					SDL_GetMouseState( &x, &y );
-					handleKeys( e.text.text[ 0 ], x, y );
+		  i.Invoke (e.key.keysym.sym);
 		}
 	    }
+
 	  
 	  //Render quad
 	  render();

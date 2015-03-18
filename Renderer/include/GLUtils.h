@@ -1,17 +1,12 @@
 #ifndef GLUTILS_H_INCLUDED
 #define GLUTILS_H_INCLUDED
 
-#include <iostream>
 #include "BasicWindow.h"
-#include "Shaders/ShaderUtils.h"
+#include "Shaders/BasicTexturedPolygonShader.h"
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
-
-
-
-using namespace std;
-
-extern ShaderUtils shaderUtils;
+#include <SOIL.h>
+#include "Logger.h"
 
 class GLUtils
 {
@@ -26,10 +21,8 @@ public:
     static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
 };
 
-ShaderUtils shaderUtils;
 int GLUtils::_SCREEN_WIDTH;
 int GLUtils::_SCREEN_HEIGHT;
-
 
 bool GLUtils::initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
@@ -52,16 +45,15 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     GLenum glewError = glewInit();
     if( glewError != GLEW_OK )
     {
-        cout << "Error initializing GLEW!\n" << glewGetErrorString( glewError );
-//        printf( "Error initializing GLEW! %s\n", glewGetErrorString( glewError ) );
+        Logger::write("Error initializing GLEW!\n");
+        Logger::write(gluErrorString( glewError ));
         return false;
     }
 
     //Make sure OpenGL 2.1 is supported
     if( !GLEW_VERSION_2_1 )
     {
-        cout << "OpenGL 2.1 not supported!\n";
-//        printf( "OpenGL 2.1 not supported!\n" );
+        Logger::write("OpenGL 2.1 not supported!\n");
         return false;
     }
 
@@ -92,8 +84,8 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     GLenum error = glGetError();
     if( error != GL_NO_ERROR )
     {
-        cout << "Error initializing OpenGL!\n" << gluErrorString( error );
-//        printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
+        Logger::write("Error initializing OpenGL!\n");
+        Logger::write(gluErrorString( error ));
         return false;
     }
 
@@ -115,24 +107,32 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
 bool GLUtils::loadGP()
 {
+    BasicTexturedPolygonShader *basicTexturedPolygonShader = BasicTexturedPolygonShader::getInstance();
+
 	//Load basic shader program
-	if( !shaderUtils.loadProgram() )
+	if( !basicTexturedPolygonShader->loadProgram() )
 	{
-	    cout << "Unable to load basic shader!\n";
-//		printf( "Unable to load basic shader!\n" );
+	    Logger::write("Unable to load basic shader!\n");
 		return false;
 	}
 
 	//Bind basic shader program
-	shaderUtils.bind();
+	basicTexturedPolygonShader->bind();
+
+    ColorRGBA color(1.0, 1.0, 1.0, 1.0);
+
+    basicTexturedPolygonShader->setTextureColor( color );
 
     //Initialize projection
-    shaderUtils.setProjection( glm::ortho<GLfloat>( 0.0, BasicWindow::SCREEN_WIDTH, BasicWindow::SCREEN_HEIGHT, 0.0, 1.0, -1.0 ) );
-    shaderUtils.updateProjection();
+    basicTexturedPolygonShader->setProjection( glm::ortho<GLfloat>( 0.0, BasicWindow::SCREEN_WIDTH, BasicWindow::SCREEN_HEIGHT, 0.0, 1.0, -1.0 ) );
+    basicTexturedPolygonShader->updateProjection();
 
     //Initialize modelview
-    shaderUtils.setModelView( glm::mat4() );
-    shaderUtils.updateModelView();
+    basicTexturedPolygonShader->setModelView( glm::mat4() );
+    basicTexturedPolygonShader->updateModelView();
+
+    //Set texture unit
+    basicTexturedPolygonShader->setTextureUnit( 0 );
 
     return true;
 }
@@ -141,7 +141,5 @@ bool GLUtils::loadMedia()
 {
     return true;
 }
-
-
 
 #endif // GLUTILS_H_INCLUDED

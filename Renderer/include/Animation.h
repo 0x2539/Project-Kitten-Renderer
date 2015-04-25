@@ -53,7 +53,7 @@ public:
 		_millisecondPerFrame = (int) (_totalDuration / (_nrRows * _nrColumns));
 	}
 
-	ShapeRectangle* getRectPointer()
+	ShapeRectangle* getRectanglePointer()
 	{
 		return _rect;
 	}

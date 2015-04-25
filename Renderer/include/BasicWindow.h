@@ -1,11 +1,8 @@
 #ifndef BASICWINDOW_H_INCLUDED
 #define BASICWINDOW_H_INCLUDED
 
-//Using SDL and standard IO
 #include "SDL2/SDL.h"
 #include "Logger.h"
-//#include <stdio.h>
-
 
 class BasicWindow
 {

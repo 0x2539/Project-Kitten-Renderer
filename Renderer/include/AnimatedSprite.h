@@ -132,6 +132,10 @@ public:
 		_spriteAnimation -> setCoords(x, y);
 	}
 
+	ShapeRectangle* getRectanglePointer(){
+		return _spriteAnimation -> getRectanglePointer();
+	}
+
 };
 
 #endif // ANIMATED_SPRITE_H

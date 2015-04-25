@@ -18,6 +18,7 @@ and may not be redistributed without written permission.*/
 #include "AnimatedSprite.h"
 #include "Input.h"
 #include "Stars.h"
+#include "Camera.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 800;
@@ -39,17 +40,9 @@ float width = 100, height = 100;
 int ScreenX = 0, ScreenY = 0;
 
 void LoadSampleLevel(GLuint texture);
-
-//Input handler
 void handleKeys( unsigned char key, int x, int y );
-
-//Per frame update
 void update();
-
-//Renders quad to the screen
 void render();
-
-//Frees media and shuts down SDL
 void close();
 //Render flag
 bool gRenderQuad = true;
@@ -57,34 +50,29 @@ bool gRenderQuad = true;
 void handleKeys()
 {
   static bool ok = 0;
-  //Logger::write((int) Input::isKeyPressed('q'));  
-  //Toggle quad
+
   if( Input::isKeyPressed('w'))
   {
       y -= Camera::getCameraMovingSpeed();
       ok = 1;
-     // Logger::write(toString("x = " + toString(x)));
   }
 
   if(Input::isKeyPressed('s'))
   {
       y += Camera::getCameraMovingSpeed();
       ok = 1;
-      //Logger::write(toString("y = " + toString(y)));
   }
 
   if(Input::isKeyPressed('d'))
   {
       x += Camera::getCameraMovingSpeed();
       ok = 1;
-      //Logger::write(toString("y = " + toString(y)));
   }
 
   if(Input::isKeyPressed('a'))
   {
       x -= Camera::getCameraMovingSpeed();
       ok = 1;
-      //Logger::write(toString("y = " + toString(y)));
   }
 
   if(ok)
@@ -92,13 +80,13 @@ void handleKeys()
       static float newX, newY;
       if(x + width / 2 - Camera::getX() > (SCREEN_WIDTH / 2))
       {
-          newX = min(799.0f, (x + width / 2));
+          newX = min((float) SCREEN_WIDTH - 1, (x + width / 2));
           Camera::setX(newX);
       }
         
       if(y + height / 2 - Camera::getY() > (SCREEN_HEIGHT / 2))
       {
-          newY = min(799.0f, (y + height / 2));
+          newY = min((float) SCREEN_HEIGHT - 1, (y + height / 2));
           Camera::setY(newY);
       }
       
@@ -192,11 +180,13 @@ void TestingMethod(){
   //AS -> addEffectAnimation(200, 200, 100, 100, e2Tex, 4000, 4, 5, false);
   //AS -> start();
   x = y = 700;
+
   AS2 = new AnimatedSprite(&x, &y, &width, &height, e2Tex, 1000, 4, 5, true);
   AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 2000, 7, 7, true);
 
- 
-  Stars::CreateUniverse(2000, 800, 800, 1600, 1600);
+  Camera::init(x, y, width, height);
+
+  Stars::CreateUniverse(3000, 800, 800, 1600, 1600);
 
   LoadSampleLevel(e3Tex);
   //AS2 -> start();
@@ -223,25 +213,6 @@ void LoadSampleLevel(GLuint texture){
       }
   }
 }
-/*
-void updateStars(){
-
-    for(unsigned int i = 0; i < stars.size(); ++i)
-    {
-        float distance = dist(CenterX, CenterY, stars[i] -> getLocationX(), stars[i] -> getLocationY());
-        float angle = starsInitialAngle[i] + starsDirection[i] * Alpha;
-
-        if(angle > 360) angle -= 360;
-        if(angle < 0) angle += 360;
-
-        float x = CenterX + distance * cos(angle * M_PI / 180);
-        float y = CenterY + distance * sin(angle * M_PI / 180);
-
-        stars[i] -> setLocation(x, y);
-    }
-
-}
-*/
 
 void close()
 {
@@ -278,7 +249,6 @@ int main( int argc, char* args[] )
       SDL_StartTextInput();
 
       // *************
-      
       TestingMethod();
 
       start = SDL_GetTicks();
@@ -312,13 +282,7 @@ int main( int argc, char* args[] )
         		  {
                   int x = 0, y = 0;
                   SDL_GetMouseState( &x, &y );
-                  //Input::handleInput(e.text.text[ 0 ], x, y)
-                   
-                  //Input::keyDown(e.text.text[ 0 ]);      		    
-        					//handleKeys( e.text.text[ 0 ], x, y );
         		  }
-
-            
 	       }
 	  
 	     //Render quad

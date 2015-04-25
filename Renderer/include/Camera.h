@@ -4,8 +4,13 @@
 class Camera{
 private:
 	static float _x, _y;
+	static float _movingSpeed;
 
 public:
+
+	static void setSpeed(float newCameraMovingSpeed){
+		_movingSpeed = newCameraMovingSpeed;
+	}
 
 	static float getX()
 	{
@@ -15,6 +20,11 @@ public:
 	static float getY()
 	{
 		return _y;
+	}
+
+	static float getCameraMovingSpeed()
+	{
+		return _movingSpeed;
 	}
 
 	static void setCoords(float x, float y)
@@ -35,6 +45,6 @@ public:
 
 };
 
-float Camera::_x, Camera::_y;
+float Camera::_x, Camera::_y, Camera::_movingSpeed = 2;
 
 #endif // CAMERA_H

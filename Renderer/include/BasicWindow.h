@@ -17,7 +17,7 @@ public:
     static void setWindow(SDL_Window *gWindow);
     static bool initWindow(int _SCREEN_WIDTH, int _SCREEN_HEIGHT);
     //Screen dimension constants
-    static int SCREEN_WIDTH ;
+    static int SCREEN_WIDTH;
     static int SCREEN_HEIGHT;
     static const int SCREEN_FPS = 60;
 };

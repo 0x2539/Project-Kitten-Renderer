@@ -70,7 +70,7 @@ bool GLUtils::initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     glLoadIdentity();
 
     //Initialize clear color
-    glClearColor( 0.f, 0.f, 1.f, 1.f );
+    glClearColor( 0.f, 0.f, 0.f, 1.f );
 
     //Enable texturing
     glEnable( GL_TEXTURE_2D );

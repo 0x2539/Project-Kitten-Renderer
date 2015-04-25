@@ -8,6 +8,7 @@
 #include "Utils/Utils.h"
 #include "Logger.h"
 #include "Camera.h"
+#include "BasicWindow.h"
 
 using namespace std;
 
@@ -170,6 +171,20 @@ void ShapeRectangle::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRi
 }
 
 void ShapeRectangle::draw(){
+
+    // if it's not currently on the screen (actually camera doesn't see it), don't draw it
+    float x = this -> getLocationX();
+    float y = this -> getLocationY();
+    float width = this -> getWidth();
+    float height = this -> getHeight();
+    float cx = Camera::getX();
+    float cy = Camera::getY();
+
+    if(x < cx && x + width < cx) return ;
+    if(y < cy && y + height < cy) return ;
+    if(x >= cx + BasicWindow::SCREEN_WIDTH) return ;
+    if(y >= cy + BasicWindow::SCREEN_HEIGHT) return ;
+
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 
     basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( 
@@ -214,6 +229,7 @@ void ShapeRectangle::update()
 }
 
 void ShapeRectangle::drawBorder(float lineWidth){
+
     glLineWidth(lineWidth);
     glBegin(GL_LINE_STRIP);
         glVertex2f(getLocationX(), getLocationY());

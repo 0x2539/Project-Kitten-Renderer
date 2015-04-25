@@ -6,6 +6,7 @@ and may not be redistributed without written permission.*/
 #include <stdio.h>
 #include <string>
 #include <algorithm>
+#include <cstdlib>
 #include "GLUtils.h"
 #include "Shapes/ShapeRectangle.h"
 #include "TextureLoader.h"
@@ -16,12 +17,15 @@ and may not be redistributed without written permission.*/
 #include "TransformAnimations/ScaleAnimation.h"
 #include "AnimatedSprite.h"
 #include "Input.h"
+#include "Stars.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 800;
+
 GLuint tx,tx2;
 ShapeRectangle *rect1, *rect2, *efRec1, *efRec2;
+
 TextureLoader *TL;
 Animation *testAnimation;
 ScaleAnimation *sA;
@@ -33,7 +37,6 @@ float x = 100, y = 600;
 float width = 100, height = 100;
 
 int ScreenX = 0, ScreenY = 0;
-int speed = 2;
 
 void LoadSampleLevel(GLuint texture);
 
@@ -51,7 +54,6 @@ void close();
 //Render flag
 bool gRenderQuad = true;
 
-
 void handleKeys()
 {
   static bool ok = 0;
@@ -59,28 +61,28 @@ void handleKeys()
   //Toggle quad
   if( Input::isKeyPressed('w'))
   {
-      y -= speed;
+      y -= Camera::getCameraMovingSpeed();
       ok = 1;
      // Logger::write(toString("x = " + toString(x)));
   }
-  else
+
   if(Input::isKeyPressed('s'))
   {
-      y += speed;
+      y += Camera::getCameraMovingSpeed();
       ok = 1;
       //Logger::write(toString("y = " + toString(y)));
   }
-  else
+
   if(Input::isKeyPressed('d'))
   {
-      x += speed;
+      x += Camera::getCameraMovingSpeed();
       ok = 1;
       //Logger::write(toString("y = " + toString(y)));
   }
-  else
+
   if(Input::isKeyPressed('a'))
   {
-      x -= speed;
+      x -= Camera::getCameraMovingSpeed();
       ok = 1;
       //Logger::write(toString("y = " + toString(y)));
   }
@@ -91,13 +93,12 @@ void handleKeys()
       if(x + width / 2 - Camera::getX() > (SCREEN_WIDTH / 2))
       {
           newX = min(799.0f, (x + width / 2));
-          Camera::setX(newX);// ScreenX = (x + width) - (SCREEN_WIDTH / 2);
+          Camera::setX(newX);
       }
         
       if(y + height / 2 - Camera::getY() > (SCREEN_HEIGHT / 2))
       {
           newY = min(799.0f, (y + height / 2));
-          Logger::write(newY);
           Camera::setY(newY);
       }
       
@@ -128,10 +129,14 @@ void render()
   //rect1 -> update();
   //rect1 -> draw();
 
+  Stars::update();
+  Stars::draw();
+
   for(auto wall : walls)
   {
     wall -> draw();
   }
+
     
     //Logger::write(toString(Camera::getX()) + " " + toString(Camera::getY()));
   
@@ -144,6 +149,7 @@ void TestingMethod(){
 
   // This is the usage of TextureLoader class
   //string path = "imgs.png";
+
   TL = TextureLoader::getInstance();
   //TL -> addTexture(path);
   TL -> addTexture("effect6.png");
@@ -156,6 +162,9 @@ void TestingMethod(){
 
   TL -> addTexture("Assets/Wall.png");
   GLuint e3Tex = TL -> getTexture("Assets/Wall.png");
+
+  TL -> addTexture("Assets/WhiteSquare.png");
+  GLuint WhiteSquareTexture = TL -> getTexture("Assets/WhiteSquare.png");
 
   //tx = TL -> getTexture(path);
   //tx2 = TL -> getTexture("Assets/effect6.png");
@@ -182,9 +191,12 @@ void TestingMethod(){
   //AS -> addEffectAnimation(200, 200, 100, 100, e1Tex, 3000, 7, 7, false);
   //AS -> addEffectAnimation(200, 200, 100, 100, e2Tex, 4000, 4, 5, false);
   //AS -> start();
-  x = y = 0;
-  AS2 = new AnimatedSprite(&x, &y, &width, &height, 0, 3000, 1, 1, false);
-  AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 3000, 7, 7, true);
+  x = y = 700;
+  AS2 = new AnimatedSprite(&x, &y, &width, &height, e2Tex, 1000, 4, 5, true);
+  AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 2000, 7, 7, true);
+
+ 
+  Stars::CreateUniverse(2000, 800, 800, 1600, 1600);
 
   LoadSampleLevel(e3Tex);
   //AS2 -> start();
@@ -211,6 +223,25 @@ void LoadSampleLevel(GLuint texture){
       }
   }
 }
+/*
+void updateStars(){
+
+    for(unsigned int i = 0; i < stars.size(); ++i)
+    {
+        float distance = dist(CenterX, CenterY, stars[i] -> getLocationX(), stars[i] -> getLocationY());
+        float angle = starsInitialAngle[i] + starsDirection[i] * Alpha;
+
+        if(angle > 360) angle -= 360;
+        if(angle < 0) angle += 360;
+
+        float x = CenterX + distance * cos(angle * M_PI / 180);
+        float y = CenterY + distance * sin(angle * M_PI / 180);
+
+        stars[i] -> setLocation(x, y);
+    }
+
+}
+*/
 
 void close()
 {

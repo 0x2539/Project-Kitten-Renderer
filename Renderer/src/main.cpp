@@ -13,15 +13,26 @@ and may not be redistributed without written permission.*/
 #include "Timer.h"
 #include "Animation.h"
 #include "TransformAnimations/ScaleAnimation.h"
+#include "AnimatedSprite.h"
+#include "Input.h"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 800;
 GLuint tx,tx2;
-ShapeRectangle *rect1, *rect2;
+ShapeRectangle *rect1, *rect2, *efRec1, *efRec2;
 TextureLoader *TL;
 Animation *testAnimation;
 ScaleAnimation *sA;
+AnimatedSprite *AS, *AS2;
+
+vector <AnimatedSprite*> walls;
+
+float x = 100, y = 600;
+float width = 100, height = 100;
+
+void LoadSampleLevel(GLuint texture);
+
 //Input handler
 void handleKeys( unsigned char key, int x, int y );
 
@@ -37,13 +48,34 @@ void close();
 bool gRenderQuad = true;
 
 
-void handleKeys( unsigned char key, int x, int y )
+void handleKeys()
 {
+
+  //Logger::write((int) Input::isKeyPressed('q'));  
   //Toggle quad
-  if( key == 'q' )
-    {
-      gRenderQuad = !gRenderQuad;
-    }
+  if( Input::isKeyPressed('w'))
+  {
+      y--;
+     // Logger::write(toString("x = " + toString(x)));
+  }
+  else
+  if(Input::isKeyPressed('s'))
+  {
+      y++;
+      //Logger::write(toString("y = " + toString(y)));
+  }
+  else
+  if(Input::isKeyPressed('d'))
+  {
+      x++;
+      //Logger::write(toString("y = " + toString(y)));
+  }
+  else
+  if(Input::isKeyPressed('a'))
+  {
+      x--;
+      //Logger::write(toString("y = " + toString(y)));
+  }
 }
 
 void update()
@@ -56,42 +88,87 @@ void render()
   //Clear color buffer
   glClear( GL_COLOR_BUFFER_BIT );
   
-  rect1 -> update();
-  rect1 -> draw();
-  testAnimation -> play();
+  //rect1 -> update();
+  //rect1 -> draw();
 
+  for(auto wall : walls)
+    wall -> draw();
+  
+  //AS -> draw();
+  AS2 -> draw();
 }
 
 void TestingMethod(){
   Logger::write("Sample message");
 
   // This is the usage of TextureLoader class
-  string path = "imgs.png";
+  //string path = "imgs.png";
   TL = TextureLoader::getInstance();
-  TL -> addTexture(path);
+  //TL -> addTexture(path);
   TL -> addTexture("effect6.png");
-  tx = TL -> getTexture(path);
-  tx2 = TL -> getTexture("effect6.png");
+
+  TL -> addTexture("Assets/e1.png");
+  GLuint e1Tex = TL -> getTexture("Assets/e1.png");
+
+  TL -> addTexture("Assets/e2.png");
+  GLuint e2Tex = TL -> getTexture("Assets/e2.png");
+
+  TL -> addTexture("Assets/Wall.png");
+  GLuint e3Tex = TL -> getTexture("Assets/Wall.png");
+
+  //tx = TL -> getTexture(path);
+  //tx2 = TL -> getTexture("Assets/effect6.png");
   //AudioEngine::playSound(Sounds::COOL_FLAC);
   //AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
   //GLUtils::loadTexture("img.png");
 
-  rect1 = new ShapeRectangle(Point(0, 0), 100, 100);
-  rect2 = new ShapeRectangle(Point(200, 200), 100, 100);
+  //rect1 = new ShapeRectangle(Point(0, 0), 100, 100);
+  //rect2 = new ShapeRectangle(Point(200, 200), 100, 100);
   
-  rect1 -> setTexture(tx);
-  rect2 -> setTexture(tx2);
+  //rect1 -> setTexture(tx);
+  //rect2 -> setTexture(tx2);
 
+  //sA = new ScaleAnimation();
+  //sA -> setScale(1, 1.0f/3.0f, 1, 1.0f/3.0f);
+  //sA -> setDuration(1000);
+  //sA -> setFillAfter(false);
 
-  sA = new ScaleAnimation();
-  sA -> setScale(1, 1.0f/3.0f, 1, 1.0f/3.0f);
-  sA -> setDuration(1000);
-  sA -> setFillAfter(false);
+  //rect1 -> addAndStartAnimation(sA);
+  
 
-  rect1 -> addAndStartAnimation(sA);
+  //AS = new AnimatedSprite(200, 200, 100, 100, e3Tex, 1000, 1, 1, false);
 
-  testAnimation = new Animation(rect2, 1000, 8, 5, true);
-  testAnimation -> start();
+  //AS -> addEffectAnimation(200, 200, 100, 100, e1Tex, 3000, 7, 7, false);
+  //AS -> addEffectAnimation(200, 200, 100, 100, e2Tex, 4000, 4, 5, false);
+  //AS -> start();
+
+  AS2 = new AnimatedSprite(&x, &y, &width, &height, 0, 3000, 1, 1, false);
+  AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 3000, 7, 7, true);
+
+  LoadSampleLevel(e3Tex);
+  //AS2 -> start();
+}
+
+void LoadSampleLevel(GLuint texture){
+  ifstream fin ("Assets/LevelTextMap/Level1.txt");
+
+  char x;
+  int N, M, i, j;
+
+  fin >> N >> M;
+  for(i=0;i<N;++i)
+  {
+      for(j=0;j<M;++j)
+      {
+          fin >> x;
+          if(x == 'x') // add a wall texture
+          {
+            walls.push_back(
+              new AnimatedSprite(j * 100, i * 100, 100, 100, texture, 1000, 1, 1, false)
+              );
+          }
+      }
+  }
 }
 
 void close()
@@ -140,22 +217,41 @@ int main( int argc, char* args[] )
 	       //Handle evens on queue
 	       while( SDL_PollEvent( &e ) != 0 )
 	       {
+            handleKeys();
+
     	      //User requests quit
     	      if( e.type == SDL_QUIT )
             {
         		  quit = true;
         		}
     	      //Handle keypress with current mouse position
-    	      else if( e.type == SDL_TEXTINPUT )
-        		{
-        		      int x = 0, y = 0;
-        					SDL_GetMouseState( &x, &y );
-        					handleKeys( e.text.text[ 0 ], x, y );
-        		}
+    	      else 
+              if( e.type == SDL_KEYDOWN )
+              {
+                  Input::keyDown(e.key.keysym.sym);
+              }
+              else
+              if( e.type == SDL_KEYUP )
+              {
+                  Input::keyUp(e.key.keysym.sym);
+              }
+              else                        
+              if( e.type == SDL_TEXTINPUT )
+        		  {
+                  int x = 0, y = 0;
+                  SDL_GetMouseState( &x, &y );
+                  //Input::handleInput(e.text.text[ 0 ], x, y)
+                   
+                  //Input::keyDown(e.text.text[ 0 ]);      		    
+        					//handleKeys( e.text.text[ 0 ], x, y );
+        		  }
+
+            
 	       }
 	  
 	     //Render quad
 	     render();
+
 	  
 	     //Update screen
 	     SDL_GL_SwapWindow( BasicWindow::getWindow() );

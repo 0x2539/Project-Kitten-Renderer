@@ -1,0 +1,9 @@
+8 8
+xxxxxxxx
+xoooooox
+xoxxxxox
+xoxooxox
+xoxoxxox
+xoxoxxox
+xoxoooox
+xoxxxxxx

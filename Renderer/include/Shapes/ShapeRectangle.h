@@ -12,11 +12,11 @@ using namespace std;
 
 class ShapeRectangle : public Shape{
   private:
-    Point _location;
-    float _initialWidth;
-    float _initialHeight;
-    float _width;
-    float _height;
+    Point *_location;
+    float *_initialWidth;
+    float *_initialHeight;
+    float *_width;
+    float *_height;
 
     GLTexturedVertex vertices[ 4 ];
     //GLVertexCoord quadVertices[ 4 ];
@@ -34,14 +34,17 @@ class ShapeRectangle : public Shape{
 
   public:
     ShapeRectangle();
-    ShapeRectangle(Point location, float width, float height);
+    ShapeRectangle(Point* location, float width, float height, GLuint Texture = 0);
+    //
+    ShapeRectangle(Point* location, float *width, float *height, GLuint Texture = 0);
+    //
     void drawBorder(float lineWidth);
     void draw();
     void update();
 
-    void setLocation(Point location);
+    void setLocation(Point* location);
     void setLocation(float xCoordinate, float yCoordinate);
-    Point getLocation();
+    Point* getLocation();
 
     void setLocationX(float xCoordinate);
     float getLocationX();
@@ -59,23 +62,57 @@ class ShapeRectangle : public Shape{
 
     void addAndStartAnimation(BasicTransformAnimation *animation);
     void setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom);
+
+    void allocateDynamicMemory();
 };
+
+void ShapeRectangle::allocateDynamicMemory()
+{
+    _initialWidth = new float;
+    _initialHeight = new float;
+    _width = new float;
+    _height = new float;
+}
 
 
 ShapeRectangle::ShapeRectangle(){
+    allocateDynamicMemory();
+
 	setLocation(0, 0);
     setSize(0, 0);
 }
 
-ShapeRectangle::ShapeRectangle(Point location, float width, float height){
+ShapeRectangle::ShapeRectangle(Point *location, float width, float height, GLuint Texture){
 
     basicTexturedPolygonShader = BasicTexturedPolygonShader::getInstance();
 
+    allocateDynamicMemory();
+
     setLocation(location);
     setSize(width, height);
+    setTexture(Texture);
 
     setGraphicBuffers();
 }
+
+// TESTING
+ShapeRectangle::ShapeRectangle(Point *location, float *width, float *height, GLuint Texture){
+
+    basicTexturedPolygonShader = BasicTexturedPolygonShader::getInstance();
+
+    allocateDynamicMemory();
+
+    setLocation(location);
+    _width = width;
+    _height = height;
+    *_initialHeight = *height;
+    *_initialWidth = *width;
+    //setSize(width, height);
+    //setTexture(Texture);
+
+    setGraphicBuffers();
+}
+// END TESTING
 
 void ShapeRectangle::setGraphicBuffers()
 {
@@ -134,7 +171,7 @@ void ShapeRectangle::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRi
 void ShapeRectangle::draw(){
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 
-    basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( glm::vec3( getLocationX(), getLocationY(), 0.f ) ) );
+    basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( glm::vec3( this -> getLocationX(), this -> getLocationY(), 0.f ) ) );
     basicTexturedPolygonShader->updateModelView();
 
     //Set texture ID
@@ -185,7 +222,7 @@ void ShapeRectangle::drawBorder(float lineWidth){
 }
 
 
-void ShapeRectangle::setLocation(Point location)
+void ShapeRectangle::setLocation(Point *location)
 {
 	_location = location;
 }
@@ -196,29 +233,29 @@ void ShapeRectangle::setLocation(float xCoordinate, float yCoordinate)
 	setLocationY(yCoordinate);
 }
 
-Point ShapeRectangle::getLocation()
+Point* ShapeRectangle::getLocation()
 {
 	return _location;
 }
 
 void ShapeRectangle::setLocationX(float xCoordinate)
 {
-	getLocation().setX(xCoordinate);
+	getLocation() -> setX(xCoordinate);
 }
 
 float ShapeRectangle::getLocationX()
 {
-	return getLocation().getX();
+	return getLocation() -> getX();
 }
 
 void ShapeRectangle::setLocationY(float yCoordinate)
 {
-	getLocation().setY(yCoordinate);
+	getLocation() -> setY(yCoordinate);
 }
 
 float ShapeRectangle::getLocationY()
 {
-	return getLocation().getY();
+	return getLocation() -> getY();
 }
 
 void ShapeRectangle::setSize(float width, float height)
@@ -229,24 +266,24 @@ void ShapeRectangle::setSize(float width, float height)
 
 void ShapeRectangle::setWidth(float width)
 {
-	_width = width;
-    _initialWidth = width;
+	*_width = width;
+    *_initialWidth = width;
 }
 
 float ShapeRectangle::getWidth()
 {
-	return _width;
+	return *_width;
 }
 
 void ShapeRectangle::setHeight(float height)
 {
-    _initialHeight = height;
-	_height = height;
+    *_initialHeight = height;
+	*_height = height;
 }
 
 float ShapeRectangle::getHeight()
 {
-	return _height;
+	return *_height;
 }
 
 void ShapeRectangle::addAndStartAnimation(BasicTransformAnimation *animation)
@@ -261,8 +298,8 @@ void ShapeRectangle::updateAnimations()
     for ( it = animations.begin(); it != animations.end(); )
     {
         (*it)->update();
-        _width = ((ScaleAnimation*)(*it))->getScaleX() * _initialWidth;
-        _height = ((ScaleAnimation*)(*it))->getScaleY() * _initialHeight;
+        *_width = ((ScaleAnimation*)(*it))->getScaleX() * (*_initialWidth);
+        *_height = ((ScaleAnimation*)(*it))->getScaleY() * (*_initialHeight);
         // setGraphicBuffers();
         updateVertices();
         Logger::write(toString(getWidth()));

@@ -26,7 +26,7 @@ int GLUtils::_SCREEN_HEIGHT;
 
 bool GLUtils::initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
-    if( BasicWindow::initWindow() )
+    if( BasicWindow::initWindow(SCREEN_WIDTH, SCREEN_HEIGHT) )
     {
         _SCREEN_WIDTH = SCREEN_WIDTH;
         _SCREEN_HEIGHT = SCREEN_HEIGHT;

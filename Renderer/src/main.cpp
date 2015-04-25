@@ -5,6 +5,7 @@ and may not be redistributed without written permission.*/
 #include "SDL2/SDL.h"
 #include <stdio.h>
 #include <string>
+#include <algorithm>
 #include "GLUtils.h"
 #include "Shapes/ShapeRectangle.h"
 #include "TextureLoader.h"
@@ -31,6 +32,9 @@ vector <AnimatedSprite*> walls;
 float x = 100, y = 600;
 float width = 100, height = 100;
 
+int ScreenX = 0, ScreenY = 0;
+int speed = 2;
+
 void LoadSampleLevel(GLuint texture);
 
 //Input handler
@@ -50,31 +54,64 @@ bool gRenderQuad = true;
 
 void handleKeys()
 {
-
+  static bool ok = 0;
   //Logger::write((int) Input::isKeyPressed('q'));  
   //Toggle quad
   if( Input::isKeyPressed('w'))
   {
-      y--;
+      y -= speed;
+      ok = 1;
      // Logger::write(toString("x = " + toString(x)));
   }
   else
   if(Input::isKeyPressed('s'))
   {
-      y++;
+      y += speed;
+      ok = 1;
       //Logger::write(toString("y = " + toString(y)));
   }
   else
   if(Input::isKeyPressed('d'))
   {
-      x++;
+      x += speed;
+      ok = 1;
       //Logger::write(toString("y = " + toString(y)));
   }
   else
   if(Input::isKeyPressed('a'))
   {
-      x--;
+      x -= speed;
+      ok = 1;
       //Logger::write(toString("y = " + toString(y)));
+  }
+
+  if(ok)
+  {
+      static float newX, newY;
+      if(x + width / 2 - Camera::getX() > (SCREEN_WIDTH / 2))
+      {
+          newX = min(799.0f, (x + width / 2));
+          Camera::setX(newX);// ScreenX = (x + width) - (SCREEN_WIDTH / 2);
+      }
+        
+      if(y + height / 2 - Camera::getY() > (SCREEN_HEIGHT / 2))
+      {
+          newY = min(799.0f, (y + height / 2));
+          Logger::write(newY);
+          Camera::setY(newY);
+      }
+      
+      if(y - Camera::getY() + height / 2 < (SCREEN_HEIGHT / 2))
+      {
+          newY = max(0.0f, (y + height / 2) - (SCREEN_HEIGHT / 2));
+          Camera::setY(newY);
+      }     
+
+      if(x - Camera::getX() + width / 2 < (SCREEN_WIDTH / 2))
+      {
+          newX = max(0.0f, (x + width / 2) - (SCREEN_WIDTH / 2));
+          Camera::setX(newX);
+      }
   }
 }
 
@@ -92,7 +129,11 @@ void render()
   //rect1 -> draw();
 
   for(auto wall : walls)
+  {
     wall -> draw();
+  }
+    
+    //Logger::write(toString(Camera::getX()) + " " + toString(Camera::getY()));
   
   //AS -> draw();
   AS2 -> draw();
@@ -141,7 +182,7 @@ void TestingMethod(){
   //AS -> addEffectAnimation(200, 200, 100, 100, e1Tex, 3000, 7, 7, false);
   //AS -> addEffectAnimation(200, 200, 100, 100, e2Tex, 4000, 4, 5, false);
   //AS -> start();
-
+  x = y = 0;
   AS2 = new AnimatedSprite(&x, &y, &width, &height, 0, 3000, 1, 1, false);
   AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 3000, 7, 7, true);
 
@@ -252,7 +293,6 @@ int main( int argc, char* args[] )
 	     //Render quad
 	     render();
 
-	  
 	     //Update screen
 	     SDL_GL_SwapWindow( BasicWindow::getWindow() );
 	     }

@@ -1,3 +1,21 @@
+16 16
+ooxxxxxxxxxxxxxx
+oooooooxxoooooox
+xoxxxxoxxoxxxxox
+xoxooxooooxooxox
+xoxoxxoxxoxoxxox
+xoxoxxooooxoxxox
+xoxoooooxoxoooox
+xoxxxoxxxoxoxxox
+xxxxxoxxxxxoxoox
+xooooooxxoooooox
+xoxxxxoxxoxxxxox
+xoxooxoxxoxooxox
+xoxoxxooooxoxxox
+xoxoxxoxxoxoxxox
+xoxooooxxoxoooox
+xoxxxxxxxoxxxxxx
+
 8 8
 xxxxxxxx
 xoooooox

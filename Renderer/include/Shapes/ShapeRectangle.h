@@ -7,6 +7,7 @@
 #include "vector"
 #include "Utils/Utils.h"
 #include "Logger.h"
+#include "Camera.h"
 
 using namespace std;
 
@@ -171,7 +172,9 @@ void ShapeRectangle::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRi
 void ShapeRectangle::draw(){
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 
-    basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( glm::vec3( this -> getLocationX(), this -> getLocationY(), 0.f ) ) );
+    basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( 
+                                        glm::vec3( this -> getLocationX() - Camera::getX(), 
+                                                   this -> getLocationY() - Camera::getY(), 0.f ) ) );
     basicTexturedPolygonShader->updateModelView();
 
     //Set texture ID

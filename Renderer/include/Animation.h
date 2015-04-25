@@ -58,6 +58,21 @@ public:
 		return _rect;
 	}
 
+	float getX()
+	{
+		_rect -> getLocationX();
+	}
+
+	float getY()
+	{
+		_rect -> getLocationY();
+	}
+
+	void setCoords(float x, float y)
+	{
+		_rect -> setLocation(x, y);
+	}
+
 	void switchToNextFrame()
 	{
 		int currentTime = Timer::getTime();
@@ -94,7 +109,7 @@ public:
 	
 	void play()
 	{	
-		
+
 		if(!_started || (_started && _completedOneCicle && !_loop)) 
 		{
 			return ; // if is not looped we play only one animation cicle

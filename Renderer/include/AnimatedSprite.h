@@ -117,6 +117,21 @@ public:
 			x -> play();
 	}
 
+	float getX()
+	{
+		return _spriteAnimation -> getX();
+	}
+
+	float getY()
+	{
+		return _spriteAnimation -> getY();
+	}
+
+	void setCoords(float x, float y)
+	{
+		_spriteAnimation -> setCoords(x, y);
+	}
+
 };
 
 #endif // ANIMATED_SPRITE_H

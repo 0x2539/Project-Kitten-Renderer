@@ -1,11 +1,8 @@
 #ifndef BASICWINDOW_H_INCLUDED
 #define BASICWINDOW_H_INCLUDED
 
-//Using SDL and standard IO
 #include "SDL2/SDL.h"
 #include "Logger.h"
-//#include <stdio.h>
-
 
 class BasicWindow
 {
@@ -15,16 +12,16 @@ public:
   static SDL_Window* getWindow();
 
     static void setWindow(SDL_Window *gWindow);
-    static bool initWindow();
+    static bool initWindow(int _SCREEN_WIDTH, int _SCREEN_HEIGHT);
     //Screen dimension constants
-    static const int SCREEN_WIDTH = 640;
-    static const int SCREEN_HEIGHT = 480;
+    static int SCREEN_WIDTH;
+    static int SCREEN_HEIGHT;
     static const int SCREEN_FPS = 60;
 };
 
 //Screen dimension constants
-const int BasicWindow::SCREEN_WIDTH;
-const int BasicWindow::SCREEN_HEIGHT;
+int BasicWindow::SCREEN_WIDTH;
+int BasicWindow::SCREEN_HEIGHT;
 const int BasicWindow::SCREEN_FPS;
 
 SDL_Window* BasicWindow::_gWindow;
@@ -40,8 +37,11 @@ void BasicWindow::setWindow(SDL_Window *gWindow)
 }
 
 
-bool BasicWindow::initWindow()
+bool BasicWindow::initWindow(int _SCREEN_WIDTH, int _SCREEN_HEIGHT)
 {
+	SCREEN_WIDTH = _SCREEN_WIDTH;
+	SCREEN_HEIGHT = _SCREEN_HEIGHT;
+
     //OpenGL context
     SDL_GLContext gContext;
 

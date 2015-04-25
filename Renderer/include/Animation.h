@@ -53,7 +53,28 @@ public:
 		_millisecondPerFrame = (int) (_totalDuration / (_nrRows * _nrColumns));
 	}
 
-	void switchToNextFrame(){
+	ShapeRectangle* getRectanglePointer()
+	{
+		return _rect;
+	}
+
+	float getX()
+	{
+		_rect -> getLocationX();
+	}
+
+	float getY()
+	{
+		_rect -> getLocationY();
+	}
+
+	void setCoords(float x, float y)
+	{
+		_rect -> setLocation(x, y);
+	}
+
+	void switchToNextFrame()
+	{
 		int currentTime = Timer::getTime();
 
 		if(currentTime - _lastTime >= _millisecondPerFrame)
@@ -72,16 +93,32 @@ public:
 		}
 	}
 
-	void start(){
-		if(!_started) {
+	void start()
+	{
+		if(!_started) 
+		{
 			_lastTime = Timer::getTime(); // Sets last_time variable on first animation play
-			_started = true;              
+			_started = true; 
+
+			_rect -> setTextCoord(_currentColumn * _xTextureFrameLength, // Left
+						  _currentRow * _yTextureFrameLength, // Top
+						  (_currentColumn + 1) *  _xTextureFrameLength, // Right
+						  (_currentRow + 1) * _yTextureFrameLength); // Bottom             
 		}
 	}
 	
-	void play(){	
+	void play()
+	{	
 
-		if(!_started || (_started && _completedOneCicle && !_loop)) return ; // if is not looped we play only one animation cicle
+		if(!_started || (_started && _completedOneCicle && !_loop)) 
+		{
+			return ; // if is not looped we play only one animation cicle
+		} 
+
+		// draw current texture frame on the rectangle
+		_rect -> draw();
+
+		if(	_nrRows == 1 && _nrColumns == 1) return ;
 
 		switchToNextFrame(); // check if we should move to next frame in the sprite sheed
 							 // actualy we move the coordinates on texture
@@ -90,9 +127,6 @@ public:
 						  _currentRow * _yTextureFrameLength, // Top
 						  (_currentColumn + 1) *  _xTextureFrameLength, // Right
 						  (_currentRow + 1) * _yTextureFrameLength); // Bottom
-		
-		// draw current texture frame on the rectangle
-		_rect -> draw();
 	}
 };
 

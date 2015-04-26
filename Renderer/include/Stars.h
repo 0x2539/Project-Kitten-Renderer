@@ -13,10 +13,9 @@ class Stars{
 private:
 	static vector<ShapeRectangle*> stars;
 	static vector<float> starsInitialAngle;
-	static vector<float> starsDirection;
+	static vector<float> starsRotationSpeed;
+
 	static GLuint texture;
-	static float Alpha;
-	static float rotationSpeed;
 	static float _CenterX;
 	static float _CenterY;
 
@@ -30,7 +29,6 @@ public:
 	static void update();
 	static void CreateUniverse(int starsNumber, float CenterX, float CenterY, float UniverseSizeX, float UniverseSizeY);
 	
-	static void setRotationSpeed(float newRotationSpeed);	
 	static void clearMemory();	
 	static void setDefaultTexture();
 };
@@ -44,15 +42,13 @@ void Stars::setDefaultTexture(){
 void Stars::clearMemory(){
 	stars.clear();
 	starsInitialAngle.clear();
-	starsDirection.clear();
+	starsRotationSpeed.clear();
 }
 
 void Stars::init(){
 	clearMemory();
 	setDefaultTexture();
 	srand(time(NULL));
-	Alpha = 0;
-	rotationSpeed = 1;
 }
 
 float Stars::dist(float x1, float y1, float x2, float y2){
@@ -90,26 +86,25 @@ void Stars::CreateUniverse(int starsNumber, float CenterX, float CenterY, float 
 	             
 	    starsInitialAngle.push_back(getAngle(0, 0, newx -_CenterX, newy - _CenterY));
 
-	    starsDirection.push_back((randomFloat(0,1) - 0.5f < 0) ? -1 : 1);
+	    starsRotationSpeed.push_back(randomFloat(-2,2));
 	  }
 
 }
 
 void Stars::update(){
 
-	Alpha += rotationSpeed;
-	if(Alpha >= 360) Alpha -= 360;
-
     for(unsigned int i = 0; i < stars.size(); ++i)
     {
         float distance = dist(_CenterX, _CenterY, stars[i] -> getLocationX(), stars[i] -> getLocationY());
-        float angle = starsInitialAngle[i] + starsDirection[i] * Alpha;
+        float angle = starsInitialAngle[i] + starsRotationSpeed[i];
 
-        if(angle > 360) angle -= 360;
+        if(angle >= 360) angle -= 360;
         if(angle < 0) angle += 360;
 
         float x = _CenterX + distance * cos(angle * M_PI / 180);
         float y = _CenterY + distance * sin(angle * M_PI / 180);
+
+        starsInitialAngle[i] = angle;
 
         stars[i] -> setLocation(x, y);
     }
@@ -123,16 +118,10 @@ void Stars::draw(){
   	}
 }
 
-void Stars::setRotationSpeed(float newRotationSpeed){
-	rotationSpeed = newRotationSpeed;
-}
-
 vector<ShapeRectangle*> Stars::stars;
 vector<float> Stars::starsInitialAngle;
-vector<float> Stars::starsDirection;
+vector<float> Stars::starsRotationSpeed;
 GLuint Stars::texture;
-float Stars::Alpha;
-float Stars::rotationSpeed;
 float Stars::_CenterX;
 float Stars::_CenterY;
 

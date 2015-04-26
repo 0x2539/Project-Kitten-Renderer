@@ -16,6 +16,17 @@ public:
 		_y = max(0.0f, playerY + (playerHeight - BasicWindow::SCREEN_HEIGHT) / 2);
 	}
 
+	static bool isVisible(float x, float y, float width, float height){
+	    float cx = Camera::getX();
+	    float cy = Camera::getY();
+
+	    if(x < cx && x + width < cx) return false;
+	    if(y < cy && y + height < cy) return false;
+	    if(x >= cx + BasicWindow::SCREEN_WIDTH) return false;
+	    if(y >= cy + BasicWindow::SCREEN_HEIGHT) return false;
+	    return true;
+	}
+
 	static void setSpeed(float newCameraMovingSpeed){
 		_movingSpeed = newCameraMovingSpeed;
 	}

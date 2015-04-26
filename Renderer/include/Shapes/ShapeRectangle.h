@@ -173,17 +173,8 @@ void ShapeRectangle::setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRi
 void ShapeRectangle::draw(){
 
     // if it's not currently on the screen (actually camera doesn't see it), don't draw it
-    float x = this -> getLocationX();
-    float y = this -> getLocationY();
-    float width = this -> getWidth();
-    float height = this -> getHeight();
-    float cx = Camera::getX();
-    float cy = Camera::getY();
-
-    if(x < cx && x + width < cx) return ;
-    if(y < cy && y + height < cy) return ;
-    if(x >= cx + BasicWindow::SCREEN_WIDTH) return ;
-    if(y >= cy + BasicWindow::SCREEN_HEIGHT) return ;
+    if(! Camera::isVisible(this -> getLocationX(), this -> getLocationY(), this -> getWidth(), this -> getHeight()))
+        return ;
 
     setColor(0.5f, 1.f, 0.5f, 1.0f);
 

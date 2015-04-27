@@ -19,6 +19,7 @@ and may not be redistributed without written permission.*/
 #include "Input.h"
 #include "Stars.h"
 #include "Camera.h"
+#include "Quadtree.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 800;
@@ -32,7 +33,16 @@ Animation *testAnimation;
 ScaleAnimation *sA;
 AnimatedSprite *AS, *AS2;
 
+vector<ShapeRectangle*> lines;
+vector<ShapeRectangle*> redlines;
+
 vector <AnimatedSprite*> walls;
+
+Quadtree *Root, *xxx;
+
+// 
+ShapeRectangle *testR;
+int cnt;
 
 float x = 100, y = 600;
 float width = 100, height = 100;
@@ -125,11 +135,60 @@ void render()
     wall -> draw();
   }
 
+  for(auto line : lines)
+      line -> draw();
+
+    float xp = xxx -> getBoxX();
+    float yp = xxx -> getBoxY();
+    float wp = xxx -> getBoxWidth();
+    float hp = xxx -> getBoxHeight();
+    
+    redlines[0] -> setLocation(xp, yp);
+    redlines[0] -> setSize(wp, 1);
+
+    //Logger::write(toString(redlines[0] -> getWidth()) + " " + toString(redlines[0] -> getHeight()));
+
+    redlines[1] -> setLocation(xp + wp, yp);
+    redlines[1] -> setSize(1, hp);
+
+    redlines[2] -> setLocation(xp, yp + hp);
+    redlines[2] -> setSize(wp, 1);
+
+    redlines[3] -> setLocation(xp, yp);
+    redlines[3] -> setSize(1, hp);
+
+  for(int i = 0; i < 4; ++i)
+  {
+    redlines[i] -> draw();
+  }
     
     //Logger::write(toString(Camera::getX()) + " " + toString(Camera::getY()));
   
   //AS -> draw();
   AS2 -> draw();
+
+  for(auto wall : walls)
+    Root -> updateNode(Root, wall -> getRectanglePointer());
+
+  xxx = xxx -> updateNode(xxx, AS2 -> getRectanglePointer());
+
+  cnt = Root -> query(testR);
+  /*
+  Logger::write(toString(xxx -> getBoxX()) + " " + toString(xxx -> getBoxY()) + \
+    " " + toString(xxx -> getBoxWidth()) + " " + toString(xxx -> getBoxHeight()) + " " + toString(xxx -> getDepth()));
+*/
+/*
+  Logger::write(toString(xxx -> getBoxX()) + " " +\
+    toString(xxx -> getBoxY()) + " " +\
+    toString(xxx -> getBoxWidth()) + " " +\
+    toString(xxx -> getBoxHeight()) + " " +\
+    + toString(xxx -> getDepth()));*/
+
+/*
+  Logger::write(toString(cnt) + " " + \
+    toString(AS2 -> getRectanglePointer() -> getLocationX()) + " " \
+    + toString(AS2 -> getRectanglePointer() -> getLocationY()));
+    */
 }
 
 void TestingMethod(){
@@ -153,6 +212,9 @@ void TestingMethod(){
 
   TL -> addTexture("Assets/WhiteSquare.png");
   GLuint WhiteSquareTexture = TL -> getTexture("Assets/WhiteSquare.png");
+
+  TL -> addTexture("Assets/RedSquare.png");
+  GLuint RedSquareTexture = TL -> getTexture("Assets/RedSquare.png");
 
   //tx = TL -> getTexture(path);
   //tx2 = TL -> getTexture("Assets/effect6.png");
@@ -180,6 +242,7 @@ void TestingMethod(){
   //AS -> addEffectAnimation(200, 200, 100, 100, e2Tex, 4000, 4, 5, false);
   //AS -> start();
   x = y = 700;
+  width = height = 30;
 
   AS2 = new AnimatedSprite(&x, &y, &width, &height, e2Tex, 1000, 4, 5, true);
   AS2 -> addEffectAnimation(&x, &y, &width, &height, e1Tex, 2000, 7, 7, true);
@@ -190,6 +253,30 @@ void TestingMethod(){
 
   LoadSampleLevel(e3Tex);
   //AS2 -> start();
+
+  Root = new Quadtree(0, NULL, 0, 0, 1600, 1600);
+
+  for(auto wall : walls)
+  {
+      Root -> insert(wall -> getRectanglePointer());
+  }
+
+  xxx = Root -> insert(AS2 -> getRectanglePointer());
+
+  testR = new ShapeRectangle(new Point(0.0f, 0.0f), 400.0f, 400.0f);
+
+  Root -> query(testR);
+
+  for(int i=0;i<15;++i)
+  {
+    lines.push_back(new ShapeRectangle(new Point((i+1) * 100, 0), 1, 1600, WhiteSquareTexture));
+    lines.push_back(new ShapeRectangle(new Point(0, (i+1) * 100), 1600, 1, WhiteSquareTexture));
+  }
+
+  for(int i=0;i<4;++i)
+  {
+    redlines.push_back(new ShapeRectangle(new Point((i+1) * 100, 0), 1, 100, RedSquareTexture));
+  }
 }
 
 void LoadSampleLevel(GLuint texture){
@@ -277,12 +364,12 @@ int main( int argc, char* args[] )
               {
                   Input::keyUp(e.key.keysym.sym);
               }
-              else                        
+              /*else                        
               if( e.type == SDL_TEXTINPUT )
         		  {
                   int x = 0, y = 0;
                   SDL_GetMouseState( &x, &y );
-        		  }
+        		  }*/
 	       }
 	  
 	     //Render quad

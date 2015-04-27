@@ -79,9 +79,8 @@ void ShapeRectangle::allocateDynamicMemory()
 
 ShapeRectangle::ShapeRectangle(){
     allocateDynamicMemory();
-
 	setLocation(0, 0);
-    setSize(0, 0);
+    _location = new Point(0.0f, 0.0f);
 }
 
 ShapeRectangle::ShapeRectangle(Point *location, float width, float height, GLuint Texture){
@@ -177,6 +176,8 @@ void ShapeRectangle::draw(){
         return ;
 
     setColor(0.5f, 1.f, 0.5f, 1.0f);
+
+    updateVertices();
 
     basicTexturedPolygonShader->setModelView( glm::translate<GLfloat>( 
                                         glm::vec3( this -> getLocationX() - Camera::getX(), 

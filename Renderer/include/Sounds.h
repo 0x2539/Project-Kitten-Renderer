@@ -1,3 +1,10 @@
+/**
+    Sounds.h
+    Purpose: Manages basic sound system.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef SOUNDS_H
 #define SOUNDS_H
 #include <string>

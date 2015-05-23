@@ -1,3 +1,10 @@
+/**
+    Stars.h
+    Purpose: .
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef STARS_H
 #define STARS_H
 
@@ -11,25 +18,107 @@
 class Stars{
 
 private:
+	//The stars rectangles
 	static vector<ShapeRectangle*> stars;
+	//The stars initial angle
 	static vector<float> starsInitialAngle;
+	//The stars rotation speed
 	static vector<float> starsRotationSpeed;
 
+	//The texture
 	static GLuint texture;
+	//The x coordinate of the center
 	static float _CenterX;
+	//The y coordinate of the center
 	static float _CenterY;
 
 public:
+
+    /**
+        Generates a random float between a and b.
+
+        @param a the minimum value returned
+        @param b the maximum value returned
+        @return a random float
+    */
 	static float randomFloat(float a, float b);
+
+    /**
+        Get the distance between two points.
+
+        @param x1 the x coordinate of the first point
+        @param y1 the y coordinate of the first point
+        @param x2 the x coordinate of the second point
+        @param y2 the y coordinate of the second point
+        @return the distance between the two points
+    */
 	static float dist(float x1, float y1, float x2, float y2);	
+
+    /**
+        Get the angle between two points.
+
+        @param x1 the x coordinate of the first point
+        @param y1 the y coordinate of the first point
+        @param x2 the x coordinate of the second point
+        @param y2 the y coordinate of the second point
+        @return the distance between the two points
+    */
 	static float getAngle(float x1, float y1, float x2, float y2);
 
+    /**
+        Initialise the stars.
+
+        @param
+        @return
+    */
 	static void init();
+
+    /**
+        Draw the stars.
+
+        @param
+        @return
+    */
 	static void draw();
+
+    /**
+        Update the stars.
+
+        @param
+        @return
+    */
 	static void update();
+
+    /**
+        Create the universe for the stars.
+
+        @param starsNumber the number of the stars
+        @param CeterX the x coordinate of the center
+        for the universe
+        @param CeterY the y coordinate of the center
+        for the universe
+        @param UniverseSizeX the horizontal size
+        of the universe
+        @param UniverseSizeY the vertical size
+        of the universe
+        @return
+    */
 	static void CreateUniverse(int starsNumber, float CenterX, float CenterY, float UniverseSizeX, float UniverseSizeY);
 	
+    /**
+        Clear the memory.
+
+        @param
+        @return
+    */
 	static void clearMemory();	
+
+    /**
+        Set the default texture for stars.
+
+        @param
+        @return
+    */
 	static void setDefaultTexture();
 };
 

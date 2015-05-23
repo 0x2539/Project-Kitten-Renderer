@@ -1,3 +1,10 @@
+/**
+    ShapeRectangle.h
+    Purpose: Implements a basic rectangle.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef SHAPERECTANGLE_H
 #define SHAPERECTANGLE_H
 
@@ -14,57 +21,243 @@ using namespace std;
 
 class ShapeRectangle : public Shape{
   private:
+    //The location
     Point *_location;
+    //The initial width
     float *_initialWidth;
+    //The initial height
     float *_initialHeight;
+    //The width
     float *_width;
+    //The height
     float *_height;
 
+    //The vertices of the rectangle
     GLTexturedVertex vertices[ 4 ];
     //GLVertexCoord quadVertices[ 4 ];
+    //The indices order
     GLuint indices[ 4 ];
+    //The vertex buffer object
     GLuint gVBO = NULL;
+    //The index buffer object
     GLuint gIBO = NULL;
 
+    //The shader program
     BasicTexturedPolygonShader *basicTexturedPolygonShader;
 
+    //The animation vector
+    vector<BasicTransformAnimation*> animations;
+
+    /**
+        Set the data for each vertex, initializes
+        the buffer objects and binds data to it.
+
+        @param
+        @return
+    */
     void setGraphicBuffers();
 
-    vector<BasicTransformAnimation*> animations;
+    /**
+        Updates the rectangle based on each animation.
+
+        @param
+        @return
+    */
     void updateAnimations();
+
+    /**
+        Updates the vertices data.
+
+        @param
+        @return
+    */
     void updateVertices();
 
   public:
+
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
     ShapeRectangle();
+
+    /**
+        Initialise a new instance of this class.
+
+        @param location the location where to
+        render to rectangle
+        @param width the width of the rectangle
+        @param height the height of the rectangle
+        @param Texture the texture to bind to the
+        rectangle
+        @return
+    */
     ShapeRectangle(Point* location, float width, float height, GLuint Texture = 0);
-    //
+
+    /**
+        Initialise a new instance of this class.
+
+        @param location the location where to
+        render to rectangle
+        @param width the width of the rectangle
+        @param height the height of the rectangle
+        @param Texture the texture to bind to the
+        rectangle
+        @return
+    */
     ShapeRectangle(Point* location, float *width, float *height, GLuint Texture = 0);
-    //
+
+    /**
+        Draw a border around the rectangle
+
+        @param lineWidth the width of the border
+        @return
+    */
     void drawBorder(float lineWidth);
+
+    /**
+        Draw the rectangle.
+
+        @param
+        @return
+    */
     void draw();
+
+    /**
+        Update the rectangle's animations and
+        other stuff.
+
+        @param
+        @return
+    */
     void update();
 
+    /**
+        Set a new location for the rectangle.
+
+        @param location the point from which the rectangle
+        will get the location
+        @return
+    */
     void setLocation(Point* location);
+
+    /**
+        Set a new location for the rectangle.
+
+        @param xCoordinate the x coordinate
+        @param yCoordinate the y coordinate
+        @return
+    */
     void setLocation(float xCoordinate, float yCoordinate);
+
+    /**
+        Get the rectangle location.
+
+        @param
+        @return the location of the rectangle
+    */
     Point* getLocation();
 
+    /**
+        Set the rectangle's x coordinate.
+
+        @param xCoordinate the rectangle's x coordinate
+        @return
+    */
     void setLocationX(float xCoordinate);
+
+    /**
+        Get the rectangle's x coordinate.
+
+        @param
+        @return the rectangle's x coordinate
+    */
     float getLocationX();
 
+    /**
+        Set the rectangle's y coordinate.
+
+        @param yCoordinate the rectangle's y coordinate
+        @return
+    */
     void setLocationY(float yCoordinate);
+
+    /**
+        Get the rectangle's y coordinate.
+
+        @param
+        @return the rectangle's y coordinate
+    */
     float getLocationY();
 
+    /**
+        Set the size of the rectangle.
+
+        @param width the width of the rectangle
+        @param height the height of the rectangle
+        @return
+    */
     void setSize(float width, float height);
 
+    /**
+        Set the width of the rectangle.
+
+        @param width the width of the rectangle
+        @return
+    */
     void setWidth(float width);
+
+    /**
+        Get the width of the rectangle.
+
+        @param
+        @return the width of the rectangle
+    */
     float getWidth();
     
+    /**
+        Set the height of the rectangle.
+
+        @param height the height of the rectangle
+        @return
+    */
     void setHeight(float height);
+
+    /**
+        Get the height of the rectangle.
+
+        @param
+        @return the height of the rectangle
+    */
     float getHeight();
 
+    /**
+        Add a new animation and start it immediately.
+
+        @param animation the animation to add and start
+        @return
+    */
     void addAndStartAnimation(BasicTransformAnimation *animation);
+
+    /**
+        Set what part of the sprite to draw.
+
+        @param texLeft the left coordinate
+        @param texTop the top coordinate
+        @param texRight the right coordinate
+        @param texBottom the bottom coordinate
+        @return
+    */
     void setTextCoord(GLfloat texLeft, GLfloat texTop, GLfloat texRight, GLfloat texBottom);
 
+    /**
+        Allocates dynamic memory.
+
+        @param
+        @return
+    */
     void allocateDynamicMemory();
 };
 

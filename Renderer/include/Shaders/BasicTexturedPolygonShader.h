@@ -1,3 +1,13 @@
+/**
+    BasicTexturedPolygonShader.h
+    Purpose: Loads, compiles and operates on basic shaders 
+    written in GLSL. It should only be used when you want 
+    to create a textured polygon. This class follows the 
+    singleton design pattern.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef BASICTEXTUREDPOLYGONSHADER_H_INCLUDED
 #define BASICTEXTUREDPOLYGONSHADER_H_INCLUDED
 
@@ -35,157 +45,155 @@ private:
 
 public:
 
+	/**
+	    Instead of creating a new object, use this method to 
+	    get a pointer to an object that will be persistent 
+	    through out the program.
+
+	    @param
+	    @return the only instance of this class
+	*/
     static BasicTexturedPolygonShader* getInstance();
 
+	/**
+	    Load the shader files to memory and compile them.
+	    If no error occured during the loading and compilation,
+	    then link the shaders to our program.
+
+	    @param
+	    @return true if no error occured during the loading
+	    and compilation, false otherwise
+	*/
     bool loadProgram();
 
+	/**
+	    Set the value of the projection matrix to pass to
+	    the shader program.
+
+	    @param matrix the matrix that will be passed to 
+	    the shader program
+	    @return
+	*/
     void setProjection( glm::mat4 matrix );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Sets member projection matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Set the value of the model view matrix to pass to
+	    the shader program.
+
+	    @param matrix the matrix that will be passed to 
+	    the shader program
+	    @return
+	*/
     void setModelView( glm::mat4 matrix );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Sets member modelview matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Multiplies the projection matrix.
+
+	    @param matrix the projection matrix to be
+	    multiplied
+	    @return
+	*/
     void leftMultProjection( glm::mat4 matrix );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Left multiplies member projection matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Multiplies the model view matrix.
+
+	    @param matrix the model view matrix to be
+	    multiplied
+	    @return
+	*/
     void leftMultModelView( glm::mat4 matrix );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Left multiplies member modelview matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Updates shader program projection matrix 
+	    with member projection matrix.
+
+	    @param
+	    @return
+	*/
     void updateProjection();
-    /*
-    Pre Condition:
-     -Bound LPlainPolygonProgram2D
-    Post Condition:
-     -Updates shader program projection matrix with member projection matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Updates shader program modelview matrix 
+	    with member modelview matrix.
+
+	    @param
+	    @return
+	*/
     void updateModelView();
-    /*
-    Pre Condition:
-     -Bound LPlainPolygonProgram2D
-    Post Condition:
-     -Updates shader program modelview matrix with member modelview matrix
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Sets vertex position attribute pointer.
+
+	    @param stride the stride of the position
+	    vertex
+	    @param data the data inside the position
+	    vertex
+	    @return
+	*/
     void setVertexPointer( GLsizei stride, const GLvoid* data );
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Sets vertex position attribute pointer
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Sets texture coordinate attribute pointer.
+
+	    @param stride the stride of the texture 
+	    vertex
+	    @param data the data inside the texture
+	    vertex
+	    @return
+	*/
     void setTexCoordPointer( GLsizei stride, const GLvoid* data );
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Sets texture coordinate attribute pointer
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Enables vertex position attribute.
+
+	    @param
+	    @return
+	*/
     void enableVertexPointer();
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Enables vertex position attribute
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Disables vertex position attribute.
+
+	    @param
+	    @return
+	*/
     void disableVertexPointer();
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Disables vertex position attribute
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Enables texture coordinate attribute.
+
+	    @param
+	    @return
+	*/
     void enableTexCoordPointer();
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Enables texture coordinate attribute
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Disables texture coordinate attribute.
+
+	    @param
+	    @return
+	*/
     void disableTexCoordPointer();
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Enables texture coordinate attribute
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Updates shader program textured polygon color.
+
+	    @param
+	    @return
+	*/
     void setTextureColor( ColorRGBA color );
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Updates shader program textured polygon color
-    Side Effects:
-     -None
-    */
 
+	/**
+	    Updates shader program multitexture unit.
+
+	    @param unit the new value for the texture unit.
+	    @return
+	*/
     void setTextureUnit( GLuint unit );
-    /*
-    Pre Condition:
-     -Bound LTexturedPolygonProgram2D
-    Post Condition:
-     -Updates shader program multitexture unit
-    Side Effects:
-     -None
-    */
 };
 
 BasicTexturedPolygonShader* BasicTexturedPolygonShader::_instance;
-
-/*This source code copyrighted by Lazy Foo' Productions (2004-2013)
-and may not be redestributed without written permission.*/
-//Version: 002
-
 
 BasicTexturedPolygonShader::BasicTexturedPolygonShader()
 {
@@ -250,7 +258,6 @@ bool BasicTexturedPolygonShader::loadProgram()
 	if( programSuccess != GL_TRUE )
     {
         cout << "Error linking program " << mProgramID << "!\n";
-//		printf( "Error linking program %d!\n", mProgramID );
 		printProgramLog( mProgramID );
         glDeleteShader( vertexShader );
         glDeleteShader( fragmentShader );

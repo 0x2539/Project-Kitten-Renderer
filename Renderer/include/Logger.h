@@ -1,3 +1,10 @@
+/**
+    Logger.h
+    Purpose: Manages a basic logging system.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef LOGGER_H
 #define LOGGER_H
 #include <iostream>
@@ -12,22 +19,52 @@ private:
 
 public:
 
+    /**
+        Writes a message to output.
+
+        @param message the message to print
+        @return
+    */
 	static void write(string message){
 		cout << message << '\n';
 	}
 
+    /**
+        Writes a message to output.
+
+        @param message the message to print
+        @return
+    */
 	static void write(const unsigned char* message){
 		cout << message << '\n';
 	}
 
+    /**
+        Writes a message to output.
+
+        @param message the message to print
+        @return
+    */
 	static void write(const char* message){
 		cout << message << '\n';
 	}
 
+    /**
+        Writes a message to output.
+
+        @param message the message to print
+        @return
+    */
 	static void write(char* message){
 		cout << message << '\n';
 	}
 
+    /**
+        Writes a message to output.
+
+        @param message the message to print
+        @return
+    */
 	static void write(int value){
 		cout << value << '\n';
 	}

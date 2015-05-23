@@ -1,25 +1,107 @@
+/**
+    Point.h
+    Purpose: Implements a basic point.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef POINT_H
 #define POINT_H
 
 class Point
 {
   private:
-    float *_x, *_y;
+
+    //The x coordinate
+    float *_x;
+    //The y coordinate
+    float *_y;
 
   public:
+
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
     Point();
+
+    /**
+        Initialise a new instance of this class.
+
+        @param x the x coordinate
+        @param y the y coordinate
+        @return
+    */
     Point(float x, float y);
+
+    /**
+        Initialise a new instance of this class.
+
+        @param x the x coordinate
+        @param y the y coordinate
+        @return
+    */
     Point(float *x, float *y);
 
+    /**
+        Set a new location for the point.
+
+        @param p the point from which the current
+        point will get the location
+        @return
+    */
     void setLocation(Point p);
+
+    /**
+        Set a new location for the point.
+
+        @param x the x coordinate
+        @param y the y coordinate
+        @return
+    */
     void setLocation(float x, float y);
     
+    /**
+        Set a new x coordinate for the point.
+
+        @param x the x coordinate of the point
+        @return
+    */
     void setX(float x);
+
+    /**
+        Get the point's x coordinate.
+
+        @param
+        @return the point's x coordinate
+    */
     float getX();
     
+    /**
+        Set a new y coordinate for the point.
+
+        @param y the y coordinate of the point
+        @return
+    */
     void setY(float y);
+
+    /**
+        Get the point's y coordinate.
+
+        @param
+        @return the point's y coordinate
+    */
     float getY();
 
+    /**
+        Allocate dynamic memory for the x and y
+        coordinates.
+
+        @param
+        @return
+    */
     void allocateDynamicMemory();
 };
 

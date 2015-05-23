@@ -1,3 +1,10 @@
+/**
+    Shapes.h
+    Purpose: Implements basic shapes: line and square.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef SHAPES_H
 #define SHAPES_H
 
@@ -10,24 +17,89 @@
 
 class Line : public Shape{
   private:
-      Point _p1, _p2;
+    //Point p1
+    Point _p1;
+    //Point p2
+    Point _p2;
 
   public:
+
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
     Line();
+
+    /**
+        Initialise a new instance of this class.
+
+        @param p1 the first point of the line
+        @param p2 the second point of the line
+        @return
+    */
     Line(Point p1, Point p2);
+
+    /**
+        Initialise a new instance of this class.
+
+        @param px1 the x coordinate of the first point
+        @param py1 the y coordinate of the first point
+        @param px2 the x coordinate of the second point
+        @param py2 the y coordinate of the second point
+        @return
+    */
     Line(float px1, float py1, float px2, float py2);
+
+    /**
+        Draw the line.
+
+        @param
+        @return
+    */
     void draw();
 };
 
 class Square : public Shape{
   private:
+    //The top-left point
     Point _leftTop;
+    //The length of a side
     float _sideLength;
 
   public:
+
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
     Square();
+
+    /**
+        Initialise a new instance of this class.
+
+        @param leftTop the top-left point
+        @return sideLength the length of a side
+    */
     Square(Point leftTop, float sideLength);
+
+    /**
+        Draw a border around the square.
+
+        @param lineWidth the width of the border
+        @return
+    */
     void drawBorder(float lineWidth);
+
+    /**
+        Draw the square.
+
+        @param
+        @return
+    */
     void draw();
 };
 

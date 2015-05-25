@@ -1,3 +1,10 @@
+/**
+    AudioEngine.h
+    Purpose: Manages the audio of the engine.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef AUDIO_ENGINE_H
 #define AUDIO_ENGINE_H
 
@@ -11,10 +18,18 @@ using namespace irrklang;
 class AudioEngine{
 
 private:
+	//The sound engine
 	static ISoundEngine* engine;
 
 public:
 
+    /**
+        Play a sound.
+
+        @param path the path of the sound to play
+        @param defaultVolume the volume of the sound
+        @return
+    */
 	static void playSound(const string path, float defaulVolume = 1.0f){
 
 		if(!engine) engine = createIrrKlangDevice();
@@ -31,6 +46,12 @@ public:
 		engine->play2D(soundtrack);
 	}
 
+    /**
+        Stop all the sounds.
+
+        @param
+        @return
+    */
 	static void stopAllSounds(){
 
 		if (!engine)

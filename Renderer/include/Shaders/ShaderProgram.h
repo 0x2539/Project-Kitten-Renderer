@@ -1,3 +1,14 @@
+/**
+    ShaderProgram.h
+    Purpose: Offers basic shader loading and binding.
+    It also contains basic methods to load uniforms
+    and attributes from the shader programs. Every
+    new created shape should inherit this class as it
+    contains the basics for every shader program.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef SHADERPROGRAM_H_INCLUDED
 #define SHADERPROGRAM_H_INCLUDED
 
@@ -14,119 +25,118 @@ using namespace std;
 class ShaderProgram
 {
 public:
+
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
 	ShaderProgram();
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Initializes variables
-    Side Effects:
-     -None
-    */
 
+    /**
+        Destroys an instance of this class. This
+        is virtual because we don't want this class
+        to have any instance.
+
+        @param
+        @return
+    */
     virtual ~ShaderProgram();
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Frees shader program
-    Side Effects:
-     -None
-    */
 
+    /**
+        Load the shader files to memory and compile them.
+        If no error occured during the loading and compilation,
+        then link the shaders to our program.
+
+        @param
+        @return true if no error occured during the loading
+        and compilation, false otherwise
+    */
 	virtual bool loadProgram() = 0;
-    /*
-    Pre Condition:
-     -A valid OpenGL context
-    Post Condition:
-     -Loads shader program
-    Side Effects:
-     -None
-    */
 
+    /**
+        Free shader program if it exists.
+
+        @param
+        @return
+    */
 	virtual void freeProgram();
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Frees shader program if it exists
-    Side Effects:
-     -None
-    */
 
+    /**
+        Set this program as the current shader program.
+        Reports to console if there was an error.
+
+        @param
+        @return true if no error occured during binding,
+        false otherwise
+    */
 	bool bind();
-    /*
-    Pre Condition:
-     -A loaded shader program
-    Post Condition:
-     -Sets this program as the current shader program
-     -Reports to console if there was an error
-    Side Effects:
-     -None
-    */
 
+    /**
+        Set default shader program as current program.
+
+        @param
+        @return
+    */
 	void unbind();
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Sets default shader program as current program
-    Side Effects:
-     -None
-    */
 
-	GLuint getProgramID();
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Returns program ID
-    Side Effects:
-     -None
+    /**
+        Get the id of the shader program.
+
+        @param
+        @return the program id
     */
+	GLuint getProgramID();
 
 protected:
+
+    /**
+        Print program log. Reports error is GLuint 
+        ID is not a shader program.
+
+        @param program the id of the shader program
+        @return
+    */
 	void printProgramLog( GLuint program );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Prints program log
-     -Reports error is GLuint ID is not a shader program
-    Side Effects:
-     -None
-    */
 
+    /**
+        Print shader log. Reports error is GLuint 
+        ID is not a shader.
+
+        @param shader the id of the shader
+        @return
+    */
 	void printShaderLog( GLuint shader );
-    /*
-    Pre Condition:
-     -None
-    Post Condition:
-     -Prints shader log
-     -Reports error is GLuint ID is not a shader
-    Side Effects:
-     -None
-    */
 
+    /**
+        Load a shader program from a file.
+
+        @param path the path from where to load the shader
+        @param shaderType the type of the shader
+        @return the id of the shader
+    */
 	GLuint loadShaderFromFile( std::string path, GLenum shaderType );
 
+    /**
+        Loads a uniform from a loaded shader.
 
-    //load uniform from shader
+        @param uniformName the name of the uniform to load
+        @return the id of the uniform
+    */
     GLint loadUniform( std::string uniformName );
 
-    //load attribute from shader
+    /**
+        Loads an attribute from a loaded shader.
+
+        @param uniformName the name of the attribute to load
+        @return the id of the attribute
+    */
     GLint loadAttrib( std::string attribName );
 
 	//Program ID
 	GLuint mProgramID;
 };
-
-
-
-
-/*This source code copyrighted by Lazy Foo' Productions (2004-2013)
-and may not be redistributed without written permission.*/
-//Version: 001
 
 ShaderProgram::ShaderProgram()
 {
@@ -155,7 +165,6 @@ bool ShaderProgram::bind()
     if( error != GL_NO_ERROR )
     {
         cout << "Error binding shader!\n" << gluErrorString( error );
-//        printf( "Error binding shader! %s\n", gluErrorString( error ) );
 		printProgramLog( mProgramID );
         return false;
     }
@@ -195,7 +204,6 @@ void ShaderProgram::printProgramLog( GLuint program )
 		{
 			//Print Log
 			cout << infoLog << '\n';
-//			printf( "%s\n", infoLog );
 		}
 
 		//Deallocate string
@@ -204,7 +212,6 @@ void ShaderProgram::printProgramLog( GLuint program )
 	else
 	{
 	    cout << "Name " << program << " is not a program\n";
-//		printf( "Name %d is not a program\n", program );
 	}
 }
 
@@ -229,7 +236,6 @@ void ShaderProgram::printShaderLog( GLuint shader )
 		{
 			//Print Log
 			cout << infoLog << '\n';
-//			printf( "%s\n", infoLog );
 		}
 
 		//Deallocate string
@@ -238,7 +244,6 @@ void ShaderProgram::printShaderLog( GLuint shader )
 	else
 	{
 	    cout << "Name " << shader << " is not a shader\n";
-//		printf( "Name %d is not a shader\n", shader );
 	}
 }
 

@@ -1,3 +1,11 @@
+/**
+    BasicWindow.h
+    Purpose: Manages the creation of the application's
+    window.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef BASICWINDOW_H_INCLUDED
 #define BASICWINDOW_H_INCLUDED
 
@@ -6,17 +14,44 @@
 
 class BasicWindow
 {
+private:
 
-  static SDL_Window* _gWindow;
+	//The window
+	static SDL_Window* _gWindow;
+
 public:
-  static SDL_Window* getWindow();
-
-    static void setWindow(SDL_Window *gWindow);
-    static bool initWindow(int _SCREEN_WIDTH, int _SCREEN_HEIGHT);
-    //Screen dimension constants
+    //The screen width
     static int SCREEN_WIDTH;
+    //The screen height
     static int SCREEN_HEIGHT;
+    //The window's frames per second
     static const int SCREEN_FPS = 60;
+
+    /**
+        Initialise the window.
+
+        @param _SCREEN_WIDTH the screen width
+        @param _SCREEN_HEIGHT the screen height
+        @return true if the window was successfully
+        created, false otherwise
+    */
+    static bool initWindow(int _SCREEN_WIDTH, int _SCREEN_HEIGHT);
+
+    /**
+        Set the window.
+
+        @param gWindow the window
+        @return
+    */
+    static void setWindow(SDL_Window *gWindow);
+
+    /**
+        Get the window.
+
+        @param
+        @return the window
+    */
+	static SDL_Window* getWindow();
 };
 
 //Screen dimension constants

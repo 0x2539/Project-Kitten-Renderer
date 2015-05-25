@@ -1,3 +1,10 @@
+/**
+    TextureLoader.h
+    Purpose: Load textures.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef TEXTURE_LOADER_H
 #define TEXTURE_LOADER_H
 #include <unordered_map>
@@ -10,13 +17,25 @@ using namespace std;
 
 class TextureLoader{
 private:
+
+	//The instance of this class
 	static TextureLoader *_instance;
+	//The map of all the loaded textures
 	unordered_map<string, GLuint> textures;
+	//The path for the placeholder texture
+	//in case the currently loaded texture
+	//does not exist
 	static string placeholderPath;
 	TextureLoader(){}
 
 public:
 
+    /**
+        Get the instance of this class.
+
+        @param
+        @return
+    */
 	static TextureLoader* getInstance()
 	{
 		if(_instance == NULL) {
@@ -28,6 +47,13 @@ public:
 		return _instance;
 	}
 
+    /**
+        Adds a new texture to the texture map.
+
+        @param path the path of the texture to
+        load to the texture map
+        @return
+    */
 	void addTexture(string path)
 	{
 		GLuint newTexture = SOIL_load_OGL_texture
@@ -51,6 +77,12 @@ public:
 		textures.insert(make_pair(path, newTexture));
 	}
 
+    /**
+        Get the texture.
+
+        @param path the path of the texture
+        @return the texture from the given path
+    */
 	GLuint getTexture(string path)
 	{
 		//show placeholder if the texture does not exist

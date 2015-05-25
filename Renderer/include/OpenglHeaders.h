@@ -1,3 +1,11 @@
+/**
+    OpenglHeaders.h
+    Purpose: Includes all the necessary libraries
+    for the OpenGL to work properly.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef OPENGLHEADERS_H_INCLUDED
 #define OPENGLHEADERS_H_INCLUDED
 

@@ -1,3 +1,10 @@
+/**
+    GLUtils.h
+    Purpose: Implements a basic color manager.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef GLUTILS_H_INCLUDED
 #define GLUTILS_H_INCLUDED
 
@@ -12,12 +19,49 @@ class GLUtils
 {
 private:
 
+    //The screen width
+    static int _SCREEN_WIDTH;
+    //The screen height
+    static int _SCREEN_HEIGHT;
+
+    /**
+        Initialise the graphics.
+
+        @param SCREEN_WIDTH the screen width
+        @param SCREEN_HEIGHT the screen height
+        @return true if there was no error while
+        initialising the graphics, false otherwise
+    */
     static bool initGL(int SCREEN_WIDTH, int SCREEN_HEIGHT);
+
+    /**
+        Load the shaders.
+
+        @param
+        @return true if there was no error while
+        loading the shaders, false otherwise
+    */
     static bool loadGP();
+
+    /**
+        Load the textures and sounds.
+
+        @param
+        @return true if there was no error while
+        loading the textures and sounds, false otherwise
+    */
     static bool loadMedia();
-    static int _SCREEN_WIDTH, _SCREEN_HEIGHT;
 
 public:
+    
+    /**
+        Initialise the graphics.
+
+        @param SCREEN_WIDTH the screen width
+        @param SCREEN_HEIGHT the screen height
+        @return true if there was no error while
+        initialising the graphics, false otherwise
+    */
     static bool initGraphics(int SCREEN_WIDTH, int SCREEN_HEIGHT);
 };
 

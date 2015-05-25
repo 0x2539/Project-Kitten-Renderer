@@ -1,3 +1,10 @@
+/**
+    Animation.h
+    Purpose: Implements an animation.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef ANIMATION_H
 #define ANIMATION_H
 #include "Shapes/ShapeRectangle.h"
@@ -6,26 +13,47 @@
 class Animation{
 private:
 
+	//The rectangle
 	ShapeRectangle *_rect;
+	//The duration of the animation
 	float _totalDuration;
+	//The rows of the sprite
 	int _nrRows;
+	//The columns of the sprite
 	int _nrColumns;
 
+	//The milliseconds per frame
 	int _millisecondPerFrame;
+	//The last time of the last frame
 	int _lastTime;
+	//The horizontal frame length
 	float _xTextureFrameLength;
+	//The vertical frame height
 	float _yTextureFrameLength;
+	//The x coordinate of the texture
 	float _currentTextureXPos;
+	//The y coordinate of the texture
 	float _currentTextureYPos;
+	//The current row of the sprite
 	int _currentRow;
+	//The current column of the sprite
 	int _currentColumn;
 
+	//If play the animation on a loop
 	bool _loop;
+	//If completed one cicle
 	bool _completedOneCicle;
+	//If started
 	bool _started;
 
 public:
 
+    /**
+        Initialise a new instance of this class.
+
+        @param
+        @return
+    */
 	Animation(){
 		_rect = new ShapeRectangle();
 		_nrColumns = _nrRows = 1;
@@ -33,6 +61,19 @@ public:
 		init();
 	}
 
+    /**
+        Initialise a new instance of this class.
+
+        @param rect the rectangle
+        @param totalDuration the duration of the
+        animation
+        @param nrRows the number of rows of the
+        sprite
+        @param nrColumns the number of columns of
+        the sprite
+        @param loop if plays the animation on a loop
+        @return
+    */
 	Animation(ShapeRectangle *rect, float totalDuration,
 		int nrRows, int nrColumns, bool loop = false){
 
@@ -44,6 +85,12 @@ public:
 		init();
 	}
 
+    /**
+        Initialise the current instance of this class.
+
+        @param
+        @return
+    */
 	void init(){
 		_currentRow = _currentColumn = 0;
 		_completedOneCicle = false;
@@ -53,26 +100,57 @@ public:
 		_millisecondPerFrame = (int) (_totalDuration / (_nrRows * _nrColumns));
 	}
 
+    /**
+        Get the rectangle.
+
+        @param
+        @return the rectangle
+    */
 	ShapeRectangle* getRectanglePointer()
 	{
 		return _rect;
 	}
 
+    /**
+        Get the x coordinate.
+
+        @param
+        @return the x coordinate
+    */
 	float getX()
 	{
 		_rect -> getLocationX();
 	}
 
+    /**
+        Get the y coordinate.
+
+        @param
+        @return the y coordinate
+    */
 	float getY()
 	{
 		_rect -> getLocationY();
 	}
 
+    /**
+        Set the location of the animation.
+
+        @param x the x coordinate
+        @param y the y coordinate
+        @return
+    */
 	void setCoords(float x, float y)
 	{
 		_rect -> setLocation(x, y);
 	}
 
+    /**
+        Play the next frame of the animation.
+
+        @param
+        @return
+    */
 	void switchToNextFrame()
 	{
 		int currentTime = Timer::getTime();
@@ -93,6 +171,12 @@ public:
 		}
 	}
 
+    /**
+        Start the animation.
+
+        @param
+        @return
+    */
 	void start()
 	{
 		if(!_started) 
@@ -106,7 +190,13 @@ public:
 						  (_currentRow + 1) * _yTextureFrameLength); // Bottom             
 		}
 	}
-	
+
+    /**
+        Play the animation.
+
+        @param
+        @return
+    */	
 	void play()
 	{	
 

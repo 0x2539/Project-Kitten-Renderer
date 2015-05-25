@@ -1,3 +1,10 @@
+/**
+    Timer.h
+    Purpose: Implements an animation.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef TIMER_H
 #define TIMER_H
 
@@ -33,20 +40,41 @@ or
 
 class Timer{
 private:
+	//The timer id
 	static SDL_TimerID _timer_id;
+	//The timer fire rate
 	static const int _timerFireRate;
+	//The ticks
 	static int _ticks;
 
 public:
 
+    /**
+        Get the time.
+
+        @param
+        @return the time
+    */
 	static int getTime(){
 		return _ticks * _timerFireRate;
 	}
 
+    /**
+        Get the time since last frame.
+
+        @param milliseconds
+        @return the time since last frame
+    */
 	static int getDeltaTime(int milliseconds){
 		return _ticks * _timerFireRate - milliseconds;
 	}
 
+    /**
+        
+
+        @param
+        @return
+    */
 	static Uint32 GameLoopTimer(Uint32 interval, void* param)
 	{
 		// Create a user event to call the game loop.

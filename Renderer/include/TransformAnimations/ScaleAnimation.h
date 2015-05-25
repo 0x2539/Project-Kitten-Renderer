@@ -1,3 +1,10 @@
+/**
+    ScaleAnimation.h
+    Purpose: Implements the scale animation.
+
+    @author Alex Buicescu
+    @version 1.0
+*/
 #ifndef SCALEANIMATION_H
 #define SCALEANIMATION_H
 
@@ -7,18 +14,63 @@
 class ScaleAnimation : public BasicTransformAnimation
 {
 private:
+	//The current scale on horizontal
 	float _xScale;
+	//The current scale on vertical
 	float _yScale;
+	//From what scale to start the animation
+	//on horizontal
 	float _fromXScale;
+	//To what scale to finish the animation
+	//on horizontal
 	float _toXScale;
+	//From what scale to start the animation
+	//on vertical
 	float _fromYScale;
+	//To what scale to finish the animation
+	//on vertical
 	float _toYScale;
 
 public:
+
+    /**
+    	This method makes transformations on the shape
+    	that has this animation.
+
+        @param
+        @return
+    */
 	void update();
+
+    /**
+    	Initialise the scales.
+
+        @param fromXScale the scale from which to start
+        the animation on horizontal
+        @param toXScale the scale to which to finish
+        the animation on horizontal
+        @param fromYScale the scale from which to start
+        the animation on vertical
+        @param toYScale the scale to which to finish
+        the animation on vertical
+        @return
+    */
 	void setScale(float fromXScale, float toXScale, float fromYScale, float toYScale);
 
+    /**
+    	Get the horizontal scale.
+
+        @param
+        @return the horizontal scale
+    */
 	float getScaleX();
+
+    /**
+    	Get the vertical scale.
+
+        @param
+        @return the vertical scale
+    */
 	float getScaleY();
 };
 

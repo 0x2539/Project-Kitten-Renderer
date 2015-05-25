@@ -2,7 +2,7 @@
     Logger.h
     Purpose: Manages a basic logging system.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef LOGGER_H

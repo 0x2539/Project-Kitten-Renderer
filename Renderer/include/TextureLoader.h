@@ -2,7 +2,7 @@
     TextureLoader.h
     Purpose: Load textures.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef TEXTURE_LOADER_H

@@ -2,7 +2,7 @@
     Camera.h
     Purpose: Manages the application's camera.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef CAMERA_H

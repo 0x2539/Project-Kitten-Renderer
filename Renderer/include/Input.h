@@ -2,7 +2,7 @@
     Input.h
     Purpose: Manages basic input.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef Input_H

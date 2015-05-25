@@ -2,7 +2,7 @@
     Animation.h
     Purpose: Implements an animation.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef ANIMATION_H

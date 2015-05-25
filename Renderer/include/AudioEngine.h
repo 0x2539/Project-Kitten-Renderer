@@ -2,7 +2,7 @@
     AudioEngine.h
     Purpose: Manages the audio of the engine.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef AUDIO_ENGINE_H

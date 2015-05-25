@@ -1,8 +1,8 @@
 /**
     Timer.h
-    Purpose: Implements an animation.
+    Purpose: Implements an timing system.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef TIMER_H

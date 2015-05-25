@@ -2,7 +2,7 @@
     Sounds.h
     Purpose: Manages basic sound system.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef SOUNDS_H

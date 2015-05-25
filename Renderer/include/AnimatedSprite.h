@@ -2,7 +2,7 @@
     AnimatedSprite.h
     Purpose: Implements an animated sprite.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef ANIMATED_SPRITE_H

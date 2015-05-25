@@ -1,8 +1,8 @@
 /**
     Stars.h
-    Purpose: .
+    Purpose: Decorative background for games, which simulates rotating stars on the night sky.
 
-    @author Alex Buicescu
+    @author Ion Ureche
     @version 1.0
 */
 #ifndef STARS_H

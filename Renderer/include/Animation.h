@@ -9,6 +9,7 @@
 #define ANIMATION_H
 #include "Shapes/ShapeRectangle.h"
 #include "Timer.h"
+#include <cmath>
 
 class Animation{
 private:
@@ -78,7 +79,7 @@ public:
 		int nrRows, int nrColumns, bool loop = false){
 
 		_rect = rect;
-		_totalDuration = totalDuration;
+		_totalDuration = abs(totalDuration);
 		_nrRows = nrRows;
 		_nrColumns = nrColumns;
 		_loop = loop;

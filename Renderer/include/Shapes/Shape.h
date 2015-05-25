@@ -20,7 +20,7 @@ class Shape
         //The texture
         GLuint texture;
         ColorRGBA color;
-
+        Shape();
 	    /**
 	        Renders the shape on the screen.
 
@@ -63,6 +63,10 @@ class Shape
 	    */
         void setColor( ColorRGBA newColor );
 };
+
+Shape::Shape(){
+
+}
 
 void Shape::setTexture(GLuint newTexture){
     texture = newTexture;

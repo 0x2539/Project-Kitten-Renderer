@@ -22,6 +22,12 @@ private:
 public:
 
     /**
+        Initialise a new instance of this class with default color values.
+        @return
+    */
+    ColorRGBA();
+
+    /**
         Initialise a new instance of this class.
 
         @param red the red color
@@ -116,6 +122,12 @@ public:
     */
 	GLfloat getAlpha();
 };
+
+ColorRGBA::ColorRGBA()
+{
+    setColor(1.0f, 1.0f, 1.0f, 0.0f);
+}
+
 
 ColorRGBA::ColorRGBA(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
 {

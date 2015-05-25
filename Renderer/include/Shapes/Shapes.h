@@ -155,11 +155,4 @@ void Square::drawBorder(float lineWidth){
     glEnd();
 }
 
-void Shape::setColor( GLfloat r, GLfloat g, GLfloat b, GLfloat a )
-{
-    //Update color in shader
-//    glUniform4f( mPolygonColorLocation, r, g, b, a );
-}
-
-
 #endif // SHAPES_H

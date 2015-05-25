@@ -370,6 +370,8 @@ int main( int argc, char* args[] )
                   int x = 0, y = 0;
                   SDL_GetMouseState( &x, &y );
         		  }*/
+
+              //Logger::write(toString(Input::getMouseX()) + " " + toString(Input::getMouseY()));
 	       }
 	  
 	     //Render quad

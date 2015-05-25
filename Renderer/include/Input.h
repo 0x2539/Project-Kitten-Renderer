@@ -58,6 +58,18 @@ public:
 	{
 		return keys[key];
 	}
+
+    static int getMouseX()
+    {
+        SDL_GetMouseState( &_MouseX, &_MouseY );
+        return _MouseX;
+    }
+
+    static int getMouseY()
+    {
+        SDL_GetMouseState( &_MouseX, &_MouseY );
+        return _MouseY;
+    }
 };
 
 int Input::_MouseX, Input::_MouseY;

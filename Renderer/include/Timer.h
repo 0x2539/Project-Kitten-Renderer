@@ -1,6 +1,6 @@
 /**
     Timer.h
-    Purpose: Implements an timing system.
+    Purpose: Implements a timing system.
 
     @author Ion Ureche
     @version 1.0

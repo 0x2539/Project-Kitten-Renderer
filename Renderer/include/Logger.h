@@ -20,7 +20,7 @@ private:
 public:
 
     /**
-        Writes a message to output.
+        Writes a string message to output.
 
         @param message the message to print
         @return
@@ -30,7 +30,7 @@ public:
 	}
 
     /**
-        Writes a message to output.
+        Writes an unsigned char string to output.
 
         @param message the message to print
         @return
@@ -40,7 +40,7 @@ public:
 	}
 
     /**
-        Writes a message to output.
+        Writes a const char string message to output.
 
         @param message the message to print
         @return
@@ -50,7 +50,7 @@ public:
 	}
 
     /**
-        Writes a message to output.
+        Writes a char string message to output.
 
         @param message the message to print
         @return
@@ -60,7 +60,7 @@ public:
 	}
 
     /**
-        Writes a message to output.
+        Writes an int value to output.
 
         @param message the message to print
         @return

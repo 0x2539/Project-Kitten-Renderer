@@ -1,0 +1,13 @@
+digraph "C:/Users/Alexandru/Desktop/Git" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_8c46e945464de86fec4b7e7767e94a6c {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Desktop" fontname="Helvetica", fontsize="10", URL="dir_8c46e945464de86fec4b7e7767e94a6c.html"]
+  subgraph clusterdir_c1efb8f7253085a3f0772d8f98e0924f {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_c1efb8f7253085a3f0772d8f98e0924f.html"];
+    dir_c1efb8f7253085a3f0772d8f98e0924f [shape=plaintext label="Git"];
+    dir_39ed2b1ca89470c942da04f624c34258 [shape=box label="Project-Kitten-Renderer" color="red" fillcolor="white" style="filled" URL="dir_39ed2b1ca89470c942da04f624c34258.html"];
+  }
+  }
+}

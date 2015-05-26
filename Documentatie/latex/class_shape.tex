@@ -1,0 +1,159 @@
+\hypertarget{class_shape}{}\section{Shape Class Reference}
+\label{class_shape}\index{Shape@{Shape}}
+
+
+{\ttfamily \#include $<$Shape.\+h$>$}
+
+
+
+Inheritance diagram for Shape\+:
+% FIG 0
+
+
+Collaboration diagram for Shape\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_shape_afacc5aad8e37308c3ce8fef768199b05}{draw} ()=0
+\item 
+void \hyperlink{class_shape_ab8b36de701a4e376c4baaf4e46a6612b}{set\+Texture} (G\+Luint new\+Texture)
+\item 
+void \hyperlink{class_shape_ad2dd6757c54649671a5b8bc2d278eaf6}{set\+Color} (G\+Lfloat red, G\+Lfloat green, G\+Lfloat blue, G\+Lfloat alpha)
+\item 
+void \hyperlink{class_shape_a8949a1a808e0699cbafa307919149af4}{set\+Color} (\hyperlink{class_color_r_g_b_a}{Color\+R\+G\+B\+A} new\+Color)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shape_a32db6fa179d8703aa4f59659602f3dd3}{}G\+Luint {\bfseries texture}\label{class_shape_a32db6fa179d8703aa4f59659602f3dd3}
+
+\item 
+\hypertarget{class_shape_a091bbed77b00d7a4ec8e777e2162254a}{}\hyperlink{class_color_r_g_b_a}{Color\+R\+G\+B\+A} {\bfseries color}\label{class_shape_a091bbed77b00d7a4ec8e777e2162254a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_shape_8h_source}{Shape.\+h} Purpose\+: Implements a basic shape. In order to create a shape you need to create another class which inherits this one and implement your drawing method there.
+
+\begin{DoxyAuthor}{Author}
+Alex Buicescu 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 16 of file Shape.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_shape_afacc5aad8e37308c3ce8fef768199b05}{}\index{Shape@{Shape}!draw@{draw}}
+\index{draw@{draw}!Shape@{Shape}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Shape\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_shape_afacc5aad8e37308c3ce8fef768199b05}
+Renders the shape on the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_shape_rectangle_a20a7cfe33c50e3adc9ee1f8989458997}{Shape\+Rectangle}, \hyperlink{class_square_a2a8be87e5cb58dd25a8af0f6166536b9}{Square}, and \hyperlink{class_line_ab6265993bf5acbc28830181c3e712f10}{Line}.
+
+\hypertarget{class_shape_ad2dd6757c54649671a5b8bc2d278eaf6}{}\index{Shape@{Shape}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Shape@{Shape}}
+\subsubsection[{set\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{red, }
+\item[{G\+Lfloat}]{green, }
+\item[{G\+Lfloat}]{blue, }
+\item[{G\+Lfloat}]{alpha}
+\end{DoxyParamCaption}
+)}\label{class_shape_ad2dd6757c54649671a5b8bc2d278eaf6}
+Set the color that will be bound to the shape. All these values must take a value between 0 and 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & the red color \\
+\hline
+{\em green} & the green color \\
+\hline
+{\em blue} & the blue color \\
+\hline
+{\em alpha} & the alpha color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Shape.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_shape_a8949a1a808e0699cbafa307919149af4}{}\index{Shape@{Shape}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Shape@{Shape}}
+\subsubsection[{set\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf Color\+R\+G\+B\+A}}]{new\+Color}
+\end{DoxyParamCaption}
+)}\label{class_shape_a8949a1a808e0699cbafa307919149af4}
+Set the color that will be bound to the shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Color} & the color from which to take the red, green, blue and alpha levels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Shape.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_shape_ab8b36de701a4e376c4baaf4e46a6612b}{}\index{Shape@{Shape}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Shape@{Shape}}
+\subsubsection[{set\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+::set\+Texture (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{new\+Texture}
+\end{DoxyParamCaption}
+)}\label{class_shape_ab8b36de701a4e376c4baaf4e46a6612b}
+Set the texture that will be bound to the shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Texture} & the texture to bound to the shape \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Shape.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/\+Shapes/Shape.\+h\end{DoxyCompactItemize}

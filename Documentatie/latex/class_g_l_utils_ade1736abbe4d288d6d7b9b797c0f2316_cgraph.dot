@@ -1,0 +1,15 @@
+digraph "GLUtils::initGraphics"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="GLUtils::initGraphics",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="BasicWindow::initWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_basic_window.html#a3b44337e63449c56d60f17ac27f9ccf9"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="BasicWindow::setWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_basic_window.html#ab97041d3e4003aa4dd534f94ff397a75"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="BasicWindow::getWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_basic_window.html#a29bbe2dfe79ff2d054823b2e8ae27b4d"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Logger::write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_logger.html#a614edec0c80a48fabf74675ee8a316c0"];
+}

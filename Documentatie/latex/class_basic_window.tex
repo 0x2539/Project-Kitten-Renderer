@@ -1,0 +1,137 @@
+\hypertarget{class_basic_window}{}\section{Basic\+Window Class Reference}
+\label{class_basic_window}\index{Basic\+Window@{Basic\+Window}}
+
+
+{\ttfamily \#include $<$Basic\+Window.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_basic_window_a3b44337e63449c56d60f17ac27f9ccf9}{init\+Window} (int \+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+T\+H, int \+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+H\+T)
+\item 
+static void \hyperlink{class_basic_window_ab97041d3e4003aa4dd534f94ff397a75}{set\+Window} (S\+D\+L\+\_\+\+Window $\ast$g\+Window)
+\item 
+static S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{class_basic_window_a29bbe2dfe79ff2d054823b2e8ae27b4d}{get\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_basic_window_ac533610319f94eea462799fffa548d65}{}static int {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+T\+H}\label{class_basic_window_ac533610319f94eea462799fffa548d65}
+
+\item 
+\hypertarget{class_basic_window_a61ac5c2fe46167475fd5f3159d3cfcf6}{}static int {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+H\+T}\label{class_basic_window_a61ac5c2fe46167475fd5f3159d3cfcf6}
+
+\item 
+\hypertarget{class_basic_window_a41eaeb4d636442bd68abe0fe479aa911}{}static const int {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+F\+P\+S} = 60\label{class_basic_window_a41eaeb4d636442bd68abe0fe479aa911}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_basic_window_8h_source}{Basic\+Window.\+h} Purpose\+: Manages the creation of the application\textquotesingle{}s window.
+
+\begin{DoxyAuthor}{Author}
+Alex Buicescu 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 15 of file Basic\+Window.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_window_a29bbe2dfe79ff2d054823b2e8ae27b4d}{}\index{Basic\+Window@{Basic\+Window}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!Basic\+Window@{Basic\+Window}}
+\subsubsection[{get\+Window}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Window $\ast$ Basic\+Window\+::get\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_basic_window_a29bbe2dfe79ff2d054823b2e8ae27b4d}
+Get the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Basic\+Window.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{class_basic_window_a3b44337e63449c56d60f17ac27f9ccf9}{}\index{Basic\+Window@{Basic\+Window}!init\+Window@{init\+Window}}
+\index{init\+Window@{init\+Window}!Basic\+Window@{Basic\+Window}}
+\subsubsection[{init\+Window}]{\setlength{\rightskip}{0pt plus 5cm}bool Basic\+Window\+::init\+Window (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+T\+H, }
+\item[{int}]{\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+H\+T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_basic_window_a3b44337e63449c56d60f17ac27f9ccf9}
+Initialise the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+T\+H} & the screen width \\
+\hline
+{\em \+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+H\+T} & the screen height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the window was successfully created, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Basic\+Window.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_basic_window_ab97041d3e4003aa4dd534f94ff397a75}{}\index{Basic\+Window@{Basic\+Window}!set\+Window@{set\+Window}}
+\index{set\+Window@{set\+Window}!Basic\+Window@{Basic\+Window}}
+\subsubsection[{set\+Window}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Window\+::set\+Window (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Window $\ast$}]{g\+Window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_basic_window_ab97041d3e4003aa4dd534f94ff397a75}
+Set the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+Window} & the window \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 69 of file Basic\+Window.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/Basic\+Window.\+h\end{DoxyCompactItemize}

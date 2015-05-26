@@ -1,0 +1,317 @@
+\hypertarget{class_stars}{}\section{Stars Class Reference}
+\label{class_stars}\index{Stars@{Stars}}
+
+
+{\ttfamily \#include $<$Stars.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{class_stars_a61b9454a421728f686e45a209132f436}{random\+Float} (float a, float b)
+\item 
+static float \hyperlink{class_stars_ac4a7365be8cf875ea226ed5cac1e7d9d}{dist} (float x1, float y1, float x2, float y2)
+\item 
+static float \hyperlink{class_stars_a521a6c68db4d742ba3f2cfcce20281fd}{get\+Angle} (float x1, float y1, float x2, float y2)
+\item 
+static void \hyperlink{class_stars_ad508110016be8c071307f78ca7d38b82}{init} ()
+\item 
+static void \hyperlink{class_stars_a79c2bc6f201c4d8967b03ccb987b23a6}{draw} ()
+\item 
+static void \hyperlink{class_stars_aa92aca9a4ad38ae23d57074b7825e732}{update} ()
+\item 
+static void \hyperlink{class_stars_ae3eceb58ea18fc3c8fde7be2e2ec3d2c}{Create\+Universe} (int stars\+Number, float Center\+X, float Center\+Y, float Universe\+Size\+X, float Universe\+Size\+Y)
+\item 
+static void \hyperlink{class_stars_a7c8377a806b771ffcaa9fa203b126796}{clear\+Memory} ()
+\item 
+static void \hyperlink{class_stars_a452bc9ed3721c5c3e51c19fe710ef18e}{set\+Default\+Texture} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_stars_8h_source}{Stars.\+h} Purpose\+: Decorative background for games, which simulates rotating stars on the night sky.
+
+\begin{DoxyAuthor}{Author}
+Ion Ureche 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 18 of file Stars.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_stars_a7c8377a806b771ffcaa9fa203b126796}{}\index{Stars@{Stars}!clear\+Memory@{clear\+Memory}}
+\index{clear\+Memory@{clear\+Memory}!Stars@{Stars}}
+\subsubsection[{clear\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::clear\+Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_a7c8377a806b771ffcaa9fa203b126796}
+Clear the memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file Stars.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{class_stars_ae3eceb58ea18fc3c8fde7be2e2ec3d2c}{}\index{Stars@{Stars}!Create\+Universe@{Create\+Universe}}
+\index{Create\+Universe@{Create\+Universe}!Stars@{Stars}}
+\subsubsection[{Create\+Universe}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::\+Create\+Universe (
+\begin{DoxyParamCaption}
+\item[{int}]{stars\+Number, }
+\item[{float}]{Center\+X, }
+\item[{float}]{Center\+Y, }
+\item[{float}]{Universe\+Size\+X, }
+\item[{float}]{Universe\+Size\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_ae3eceb58ea18fc3c8fde7be2e2ec3d2c}
+Create the universe for the stars.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stars\+Number} & the number of the stars \\
+\hline
+{\em Ceter\+X} & the x coordinate of the center for the universe \\
+\hline
+{\em Ceter\+Y} & the y coordinate of the center for the universe \\
+\hline
+{\em Universe\+Size\+X} & the horizontal size of the universe \\
+\hline
+{\em Universe\+Size\+Y} & the vertical size of the universe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 163 of file Stars.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\hypertarget{class_stars_ac4a7365be8cf875ea226ed5cac1e7d9d}{}\index{Stars@{Stars}!dist@{dist}}
+\index{dist@{dist}!Stars@{Stars}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}float Stars\+::dist (
+\begin{DoxyParamCaption}
+\item[{float}]{x1, }
+\item[{float}]{y1, }
+\item[{float}]{x2, }
+\item[{float}]{y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_ac4a7365be8cf875ea226ed5cac1e7d9d}
+Get the distance between two points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & the x coordinate of the first point \\
+\hline
+{\em y1} & the y coordinate of the first point \\
+\hline
+{\em x2} & the x coordinate of the second point \\
+\hline
+{\em y2} & the y coordinate of the second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two points 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file Stars.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_stars_a79c2bc6f201c4d8967b03ccb987b23a6}{}\index{Stars@{Stars}!draw@{draw}}
+\index{draw@{draw}!Stars@{Stars}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_a79c2bc6f201c4d8967b03ccb987b23a6}
+Draw the stars.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file Stars.\+h.
+
+\hypertarget{class_stars_a521a6c68db4d742ba3f2cfcce20281fd}{}\index{Stars@{Stars}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Stars@{Stars}}
+\subsubsection[{get\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Stars\+::get\+Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{x1, }
+\item[{float}]{y1, }
+\item[{float}]{x2, }
+\item[{float}]{y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_a521a6c68db4d742ba3f2cfcce20281fd}
+Get the angle between two points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & the x coordinate of the first point \\
+\hline
+{\em y1} & the y coordinate of the first point \\
+\hline
+{\em x2} & the x coordinate of the second point \\
+\hline
+{\em y2} & the y coordinate of the second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two points 
+\end{DoxyReturn}
+
+
+Definition at line 151 of file Stars.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_stars_ad508110016be8c071307f78ca7d38b82}{}\index{Stars@{Stars}!init@{init}}
+\index{init@{init}!Stars@{Stars}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_ad508110016be8c071307f78ca7d38b82}
+Initialise the stars.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Stars.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\hypertarget{class_stars_a61b9454a421728f686e45a209132f436}{}\index{Stars@{Stars}!random\+Float@{random\+Float}}
+\index{random\+Float@{random\+Float}!Stars@{Stars}}
+\subsubsection[{random\+Float}]{\setlength{\rightskip}{0pt plus 5cm}float Stars\+::random\+Float (
+\begin{DoxyParamCaption}
+\item[{float}]{a, }
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_a61b9454a421728f686e45a209132f436}
+Generates a random float between a and b.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the minimum value returned \\
+\hline
+{\em b} & the maximum value returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random float 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file Stars.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\hypertarget{class_stars_a452bc9ed3721c5c3e51c19fe710ef18e}{}\index{Stars@{Stars}!set\+Default\+Texture@{set\+Default\+Texture}}
+\index{set\+Default\+Texture@{set\+Default\+Texture}!Stars@{Stars}}
+\subsubsection[{set\+Default\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::set\+Default\+Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_a452bc9ed3721c5c3e51c19fe710ef18e}
+Set the default texture for stars.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file Stars.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+\hypertarget{class_stars_aa92aca9a4ad38ae23d57074b7825e732}{}\index{Stars@{Stars}!update@{update}}
+\index{update@{update}!Stars@{Stars}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Stars\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_stars_aa92aca9a4ad38ae23d57074b7825e732}
+Update the stars.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file Stars.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 9
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/Stars.\+h\end{DoxyCompactItemize}

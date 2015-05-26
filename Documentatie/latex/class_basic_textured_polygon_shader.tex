@@ -1,0 +1,413 @@
+\hypertarget{class_basic_textured_polygon_shader}{}\section{Basic\+Textured\+Polygon\+Shader Class Reference}
+\label{class_basic_textured_polygon_shader}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+
+
+{\ttfamily \#include $<$Basic\+Textured\+Polygon\+Shader.\+h$>$}
+
+
+
+Inheritance diagram for Basic\+Textured\+Polygon\+Shader\+:
+% FIG 0
+
+
+Collaboration diagram for Basic\+Textured\+Polygon\+Shader\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_basic_textured_polygon_shader_a96372bf0373a1b0a98f65bd38f1842c5}{load\+Program} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a223de474ef7bd56c994a35b7a8e79a31}{set\+Projection} (glm\+::mat4 matrix)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a3f9a989cd2128d783d6c7c55b9a85119}{set\+Model\+View} (glm\+::mat4 matrix)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a6958c422c6aaddac499823cf034bf1a2}{left\+Mult\+Projection} (glm\+::mat4 matrix)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a86fa69bdffa569d870baa24f62cfbe64}{left\+Mult\+Model\+View} (glm\+::mat4 matrix)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a70d59898e2a090537c025c613991d0e8}{update\+Projection} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a39d297fb898feaf1484945c9674cbbeb}{update\+Model\+View} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_ad8e2bdc1ddf7a66d52e1689a27e58a56}{set\+Vertex\+Pointer} (G\+Lsizei stride, const G\+Lvoid $\ast$data)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a8fa5026aea4a341b5615cd21926b6f9a}{set\+Tex\+Coord\+Pointer} (G\+Lsizei stride, const G\+Lvoid $\ast$data)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a418b2fef8e5d20c1dc701b905ed69756}{enable\+Vertex\+Pointer} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_abb7f62c6d45ea55e10b7bb36f95e904a}{disable\+Vertex\+Pointer} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a6a808286f502afb7764764a03902fc63}{enable\+Tex\+Coord\+Pointer} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_afc590e102d76ec81e3111bf89c84d548}{disable\+Tex\+Coord\+Pointer} ()
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a82ed488e6b9e7c2562b1ff6e8fa5c78f}{set\+Texture\+Color} (\hyperlink{class_color_r_g_b_a}{Color\+R\+G\+B\+A} color)
+\item 
+void \hyperlink{class_basic_textured_polygon_shader_a1e482c3dcdd464d8d55432d9adf9a29c}{set\+Texture\+Unit} (G\+Luint unit)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_basic_textured_polygon_shader}{Basic\+Textured\+Polygon\+Shader} $\ast$ \hyperlink{class_basic_textured_polygon_shader_ac486c42bd73223b1118e0b010c7fb79e}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{_basic_textured_polygon_shader_8h_source}{Basic\+Textured\+Polygon\+Shader.\+h} Purpose\+: Loads, compiles and operates on basic shaders written in G\+L\+S\+L. It should only be used when you want to create a textured polygon. This class follows the singleton design pattern.
+
+\begin{DoxyAuthor}{Author}
+Alex Buicescu 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 19 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_textured_polygon_shader_afc590e102d76ec81e3111bf89c84d548}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!disable\+Tex\+Coord\+Pointer@{disable\+Tex\+Coord\+Pointer}}
+\index{disable\+Tex\+Coord\+Pointer@{disable\+Tex\+Coord\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{disable\+Tex\+Coord\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::disable\+Tex\+Coord\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_afc590e102d76ec81e3111bf89c84d548}
+Disables texture coordinate attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 345 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_abb7f62c6d45ea55e10b7bb36f95e904a}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!disable\+Vertex\+Pointer@{disable\+Vertex\+Pointer}}
+\index{disable\+Vertex\+Pointer@{disable\+Vertex\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{disable\+Vertex\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::disable\+Vertex\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_abb7f62c6d45ea55e10b7bb36f95e904a}
+Disables vertex position attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 335 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a6a808286f502afb7764764a03902fc63}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!enable\+Tex\+Coord\+Pointer@{enable\+Tex\+Coord\+Pointer}}
+\index{enable\+Tex\+Coord\+Pointer@{enable\+Tex\+Coord\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{enable\+Tex\+Coord\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::enable\+Tex\+Coord\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a6a808286f502afb7764764a03902fc63}
+Enables texture coordinate attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 340 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a418b2fef8e5d20c1dc701b905ed69756}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!enable\+Vertex\+Pointer@{enable\+Vertex\+Pointer}}
+\index{enable\+Vertex\+Pointer@{enable\+Vertex\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{enable\+Vertex\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::enable\+Vertex\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a418b2fef8e5d20c1dc701b905ed69756}
+Enables vertex position attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 330 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_ac486c42bd73223b1118e0b010c7fb79e}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{get\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\+Textured\+Polygon\+Shader} $\ast$ Basic\+Textured\+Polygon\+Shader\+::get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_basic_textured_polygon_shader_ac486c42bd73223b1118e0b010c7fb79e}
+Instead of creating a new object, use this method to get a pointer to an object that will be persistent through out the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 209 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_basic_textured_polygon_shader_a86fa69bdffa569d870baa24f62cfbe64}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!left\+Mult\+Model\+View@{left\+Mult\+Model\+View}}
+\index{left\+Mult\+Model\+View@{left\+Mult\+Model\+View}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{left\+Mult\+Model\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::left\+Mult\+Model\+View (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a86fa69bdffa569d870baa24f62cfbe64}
+Multiplies the model view matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the model view matrix to be multiplied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 305 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a6958c422c6aaddac499823cf034bf1a2}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!left\+Mult\+Projection@{left\+Mult\+Projection}}
+\index{left\+Mult\+Projection@{left\+Mult\+Projection}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{left\+Mult\+Projection}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::left\+Mult\+Projection (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a6958c422c6aaddac499823cf034bf1a2}
+Multiplies the projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the projection matrix to be multiplied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 300 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a96372bf0373a1b0a98f65bd38f1842c5}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!load\+Program@{load\+Program}}
+\index{load\+Program@{load\+Program}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{load\+Program}]{\setlength{\rightskip}{0pt plus 5cm}bool Basic\+Textured\+Polygon\+Shader\+::load\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_basic_textured_polygon_shader_a96372bf0373a1b0a98f65bd38f1842c5}
+Load the shader files to memory and compile them. If no error occured during the loading and compilation, then link the shaders to our program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_shader_program_a77a03970497041319d7e996c92f59655}{Shader\+Program}.
+
+
+
+Definition at line 217 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_basic_textured_polygon_shader_a3f9a989cd2128d783d6c7c55b9a85119}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Model\+View@{set\+Model\+View}}
+\index{set\+Model\+View@{set\+Model\+View}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Model\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Model\+View (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a3f9a989cd2128d783d6c7c55b9a85119}
+Set the value of the model view matrix to pass to the shader program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix that will be passed to the shader program \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 295 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a223de474ef7bd56c994a35b7a8e79a31}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Projection@{set\+Projection}}
+\index{set\+Projection@{set\+Projection}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Projection}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Projection (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4}]{matrix}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a223de474ef7bd56c994a35b7a8e79a31}
+Set the value of the projection matrix to pass to the shader program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix that will be passed to the shader program \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 290 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a8fa5026aea4a341b5615cd21926b6f9a}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Tex\+Coord\+Pointer@{set\+Tex\+Coord\+Pointer}}
+\index{set\+Tex\+Coord\+Pointer@{set\+Tex\+Coord\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Tex\+Coord\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Tex\+Coord\+Pointer (
+\begin{DoxyParamCaption}
+\item[{G\+Lsizei}]{stride, }
+\item[{const G\+Lvoid $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a8fa5026aea4a341b5615cd21926b6f9a}
+Sets texture coordinate attribute pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stride} & the stride of the texture vertex \\
+\hline
+{\em data} & the data inside the texture vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 325 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a82ed488e6b9e7c2562b1ff6e8fa5c78f}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Texture\+Color@{set\+Texture\+Color}}
+\index{set\+Texture\+Color@{set\+Texture\+Color}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Texture\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Texture\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf Color\+R\+G\+B\+A}}]{color}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a82ed488e6b9e7c2562b1ff6e8fa5c78f}
+Updates shader program textured polygon color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_basic_textured_polygon_shader_a1e482c3dcdd464d8d55432d9adf9a29c}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Texture\+Unit@{set\+Texture\+Unit}}
+\index{set\+Texture\+Unit@{set\+Texture\+Unit}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Texture\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Texture\+Unit (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{unit}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a1e482c3dcdd464d8d55432d9adf9a29c}
+Updates shader program multitexture unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & the new value for the texture unit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 355 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_ad8e2bdc1ddf7a66d52e1689a27e58a56}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!set\+Vertex\+Pointer@{set\+Vertex\+Pointer}}
+\index{set\+Vertex\+Pointer@{set\+Vertex\+Pointer}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{set\+Vertex\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::set\+Vertex\+Pointer (
+\begin{DoxyParamCaption}
+\item[{G\+Lsizei}]{stride, }
+\item[{const G\+Lvoid $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_ad8e2bdc1ddf7a66d52e1689a27e58a56}
+Sets vertex position attribute pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stride} & the stride of the position vertex \\
+\hline
+{\em data} & the data inside the position vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 320 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a39d297fb898feaf1484945c9674cbbeb}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!update\+Model\+View@{update\+Model\+View}}
+\index{update\+Model\+View@{update\+Model\+View}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{update\+Model\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::update\+Model\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a39d297fb898feaf1484945c9674cbbeb}
+Updates shader program modelview matrix with member modelview matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 315 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+\hypertarget{class_basic_textured_polygon_shader_a70d59898e2a090537c025c613991d0e8}{}\index{Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}!update\+Projection@{update\+Projection}}
+\index{update\+Projection@{update\+Projection}!Basic\+Textured\+Polygon\+Shader@{Basic\+Textured\+Polygon\+Shader}}
+\subsubsection[{update\+Projection}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Textured\+Polygon\+Shader\+::update\+Projection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_textured_polygon_shader_a70d59898e2a090537c025c613991d0e8}
+Updates shader program projection matrix with member projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file Basic\+Textured\+Polygon\+Shader.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/\+Shaders/Basic\+Textured\+Polygon\+Shader.\+h\end{DoxyCompactItemize}

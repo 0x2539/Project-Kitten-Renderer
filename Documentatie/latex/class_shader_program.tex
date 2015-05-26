@@ -1,0 +1,318 @@
+\hypertarget{class_shader_program}{}\section{Shader\+Program Class Reference}
+\label{class_shader_program}\index{Shader\+Program@{Shader\+Program}}
+
+
+Inheritance diagram for Shader\+Program\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shader_program_add585b75cb78f4afa865ea7b27c9651e}{Shader\+Program} ()
+\item 
+virtual \hyperlink{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f}{$\sim$\+Shader\+Program} ()
+\item 
+virtual bool \hyperlink{class_shader_program_a77a03970497041319d7e996c92f59655}{load\+Program} ()=0
+\item 
+virtual void \hyperlink{class_shader_program_a4000b2c389106aba33d9bf08cc1b5b1a}{free\+Program} ()
+\item 
+bool \hyperlink{class_shader_program_a5d29230086616d9f0221c25bdc3f5b8d}{bind} ()
+\item 
+void \hyperlink{class_shader_program_aeb6df1f103db0e67efbb37ab31983e7f}{unbind} ()
+\item 
+G\+Luint \hyperlink{class_shader_program_a4bc838439dd995dfd7aafd337fa28995}{get\+Program\+I\+D} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_shader_program_a4ccdc87e3241168949491117b687ee71}{print\+Program\+Log} (G\+Luint program)
+\item 
+void \hyperlink{class_shader_program_a5bf4c2d263d0419835da1f66a12a5a00}{print\+Shader\+Log} (G\+Luint shader)
+\item 
+G\+Luint \hyperlink{class_shader_program_a7a25067fece6965c039432cf86e49446}{load\+Shader\+From\+File} (std\+::string path, G\+Lenum shader\+Type)
+\item 
+G\+Lint \hyperlink{class_shader_program_ae88ae348f010452392ed77dfb0310c3a}{load\+Uniform} (std\+::string uniform\+Name)
+\item 
+G\+Lint \hyperlink{class_shader_program_adeb74e1846d0aee5f24c661c18062634}{load\+Attrib} (std\+::string attrib\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shader_program_a0c8e14a9f1e194ee9c92503ad3e2aba5}{}G\+Luint {\bfseries m\+Program\+I\+D}\label{class_shader_program_a0c8e14a9f1e194ee9c92503ad3e2aba5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file Shader\+Program.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_shader_program_add585b75cb78f4afa865ea7b27c9651e}{}\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}Shader\+Program\+::\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shader_program_add585b75cb78f4afa865ea7b27c9651e}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Shader\+Program.\+h.
+
+\hypertarget{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f}{}\index{Shader\+Program@{Shader\+Program}!````~Shader\+Program@{$\sim$\+Shader\+Program}}
+\index{````~Shader\+Program@{$\sim$\+Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{$\sim$\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}Shader\+Program\+::$\sim$\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f}
+Destroys an instance of this class. This is virtual because we don\textquotesingle{}t want this class to have any instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file Shader\+Program.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_shader_program_a5d29230086616d9f0221c25bdc3f5b8d}{}\index{Shader\+Program@{Shader\+Program}!bind@{bind}}
+\index{bind@{bind}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}bool Shader\+Program\+::bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shader_program_a5d29230086616d9f0221c25bdc3f5b8d}
+Set this program as the current shader program. Reports to console if there was an error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file Shader\+Program.\+h.
+
+\hypertarget{class_shader_program_a4000b2c389106aba33d9bf08cc1b5b1a}{}\index{Shader\+Program@{Shader\+Program}!free\+Program@{free\+Program}}
+\index{free\+Program@{free\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{free\+Program}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::free\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_shader_program_a4000b2c389106aba33d9bf08cc1b5b1a}
+Free shader program if it exists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file Shader\+Program.\+h.
+
+\hypertarget{class_shader_program_a4bc838439dd995dfd7aafd337fa28995}{}\index{Shader\+Program@{Shader\+Program}!get\+Program\+I\+D@{get\+Program\+I\+D}}
+\index{get\+Program\+I\+D@{get\+Program\+I\+D}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{get\+Program\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Shader\+Program\+::get\+Program\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shader_program_a4bc838439dd995dfd7aafd337fa28995}
+Get the id of the shader program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file Shader\+Program.\+h.
+
+\hypertarget{class_shader_program_adeb74e1846d0aee5f24c661c18062634}{}\index{Shader\+Program@{Shader\+Program}!load\+Attrib@{load\+Attrib}}
+\index{load\+Attrib@{load\+Attrib}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{load\+Attrib}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Shader\+Program\+::load\+Attrib (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{attrib\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_shader_program_adeb74e1846d0aee5f24c661c18062634}
+Loads an attribute from a loaded shader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & the name of the attribute to load \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the attribute 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file Shader\+Program.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\hypertarget{class_shader_program_a77a03970497041319d7e996c92f59655}{}\index{Shader\+Program@{Shader\+Program}!load\+Program@{load\+Program}}
+\index{load\+Program@{load\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{load\+Program}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Shader\+Program\+::load\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_shader_program_a77a03970497041319d7e996c92f59655}
+Load the shader files to memory and compile them. If no error occured during the loading and compilation, then link the shaders to our program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_basic_textured_polygon_shader_a96372bf0373a1b0a98f65bd38f1842c5}{Basic\+Textured\+Polygon\+Shader}.
+
+\hypertarget{class_shader_program_a7a25067fece6965c039432cf86e49446}{}\index{Shader\+Program@{Shader\+Program}!load\+Shader\+From\+File@{load\+Shader\+From\+File}}
+\index{load\+Shader\+From\+File@{load\+Shader\+From\+File}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{load\+Shader\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Shader\+Program\+::load\+Shader\+From\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path, }
+\item[{G\+Lenum}]{shader\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_shader_program_a7a25067fece6965c039432cf86e49446}
+Load a shader program from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path from where to load the shader \\
+\hline
+{\em shader\+Type} & the type of the shader \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the shader 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file Shader\+Program.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_shader_program_ae88ae348f010452392ed77dfb0310c3a}{}\index{Shader\+Program@{Shader\+Program}!load\+Uniform@{load\+Uniform}}
+\index{load\+Uniform@{load\+Uniform}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{load\+Uniform}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Shader\+Program\+::load\+Uniform (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{uniform\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_shader_program_ae88ae348f010452392ed77dfb0310c3a}
+Loads a uniform from a loaded shader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & the name of the uniform to load \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the uniform 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file Shader\+Program.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_shader_program_a4ccdc87e3241168949491117b687ee71}{}\index{Shader\+Program@{Shader\+Program}!print\+Program\+Log@{print\+Program\+Log}}
+\index{print\+Program\+Log@{print\+Program\+Log}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{print\+Program\+Log}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::print\+Program\+Log (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_shader_program_a4ccdc87e3241168949491117b687ee71}
+Print program log. Reports error is G\+Luint I\+D is not a shader program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & the id of the shader program \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 186 of file Shader\+Program.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_shader_program_a5bf4c2d263d0419835da1f66a12a5a00}{}\index{Shader\+Program@{Shader\+Program}!print\+Shader\+Log@{print\+Shader\+Log}}
+\index{print\+Shader\+Log@{print\+Shader\+Log}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{print\+Shader\+Log}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::print\+Shader\+Log (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_shader_program_a5bf4c2d263d0419835da1f66a12a5a00}
+Print shader log. Reports error is G\+Luint I\+D is not a shader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & the id of the shader \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 218 of file Shader\+Program.\+h.
+
+\hypertarget{class_shader_program_aeb6df1f103db0e67efbb37ab31983e7f}{}\index{Shader\+Program@{Shader\+Program}!unbind@{unbind}}
+\index{unbind@{unbind}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::unbind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shader_program_aeb6df1f103db0e67efbb37ab31983e7f}
+Set default shader program as current program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file Shader\+Program.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/\+Shaders/Shader\+Program.\+h\end{DoxyCompactItemize}

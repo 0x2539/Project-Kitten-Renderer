@@ -1,0 +1,21 @@
+digraph "Logger::write"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Logger::write",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AudioEngine::playSound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_audio_engine.html#a045d53d2a4c7331d21e053f9153b197e"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="AudioEngine::stopAllSounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_audio_engine.html#ab26d5b6c36d840ff611f20ac9000cb5a"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="BasicWindow::initWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_basic_window.html#a3b44337e63449c56d60f17ac27f9ccf9"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GLUtils::initGraphics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_l_utils.html#ade1736abbe4d288d6d7b9b797c0f2316"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ShaderProgram::loadUniform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_shader_program.html#ae88ae348f010452392ed77dfb0310c3a"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ShaderProgram::loadAttrib",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_shader_program.html#adeb74e1846d0aee5f24c661c18062634"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="TextureLoader::addTexture",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_texture_loader.html#a553bf3d71fdd7df1665e20e2957cc35d"];
+}

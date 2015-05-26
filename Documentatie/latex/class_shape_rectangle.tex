@@ -1,0 +1,543 @@
+\hypertarget{class_shape_rectangle}{}\section{Shape\+Rectangle Class Reference}
+\label{class_shape_rectangle}\index{Shape\+Rectangle@{Shape\+Rectangle}}
+
+
+Inheritance diagram for Shape\+Rectangle\+:
+% FIG 0
+
+
+Collaboration diagram for Shape\+Rectangle\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shape_rectangle_a8cdb8cd9d0fa3c64d5a269dd9b8181ac}{Shape\+Rectangle} ()
+\item 
+\hyperlink{class_shape_rectangle_ad11376a9387ce301abbeb5986261e9a6}{Shape\+Rectangle} (\hyperlink{class_point}{Point} $\ast$location, float width, float height, G\+Luint Texture=0)
+\item 
+\hyperlink{class_shape_rectangle_aadea0d8e3cc30fb401b587be8f0bb793}{Shape\+Rectangle} (\hyperlink{class_point}{Point} $\ast$location, float $\ast$width, float $\ast$height, G\+Luint Texture=0)
+\item 
+void \hyperlink{class_shape_rectangle_a7fd691a209b8e73d2849ce8e675f2c9f}{draw\+Border} (float line\+Width)
+\item 
+void \hyperlink{class_shape_rectangle_a20a7cfe33c50e3adc9ee1f8989458997}{draw} ()
+\item 
+void \hyperlink{class_shape_rectangle_a27a4f3efb30a8233614afcea472145dd}{update} ()
+\item 
+void \hyperlink{class_shape_rectangle_ab9f7ab7f3be2f09e46e3790644c414f9}{set\+Location} (\hyperlink{class_point}{Point} $\ast$location)
+\item 
+void \hyperlink{class_shape_rectangle_a0d123eb4043cb3bad2c7700dc0b35439}{set\+Location} (float x\+Coordinate, float y\+Coordinate)
+\item 
+\hyperlink{class_point}{Point} $\ast$ \hyperlink{class_shape_rectangle_ad625cedb3495d76cdcc750da474b84ad}{get\+Location} ()
+\item 
+void \hyperlink{class_shape_rectangle_aaeea81487d18c816bcb158491e44f24a}{set\+Location\+X} (float x\+Coordinate)
+\item 
+float \hyperlink{class_shape_rectangle_a270b44e1c3580bdc47659d98ff10155f}{get\+Location\+X} ()
+\item 
+void \hyperlink{class_shape_rectangle_ae0e4300d339e074856f2eb971642f0e1}{set\+Location\+Y} (float y\+Coordinate)
+\item 
+float \hyperlink{class_shape_rectangle_a625f77516f1a81c2394ffb366dac0cde}{get\+Location\+Y} ()
+\item 
+void \hyperlink{class_shape_rectangle_ab7c98e1ae45dcbeacda467e6c3248c65}{set\+Size} (float width, float height)
+\item 
+void \hyperlink{class_shape_rectangle_a56813e435437b7bdee9934879306eccd}{set\+Width} (float width)
+\item 
+float \hyperlink{class_shape_rectangle_a698aef9d35f44b45581ff973e5ca5d66}{get\+Width} ()
+\item 
+void \hyperlink{class_shape_rectangle_a033d903ad36dce1759c413b505648eb3}{set\+Height} (float height)
+\item 
+float \hyperlink{class_shape_rectangle_aa23913713b8e6df47e320be6f2df82f2}{get\+Height} ()
+\item 
+void \hyperlink{class_shape_rectangle_aa7e763889f9695eff2992de3af9f626c}{add\+And\+Start\+Animation} (\hyperlink{class_basic_transform_animation}{Basic\+Transform\+Animation} $\ast$animation)
+\item 
+void \hyperlink{class_shape_rectangle_a334fccb8c9cf4146747a1378eae0cee5}{set\+Text\+Coord} (G\+Lfloat tex\+Left, G\+Lfloat tex\+Top, G\+Lfloat tex\+Right, G\+Lfloat tex\+Bottom)
+\item 
+void \hyperlink{class_shape_rectangle_a65b4601964e17f7221827a303bcedd4e}{allocate\+Dynamic\+Memory} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file Shape\+Rectangle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_shape_rectangle_a8cdb8cd9d0fa3c64d5a269dd9b8181ac}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{Shape\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}Shape\+Rectangle\+::\+Shape\+Rectangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a8cdb8cd9d0fa3c64d5a269dd9b8181ac}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_ad11376a9387ce301abbeb5986261e9a6}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{Shape\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}Shape\+Rectangle\+::\+Shape\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf Point} $\ast$}]{location, }
+\item[{float}]{width, }
+\item[{float}]{height, }
+\item[{G\+Luint}]{Texture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_ad11376a9387ce301abbeb5986261e9a6}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & the location where to render to rectangle \\
+\hline
+{\em width} & the width of the rectangle \\
+\hline
+{\em height} & the height of the rectangle \\
+\hline
+{\em Texture} & the texture to bind to the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 279 of file Shape\+Rectangle.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_shape_rectangle_aadea0d8e3cc30fb401b587be8f0bb793}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\index{Shape\+Rectangle@{Shape\+Rectangle}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{Shape\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}Shape\+Rectangle\+::\+Shape\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf Point} $\ast$}]{location, }
+\item[{float $\ast$}]{width, }
+\item[{float $\ast$}]{height, }
+\item[{G\+Luint}]{Texture = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_aadea0d8e3cc30fb401b587be8f0bb793}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & the location where to render to rectangle \\
+\hline
+{\em width} & the width of the rectangle \\
+\hline
+{\em height} & the height of the rectangle \\
+\hline
+{\em Texture} & the texture to bind to the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 293 of file Shape\+Rectangle.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_shape_rectangle_aa7e763889f9695eff2992de3af9f626c}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!add\+And\+Start\+Animation@{add\+And\+Start\+Animation}}
+\index{add\+And\+Start\+Animation@{add\+And\+Start\+Animation}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{add\+And\+Start\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::add\+And\+Start\+Animation (
+\begin{DoxyParamCaption}
+\item[{{\bf Basic\+Transform\+Animation} $\ast$}]{animation}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_aa7e763889f9695eff2992de3af9f626c}
+Add a new animation and start it immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animation} & the animation to add and start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 493 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a65b4601964e17f7221827a303bcedd4e}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!allocate\+Dynamic\+Memory@{allocate\+Dynamic\+Memory}}
+\index{allocate\+Dynamic\+Memory@{allocate\+Dynamic\+Memory}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{allocate\+Dynamic\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::allocate\+Dynamic\+Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a65b4601964e17f7221827a303bcedd4e}
+Allocates dynamic memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a20a7cfe33c50e3adc9ee1f8989458997}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!draw@{draw}}
+\index{draw@{draw}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_shape_rectangle_a20a7cfe33c50e3adc9ee1f8989458997}
+Draw the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_shape_afacc5aad8e37308c3ce8fef768199b05}{Shape}.
+
+
+
+Definition at line 365 of file Shape\+Rectangle.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_shape_rectangle_a7fd691a209b8e73d2849ce8e675f2c9f}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!draw\+Border@{draw\+Border}}
+\index{draw\+Border@{draw\+Border}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{draw\+Border}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::draw\+Border (
+\begin{DoxyParamCaption}
+\item[{float}]{line\+Width}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a7fd691a209b8e73d2849ce8e675f2c9f}
+Draw a border around the rectangle
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+Width} & the width of the border \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 416 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_aa23913713b8e6df47e320be6f2df82f2}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\+Rectangle\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_aa23913713b8e6df47e320be6f2df82f2}
+Get the height of the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 488 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_ad625cedb3495d76cdcc750da474b84ad}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{get\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} $\ast$ Shape\+Rectangle\+::get\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_ad625cedb3495d76cdcc750da474b84ad}
+Get the rectangle location.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 440 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a270b44e1c3580bdc47659d98ff10155f}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!get\+Location\+X@{get\+Location\+X}}
+\index{get\+Location\+X@{get\+Location\+X}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{get\+Location\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\+Rectangle\+::get\+Location\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a270b44e1c3580bdc47659d98ff10155f}
+Get the rectangle\textquotesingle{}s x coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 450 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a625f77516f1a81c2394ffb366dac0cde}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!get\+Location\+Y@{get\+Location\+Y}}
+\index{get\+Location\+Y@{get\+Location\+Y}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{get\+Location\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\+Rectangle\+::get\+Location\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a625f77516f1a81c2394ffb366dac0cde}
+Get the rectangle\textquotesingle{}s y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 460 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a698aef9d35f44b45581ff973e5ca5d66}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\+Rectangle\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a698aef9d35f44b45581ff973e5ca5d66}
+Get the width of the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 477 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a033d903ad36dce1759c413b505648eb3}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Height@{set\+Height}}
+\index{set\+Height@{set\+Height}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Height}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Height (
+\begin{DoxyParamCaption}
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a033d903ad36dce1759c413b505648eb3}
+Set the height of the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & the height of the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 482 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_ab9f7ab7f3be2f09e46e3790644c414f9}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Location@{set\+Location}}
+\index{set\+Location@{set\+Location}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Location}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Location (
+\begin{DoxyParamCaption}
+\item[{{\bf Point} $\ast$}]{location}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_ab9f7ab7f3be2f09e46e3790644c414f9}
+Set a new location for the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & the point from which the rectangle will get the location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 429 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a0d123eb4043cb3bad2c7700dc0b35439}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Location@{set\+Location}}
+\index{set\+Location@{set\+Location}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Location}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Location (
+\begin{DoxyParamCaption}
+\item[{float}]{x\+Coordinate, }
+\item[{float}]{y\+Coordinate}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a0d123eb4043cb3bad2c7700dc0b35439}
+Set a new location for the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Coordinate} & the x coordinate \\
+\hline
+{\em y\+Coordinate} & the y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 434 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_aaeea81487d18c816bcb158491e44f24a}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Location\+X@{set\+Location\+X}}
+\index{set\+Location\+X@{set\+Location\+X}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Location\+X}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Location\+X (
+\begin{DoxyParamCaption}
+\item[{float}]{x\+Coordinate}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_aaeea81487d18c816bcb158491e44f24a}
+Set the rectangle\textquotesingle{}s x coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Coordinate} & the rectangle\textquotesingle{}s x coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 445 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_ae0e4300d339e074856f2eb971642f0e1}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Location\+Y@{set\+Location\+Y}}
+\index{set\+Location\+Y@{set\+Location\+Y}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Location\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Location\+Y (
+\begin{DoxyParamCaption}
+\item[{float}]{y\+Coordinate}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_ae0e4300d339e074856f2eb971642f0e1}
+Set the rectangle\textquotesingle{}s y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+Coordinate} & the rectangle\textquotesingle{}s y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 455 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_ab7c98e1ae45dcbeacda467e6c3248c65}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_ab7c98e1ae45dcbeacda467e6c3248c65}
+Set the size of the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the rectangle \\
+\hline
+{\em height} & the height of the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 465 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a334fccb8c9cf4146747a1378eae0cee5}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Text\+Coord@{set\+Text\+Coord}}
+\index{set\+Text\+Coord@{set\+Text\+Coord}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Text\+Coord}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Text\+Coord (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{tex\+Left, }
+\item[{G\+Lfloat}]{tex\+Top, }
+\item[{G\+Lfloat}]{tex\+Right, }
+\item[{G\+Lfloat}]{tex\+Bottom}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a334fccb8c9cf4146747a1378eae0cee5}
+Set what part of the sprite to draw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex\+Left} & the left coordinate \\
+\hline
+{\em tex\+Top} & the top coordinate \\
+\hline
+{\em tex\+Right} & the right coordinate \\
+\hline
+{\em tex\+Bottom} & the bottom coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 358 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a56813e435437b7bdee9934879306eccd}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{set\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{float}]{width}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a56813e435437b7bdee9934879306eccd}
+Set the width of the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 471 of file Shape\+Rectangle.\+h.
+
+\hypertarget{class_shape_rectangle_a27a4f3efb30a8233614afcea472145dd}{}\index{Shape\+Rectangle@{Shape\+Rectangle}!update@{update}}
+\index{update@{update}!Shape\+Rectangle@{Shape\+Rectangle}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Shape\+Rectangle\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_shape_rectangle_a27a4f3efb30a8233614afcea472145dd}
+Update the rectangle\textquotesingle{}s animations and other stuff.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 411 of file Shape\+Rectangle.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/\+Shapes/Shape\+Rectangle.\+h\end{DoxyCompactItemize}

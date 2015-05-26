@@ -1,0 +1,13 @@
+digraph "C:/Users/Alexandru/Desktop/Git/Project-Kitten-Renderer/Renderer/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d326cf0099d2e9dc0ae636a95340eaad {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Renderer" fontname="Helvetica", fontsize="10", URL="dir_d326cf0099d2e9dc0ae636a95340eaad.html"]
+  subgraph clusterdir_b7af573e44db28f91377c711e551e83e {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_b7af573e44db28f91377c711e551e83e.html"];
+    dir_b7af573e44db28f91377c711e551e83e [shape=plaintext label="src"];
+    dir_10c163a871e6c8d2d5d81bb992be3b5e [shape=box label="GL" color="black" fillcolor="white" style="filled" URL="dir_10c163a871e6c8d2d5d81bb992be3b5e.html"];
+  }
+  }
+}

@@ -1,0 +1,394 @@
+\hypertarget{class_basic_transform_animation}{}\section{Basic\+Transform\+Animation Class Reference}
+\label{class_basic_transform_animation}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+
+
+{\ttfamily \#include $<$Basic\+Transform\+Animation.\+h$>$}
+
+
+
+Inheritance diagram for Basic\+Transform\+Animation\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_basic_transform_animation_a12cbbe1de97f1bc06e3bdf25c9a46045}{set\+Duration} (long duration)
+\item 
+long \hyperlink{class_basic_transform_animation_a57c871bf0044ce70872d2fbd12f3317a}{get\+Duration} ()
+\item 
+void \hyperlink{class_basic_transform_animation_a256fc4440ecd8b14155749df966cdfb0}{set\+Elapsed\+Time} (long elapsed\+Time)
+\item 
+long \hyperlink{class_basic_transform_animation_a7ddb2882c528e4fb3840a3613c8cfd9a}{get\+Elapsed\+Time} ()
+\item 
+void \hyperlink{class_basic_transform_animation_abb0b8ba9c165d6ac95415c4d61f73fe6}{set\+Fill\+After} (bool fill\+After)
+\item 
+bool \hyperlink{class_basic_transform_animation_a5c4ce9cc0d4beb70a3f6f13ec37ca6e5}{get\+Fill\+After} ()
+\item 
+bool \hyperlink{class_basic_transform_animation_a20e1dc6f82c86a9153445d786d14c418}{is\+Finished} ()
+\item 
+void \hyperlink{class_basic_transform_animation_a01888bebf388f05201c5dda18c24d4ef}{set\+Relative\+Point} (\hyperlink{class_point}{Point} relative\+Point)
+\item 
+\hyperlink{class_point}{Point} \hyperlink{class_basic_transform_animation_a69dc2238c5a86960e017a81e944ec591}{get\+Relative\+Point} ()
+\item 
+void \hyperlink{class_basic_transform_animation_a3989a6b289f60dd868c64f3e9ea8f9a5}{set\+Relative\+Point\+X} (float x)
+\item 
+float \hyperlink{class_basic_transform_animation_afdd12616f28afea6332ebb90bc3fe47a}{get\+Relative\+Point\+X} ()
+\item 
+void \hyperlink{class_basic_transform_animation_afa794d26d807dea36573ccb8accd7029}{set\+Relative\+Point\+Y} (float y)
+\item 
+float \hyperlink{class_basic_transform_animation_ab4717d34671f3f59a18120c14cbdb5d3}{get\+Relative\+Point\+Y} ()
+\item 
+virtual void \hyperlink{class_basic_transform_animation_aeeb48c45423783d9dd657441b40c2569}{update} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_basic_transform_animation_a53f15b4ca9e37f22ba02c83dc78b004c}{}bool {\bfseries \+\_\+finished}\label{class_basic_transform_animation_a53f15b4ca9e37f22ba02c83dc78b004c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_basic_transform_animation_8h_source}{Basic\+Transform\+Animation.\+h} Purpose\+: Implements basic class for any animation. If you need an animation then create a new class which inherits this class and implement your methods there.
+
+\begin{DoxyAuthor}{Author}
+Alex Buicescu 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 14 of file Basic\+Transform\+Animation.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_transform_animation_a57c871bf0044ce70872d2fbd12f3317a}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}long Basic\+Transform\+Animation\+::get\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a57c871bf0044ce70872d2fbd12f3317a}
+Get the duration of the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 168 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\hypertarget{class_basic_transform_animation_a7ddb2882c528e4fb3840a3613c8cfd9a}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Elapsed\+Time@{get\+Elapsed\+Time}}
+\index{get\+Elapsed\+Time@{get\+Elapsed\+Time}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Elapsed\+Time}]{\setlength{\rightskip}{0pt plus 5cm}long Basic\+Transform\+Animation\+::get\+Elapsed\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a7ddb2882c528e4fb3840a3613c8cfd9a}
+Get the amount of time passed since starting the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_basic_transform_animation_a5c4ce9cc0d4beb70a3f6f13ec37ca6e5}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Fill\+After@{get\+Fill\+After}}
+\index{get\+Fill\+After@{get\+Fill\+After}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Fill\+After}]{\setlength{\rightskip}{0pt plus 5cm}bool Basic\+Transform\+Animation\+::get\+Fill\+After (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a5c4ce9cc0d4beb70a3f6f13ec37ca6e5}
+Get the fill after property. This is set using \hyperlink{class_basic_transform_animation_abb0b8ba9c165d6ac95415c4d61f73fe6}{set\+Fill\+After(bool)} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 188 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_basic_transform_animation_a69dc2238c5a86960e017a81e944ec591}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Relative\+Point@{get\+Relative\+Point}}
+\index{get\+Relative\+Point@{get\+Relative\+Point}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Relative\+Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Basic\+Transform\+Animation\+::get\+Relative\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a69dc2238c5a86960e017a81e944ec591}
+Get the relative point from where the animation makes its effect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file Basic\+Transform\+Animation.\+h.
+
+\hypertarget{class_basic_transform_animation_afdd12616f28afea6332ebb90bc3fe47a}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Relative\+Point\+X@{get\+Relative\+Point\+X}}
+\index{get\+Relative\+Point\+X@{get\+Relative\+Point\+X}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Relative\+Point\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Basic\+Transform\+Animation\+::get\+Relative\+Point\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_afdd12616f28afea6332ebb90bc3fe47a}
+Get the x coordinate of the relative point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the relative point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 208 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_basic_transform_animation_ab4717d34671f3f59a18120c14cbdb5d3}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!get\+Relative\+Point\+Y@{get\+Relative\+Point\+Y}}
+\index{get\+Relative\+Point\+Y@{get\+Relative\+Point\+Y}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{get\+Relative\+Point\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Basic\+Transform\+Animation\+::get\+Relative\+Point\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_ab4717d34671f3f59a18120c14cbdb5d3}
+Get the y coordinate of the relative point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & the y coordinate of the relative point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 218 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 5
+
+
+\hypertarget{class_basic_transform_animation_a20e1dc6f82c86a9153445d786d14c418}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{is\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}bool Basic\+Transform\+Animation\+::is\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a20e1dc6f82c86a9153445d786d14c418}
+Get if the animation has finished.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Basic\+Transform\+Animation.\+h.
+
+\hypertarget{class_basic_transform_animation_a12cbbe1de97f1bc06e3bdf25c9a46045}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Duration@{set\+Duration}}
+\index{set\+Duration@{set\+Duration}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Duration (
+\begin{DoxyParamCaption}
+\item[{long}]{duration}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a12cbbe1de97f1bc06e3bdf25c9a46045}
+Set the duration of the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & the duration of the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 163 of file Basic\+Transform\+Animation.\+h.
+
+\hypertarget{class_basic_transform_animation_a256fc4440ecd8b14155749df966cdfb0}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Elapsed\+Time@{set\+Elapsed\+Time}}
+\index{set\+Elapsed\+Time@{set\+Elapsed\+Time}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Elapsed\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Elapsed\+Time (
+\begin{DoxyParamCaption}
+\item[{long}]{elapsed\+Time}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a256fc4440ecd8b14155749df966cdfb0}
+Set the amount of time passed since starting the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em elapsed\+Time} & the amount of time passed since starting the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 173 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\hypertarget{class_basic_transform_animation_abb0b8ba9c165d6ac95415c4d61f73fe6}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Fill\+After@{set\+Fill\+After}}
+\index{set\+Fill\+After@{set\+Fill\+After}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Fill\+After}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Fill\+After (
+\begin{DoxyParamCaption}
+\item[{bool}]{fill\+After}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_abb0b8ba9c165d6ac95415c4d61f73fe6}
+This sets if the shape will remain the same after the animation is finished.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fill\+After} & if set to true, then the shape will be the same after the animation has finished, if set to false, then the shape will come back to its original properties before the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Basic\+Transform\+Animation.\+h.
+
+\hypertarget{class_basic_transform_animation_a01888bebf388f05201c5dda18c24d4ef}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Relative\+Point@{set\+Relative\+Point}}
+\index{set\+Relative\+Point@{set\+Relative\+Point}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Relative\+Point}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Relative\+Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}}]{relative\+Point}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a01888bebf388f05201c5dda18c24d4ef}
+Set the point from where the animation will make its effect. It will take values between 0 and 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Point} & the point from which to take the coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 198 of file Basic\+Transform\+Animation.\+h.
+
+\hypertarget{class_basic_transform_animation_a3989a6b289f60dd868c64f3e9ea8f9a5}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Relative\+Point\+X@{set\+Relative\+Point\+X}}
+\index{set\+Relative\+Point\+X@{set\+Relative\+Point\+X}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Relative\+Point\+X}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Relative\+Point\+X (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_a3989a6b289f60dd868c64f3e9ea8f9a5}
+Set the x coordinate of the relative point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the relative point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+\hypertarget{class_basic_transform_animation_afa794d26d807dea36573ccb8accd7029}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!set\+Relative\+Point\+Y@{set\+Relative\+Point\+Y}}
+\index{set\+Relative\+Point\+Y@{set\+Relative\+Point\+Y}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{set\+Relative\+Point\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Transform\+Animation\+::set\+Relative\+Point\+Y (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\label{class_basic_transform_animation_afa794d26d807dea36573ccb8accd7029}
+Set the y coordinate of the relative point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & the y coordinate of the relative point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 213 of file Basic\+Transform\+Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 8
+
+
+\hypertarget{class_basic_transform_animation_aeeb48c45423783d9dd657441b40c2569}{}\index{Basic\+Transform\+Animation@{Basic\+Transform\+Animation}!update@{update}}
+\index{update@{update}!Basic\+Transform\+Animation@{Basic\+Transform\+Animation}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Transform\+Animation\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_basic_transform_animation_aeeb48c45423783d9dd657441b40c2569}
+This method makes transformations on the shape that has this animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_scale_animation_aaebd2e003860789ed140d42bd87e68bb}{Scale\+Animation}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/\+Transform\+Animations/Basic\+Transform\+Animation.\+h\end{DoxyCompactItemize}

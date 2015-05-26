@@ -1,0 +1,298 @@
+\hypertarget{class_animation}{}\section{Animation Class Reference}
+\label{class_animation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation} ()
+\item 
+\hyperlink{class_animation_afd60356af2b0ce2af2fd09142b4ff43a}{Animation} (\hyperlink{class_shape_rectangle}{Shape\+Rectangle} $\ast$rect, float total\+Duration, int nr\+Rows, int nr\+Columns, bool loop=false)
+\item 
+void \hyperlink{class_animation_a71cd77a66064b85cb34061b47c414709}{init} ()
+\item 
+\hyperlink{class_shape_rectangle}{Shape\+Rectangle} $\ast$ \hyperlink{class_animation_a567a1028c3758bab197cb49a1f5ff34e}{get\+Rectangle\+Pointer} ()
+\item 
+float \hyperlink{class_animation_a4a67ae8f77cd8383ee15702666f5d236}{get\+X} ()
+\item 
+float \hyperlink{class_animation_a000f6837c55e7db24b6c51f0f29dab17}{get\+Y} ()
+\item 
+void \hyperlink{class_animation_a781079ce6fe72123d826633325da1f21}{set\+Coords} (float x, float y)
+\item 
+void \hyperlink{class_animation_aaee3c4db55fb03fa73e6a7e5ee5fb847}{switch\+To\+Next\+Frame} ()
+\item 
+void \hyperlink{class_animation_a96ee98c1649134ad383610dbc9def5fe}{start} ()
+\item 
+void \hyperlink{class_animation_aaa628f424f1cdaf2a74f8d10298ef8af}{play} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_animation_8h_source}{Animation.\+h} Purpose\+: Implements an animation.
+
+\begin{DoxyAuthor}{Author}
+Ion Ureche 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 14 of file Animation.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{}\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\subsubsection[{Animation}]{\setlength{\rightskip}{0pt plus 5cm}Animation\+::\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\hypertarget{class_animation_afd60356af2b0ce2af2fd09142b4ff43a}{}\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\subsubsection[{Animation}]{\setlength{\rightskip}{0pt plus 5cm}Animation\+::\+Animation (
+\begin{DoxyParamCaption}
+\item[{{\bf Shape\+Rectangle} $\ast$}]{rect, }
+\item[{float}]{total\+Duration, }
+\item[{int}]{nr\+Rows, }
+\item[{int}]{nr\+Columns, }
+\item[{bool}]{loop = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_afd60356af2b0ce2af2fd09142b4ff43a}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & the rectangle \\
+\hline
+{\em total\+Duration} & the duration of the animation \\
+\hline
+{\em nr\+Rows} & the number of rows of the sprite \\
+\hline
+{\em nr\+Columns} & the number of columns of the sprite \\
+\hline
+{\em loop} & if plays the animation on a loop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_animation_a567a1028c3758bab197cb49a1f5ff34e}{}\index{Animation@{Animation}!get\+Rectangle\+Pointer@{get\+Rectangle\+Pointer}}
+\index{get\+Rectangle\+Pointer@{get\+Rectangle\+Pointer}!Animation@{Animation}}
+\subsubsection[{get\+Rectangle\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape\+Rectangle}$\ast$ Animation\+::get\+Rectangle\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a567a1028c3758bab197cb49a1f5ff34e}
+Get the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file Animation.\+h.
+
+\hypertarget{class_animation_a4a67ae8f77cd8383ee15702666f5d236}{}\index{Animation@{Animation}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Animation@{Animation}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Animation\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a4a67ae8f77cd8383ee15702666f5d236}
+Get the x coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file Animation.\+h.
+
+\hypertarget{class_animation_a000f6837c55e7db24b6c51f0f29dab17}{}\index{Animation@{Animation}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Animation@{Animation}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Animation\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a000f6837c55e7db24b6c51f0f29dab17}
+Get the y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file Animation.\+h.
+
+\hypertarget{class_animation_a71cd77a66064b85cb34061b47c414709}{}\index{Animation@{Animation}!init@{init}}
+\index{init@{init}!Animation@{Animation}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a71cd77a66064b85cb34061b47c414709}
+Initialise the current instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Animation.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{class_animation_aaa628f424f1cdaf2a74f8d10298ef8af}{}\index{Animation@{Animation}!play@{play}}
+\index{play@{play}!Animation@{Animation}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_aaa628f424f1cdaf2a74f8d10298ef8af}
+Play the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_animation_a781079ce6fe72123d826633325da1f21}{}\index{Animation@{Animation}!set\+Coords@{set\+Coords}}
+\index{set\+Coords@{set\+Coords}!Animation@{Animation}}
+\subsubsection[{set\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::set\+Coords (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a781079ce6fe72123d826633325da1f21}
+Set the location of the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Animation.\+h.
+
+\hypertarget{class_animation_a96ee98c1649134ad383610dbc9def5fe}{}\index{Animation@{Animation}!start@{start}}
+\index{start@{start}!Animation@{Animation}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_a96ee98c1649134ad383610dbc9def5fe}
+Start the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_animation_aaee3c4db55fb03fa73e6a7e5ee5fb847}{}\index{Animation@{Animation}!switch\+To\+Next\+Frame@{switch\+To\+Next\+Frame}}
+\index{switch\+To\+Next\+Frame@{switch\+To\+Next\+Frame}!Animation@{Animation}}
+\subsubsection[{switch\+To\+Next\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::switch\+To\+Next\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animation_aaee3c4db55fb03fa73e6a7e5ee5fb847}
+Play the next frame of the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file Animation.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 5
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/Animation.\+h\end{DoxyCompactItemize}

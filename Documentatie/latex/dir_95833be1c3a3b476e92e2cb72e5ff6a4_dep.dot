@@ -1,0 +1,13 @@
+digraph "C:/Users/Alexandru" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d522931ffa1371640980b621734a4381 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Users" fontname="Helvetica", fontsize="10", URL="dir_d522931ffa1371640980b621734a4381.html"]
+  subgraph clusterdir_95833be1c3a3b476e92e2cb72e5ff6a4 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_95833be1c3a3b476e92e2cb72e5ff6a4.html"];
+    dir_95833be1c3a3b476e92e2cb72e5ff6a4 [shape=plaintext label="Alexandru"];
+    dir_8c46e945464de86fec4b7e7767e94a6c [shape=box label="Desktop" color="red" fillcolor="white" style="filled" URL="dir_8c46e945464de86fec4b7e7767e94a6c.html"];
+  }
+  }
+}

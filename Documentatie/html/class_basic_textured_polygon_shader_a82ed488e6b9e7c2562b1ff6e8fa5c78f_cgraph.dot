@@ -1,0 +1,15 @@
+digraph "BasicTexturedPolygonShader::setTextureColor"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="BasicTexturedPolygonShader\l::setTextureColor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ColorRGBA::getRed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a84eb325397f8253beb04f0766e00c6d8"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ColorRGBA::getGreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a337699dcfc081d67a7fc760a31e0cafa"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ColorRGBA::getBlue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#adcc5ca8f75209f1ff0b73bfc686b6336"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ColorRGBA::getAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a726c1804deae2b611d3019ae769d7bbd"];
+}

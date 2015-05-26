@@ -1,0 +1,11 @@
+digraph "Camera::setCoords"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Camera::setCoords",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Camera::setX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_camera.html#aa9f8596fa1f4c04187749024196fc337"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Camera::setY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_camera.html#a17e3fdb2a83f30379f2f8e9dbf9ad66d"];
+}

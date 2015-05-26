@@ -1,0 +1,293 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_camera_a47dc02d3d741ad47a249dfbbc96069a2}{init} (float player\+X, float player\+Y, float player\+Width, float player\+Height)
+\item 
+static bool \hyperlink{class_camera_aedd574cbd0a6f799aa6f15865d4fd553}{is\+Visible} (float x, float y, float width, float height)
+\item 
+static void \hyperlink{class_camera_ac132953a621f29c9f5aa1e37bfa4e1db}{set\+Speed} (float new\+Camera\+Moving\+Speed)
+\item 
+static float \hyperlink{class_camera_ac610adc3428b5bf3d94f355abeca953d}{get\+X} ()
+\item 
+static float \hyperlink{class_camera_ada87410869fe5a98f8477664ad2e25ac}{get\+Y} ()
+\item 
+static float \hyperlink{class_camera_a0732508f67717e7fd0cde7b27d012d12}{get\+Camera\+Moving\+Speed} ()
+\item 
+static void \hyperlink{class_camera_a852f9987f68d5e722462a2bdb0797693}{set\+Coords} (float x, float y)
+\item 
+static void \hyperlink{class_camera_aa9f8596fa1f4c04187749024196fc337}{set\+X} (float x)
+\item 
+static void \hyperlink{class_camera_a17e3fdb2a83f30379f2f8e9dbf9ad66d}{set\+Y} (float y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_camera_8h_source}{Camera.\+h} Purpose\+: Manages the application\textquotesingle{}s camera.
+
+\begin{DoxyAuthor}{Author}
+Ion Ureche 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 14 of file Camera.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_a0732508f67717e7fd0cde7b27d012d12}{}\index{Camera@{Camera}!get\+Camera\+Moving\+Speed@{get\+Camera\+Moving\+Speed}}
+\index{get\+Camera\+Moving\+Speed@{get\+Camera\+Moving\+Speed}!Camera@{Camera}}
+\subsubsection[{get\+Camera\+Moving\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}static float Camera\+::get\+Camera\+Moving\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_a0732508f67717e7fd0cde7b27d012d12}
+Get the moving speed of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file Camera.\+h.
+
+\hypertarget{class_camera_ac610adc3428b5bf3d94f355abeca953d}{}\index{Camera@{Camera}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Camera@{Camera}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}static float Camera\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_ac610adc3428b5bf3d94f355abeca953d}
+Get the x coordinate of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Camera.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{class_camera_ada87410869fe5a98f8477664ad2e25ac}{}\index{Camera@{Camera}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Camera@{Camera}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}static float Camera\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_ada87410869fe5a98f8477664ad2e25ac}
+Get the y coordinate of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file Camera.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\hypertarget{class_camera_a47dc02d3d741ad47a249dfbbc96069a2}{}\index{Camera@{Camera}!init@{init}}
+\index{init@{init}!Camera@{Camera}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}static void Camera\+::init (
+\begin{DoxyParamCaption}
+\item[{float}]{player\+X, }
+\item[{float}]{player\+Y, }
+\item[{float}]{player\+Width, }
+\item[{float}]{player\+Height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_a47dc02d3d741ad47a249dfbbc96069a2}
+Initialise the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+X} & the x coordinate of the player \\
+\hline
+{\em player\+Y} & the y coordinate of the player \\
+\hline
+{\em player\+Width} & the width of the player \\
+\hline
+{\em player\+Height} & the height of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Camera.\+h.
+
+\hypertarget{class_camera_aedd574cbd0a6f799aa6f15865d4fd553}{}\index{Camera@{Camera}!is\+Visible@{is\+Visible}}
+\index{is\+Visible@{is\+Visible}!Camera@{Camera}}
+\subsubsection[{is\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}static bool Camera\+::is\+Visible (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_aedd574cbd0a6f799aa6f15865d4fd553}
+Gets the visibility of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the camera \\
+\hline
+{\em y} & the y coordinate of the camera \\
+\hline
+{\em width} & the width of the camera \\
+\hline
+{\em height} & the height of the camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the visibility of the camera 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file Camera.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{class_camera_a852f9987f68d5e722462a2bdb0797693}{}\index{Camera@{Camera}!set\+Coords@{set\+Coords}}
+\index{set\+Coords@{set\+Coords}!Camera@{Camera}}
+\subsubsection[{set\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}static void Camera\+::set\+Coords (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_a852f9987f68d5e722462a2bdb0797693}
+Set the coordinates of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the camera \\
+\hline
+{\em y} & the y coordinate of the camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 110 of file Camera.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 4
+
+
+\hypertarget{class_camera_ac132953a621f29c9f5aa1e37bfa4e1db}{}\index{Camera@{Camera}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!Camera@{Camera}}
+\subsubsection[{set\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}static void Camera\+::set\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{new\+Camera\+Moving\+Speed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_ac132953a621f29c9f5aa1e37bfa4e1db}
+Set the moving speed of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Camera\+Moving\+Speed} & the new moving speed of the camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 66 of file Camera.\+h.
+
+\hypertarget{class_camera_aa9f8596fa1f4c04187749024196fc337}{}\index{Camera@{Camera}!set\+X@{set\+X}}
+\index{set\+X@{set\+X}!Camera@{Camera}}
+\subsubsection[{set\+X}]{\setlength{\rightskip}{0pt plus 5cm}static void Camera\+::set\+X (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_aa9f8596fa1f4c04187749024196fc337}
+Set the x coordinate of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Camera.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\hypertarget{class_camera_a17e3fdb2a83f30379f2f8e9dbf9ad66d}{}\index{Camera@{Camera}!set\+Y@{set\+Y}}
+\index{set\+Y@{set\+Y}!Camera@{Camera}}
+\subsubsection[{set\+Y}]{\setlength{\rightskip}{0pt plus 5cm}static void Camera\+::set\+Y (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_camera_a17e3fdb2a83f30379f2f8e9dbf9ad66d}
+Set the y coordinate of the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & the y coordinate of the camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 133 of file Camera.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/Camera.\+h\end{DoxyCompactItemize}

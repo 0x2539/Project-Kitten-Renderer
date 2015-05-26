@@ -1,0 +1,11 @@
+digraph "ColorRGBA::getGreen"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ColorRGBA::getGreen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ColorRGBA::setColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a23c142b9edfc3209ba5d8b107564ed63"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="BasicTexturedPolygonShader\l::setTextureColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_basic_textured_polygon_shader.html#a82ed488e6b9e7c2562b1ff6e8fa5c78f"];
+}

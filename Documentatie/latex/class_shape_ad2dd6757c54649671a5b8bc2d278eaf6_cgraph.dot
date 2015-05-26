@@ -1,0 +1,17 @@
+digraph "Shape::setColor"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Shape::setColor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ColorRGBA::setColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a76f2f4e38f975f9389390180ffd33c75"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ColorRGBA::setRed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#aa89321867bc54276a32a075df7bfc941"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ColorRGBA::setGreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a246a8741af2a6877fc2cf3b2d7558f07"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ColorRGBA::setBlue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a23fbd326b3a65240afdad9de28253627"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ColorRGBA::setAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_color_r_g_b_a.html#a45c53cfb2b2d1098caeaefa03e56aa2e"];
+}

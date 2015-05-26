@@ -1,0 +1,403 @@
+\hypertarget{class_animated_sprite}{}\section{Animated\+Sprite Class Reference}
+\label{class_animated_sprite}\index{Animated\+Sprite@{Animated\+Sprite}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_animated_sprite_a1147eb833593fa4c28854b96a84413a9}{Animated\+Sprite} ()
+\item 
+\hyperlink{class_animated_sprite_a448073993861b75ad4036e5f598d69c2}{Animated\+Sprite} (\hyperlink{class_animation}{Animation} $\ast$sprite\+Animation)
+\item 
+\hyperlink{class_animated_sprite_aa2c1e1e129958d433ec53a77c264ec48}{Animated\+Sprite} (int coord\+X, int coord\+Y, int width, int height, G\+Luint texture, int duration, int texture\+Rows, int texture\+Cols, bool looped=false)
+\item 
+\hyperlink{class_animated_sprite_a50f8ae7feb5eae0bc4fa2f2682530848}{Animated\+Sprite} (float $\ast$coord\+X, float $\ast$coord\+Y, float $\ast$width, float $\ast$height, G\+Luint texture, int duration, int texture\+Rows, int texture\+Cols, bool looped=false)
+\item 
+void \hyperlink{class_animated_sprite_abe23be53e97688105ce0e73376b7f1aa}{add\+Effect\+Animation} (\hyperlink{class_animation}{Animation} $\ast$new\+Effect\+Animation)
+\item 
+void \hyperlink{class_animated_sprite_a9b3686a30256e69e35da3c066374bf30}{add\+Effect\+Animation} (float coord\+X, float coord\+Y, float width, float height, G\+Luint texture, int duration, int texture\+Rows, int texture\+Cols, bool looped=false)
+\item 
+void \hyperlink{class_animated_sprite_adb3abbec1ef8b02430eabb4ac7d9284f}{add\+Effect\+Animation} (float $\ast$coord\+X, float $\ast$coord\+Y, float $\ast$width, float $\ast$height, G\+Luint texture, int duration, int texture\+Rows, int texture\+Cols, bool looped=false)
+\item 
+void \hyperlink{class_animated_sprite_adc3e6d7cfb89df9ef4d2ae4f45a39703}{start} ()
+\item 
+void \hyperlink{class_animated_sprite_a4992201e79a2c2b0c4b17a288193dca9}{draw} ()
+\item 
+float \hyperlink{class_animated_sprite_a5a6e251f4cc5a241972534701e8f90bb}{get\+X} ()
+\item 
+float \hyperlink{class_animated_sprite_abf1c1c5beaf1c2c9257d11698cb0afb6}{get\+Y} ()
+\item 
+void \hyperlink{class_animated_sprite_a628acd87e40dff70886864532ce9486c}{set\+Coords} (float x, float y)
+\item 
+\hyperlink{class_shape_rectangle}{Shape\+Rectangle} $\ast$ \hyperlink{class_animated_sprite_a259fa1a5d07061e7fe726d5e39f46b24}{get\+Rectangle\+Pointer} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Animated\+Sprite.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_animated_sprite_a1147eb833593fa4c28854b96a84413a9}{}\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{Animated\+Sprite}]{\setlength{\rightskip}{0pt plus 5cm}Animated\+Sprite\+::\+Animated\+Sprite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a1147eb833593fa4c28854b96a84413a9}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a448073993861b75ad4036e5f598d69c2}{}\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{Animated\+Sprite}]{\setlength{\rightskip}{0pt plus 5cm}Animated\+Sprite\+::\+Animated\+Sprite (
+\begin{DoxyParamCaption}
+\item[{{\bf Animation} $\ast$}]{sprite\+Animation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a448073993861b75ad4036e5f598d69c2}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite\+Animation} & the sprite animation to play \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 45 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_aa2c1e1e129958d433ec53a77c264ec48}{}\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{Animated\+Sprite}]{\setlength{\rightskip}{0pt plus 5cm}Animated\+Sprite\+::\+Animated\+Sprite (
+\begin{DoxyParamCaption}
+\item[{int}]{coord\+X, }
+\item[{int}]{coord\+Y, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{G\+Luint}]{texture, }
+\item[{int}]{duration, }
+\item[{int}]{texture\+Rows, }
+\item[{int}]{texture\+Cols, }
+\item[{bool}]{looped = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_aa2c1e1e129958d433ec53a77c264ec48}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+X} & the x coordinate \\
+\hline
+{\em coord\+Y} & the y coordinate \\
+\hline
+{\em width} & the width \\
+\hline
+{\em height} & the height \\
+\hline
+{\em texture} & the texture \\
+\hline
+{\em duration} & the duration of the animation \\
+\hline
+{\em texture\+Rows} & the number of texture\textquotesingle{}s rows \\
+\hline
+{\em texture\+Cols} & the number of texture\textquotesingle{}s columns \\
+\hline
+{\em looped} & if looping through the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a50f8ae7feb5eae0bc4fa2f2682530848}{}\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\index{Animated\+Sprite@{Animated\+Sprite}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{Animated\+Sprite}]{\setlength{\rightskip}{0pt plus 5cm}Animated\+Sprite\+::\+Animated\+Sprite (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{coord\+X, }
+\item[{float $\ast$}]{coord\+Y, }
+\item[{float $\ast$}]{width, }
+\item[{float $\ast$}]{height, }
+\item[{G\+Luint}]{texture, }
+\item[{int}]{duration, }
+\item[{int}]{texture\+Rows, }
+\item[{int}]{texture\+Cols, }
+\item[{bool}]{looped = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a50f8ae7feb5eae0bc4fa2f2682530848}
+Initialise a new instance of this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+X} & the x coordinate \\
+\hline
+{\em coord\+Y} & the y coordinate \\
+\hline
+{\em width} & the width \\
+\hline
+{\em height} & the height \\
+\hline
+{\em texture} & the texture \\
+\hline
+{\em duration} & the duration of the animation \\
+\hline
+{\em texture\+Rows} & the number of texture\textquotesingle{}s rows \\
+\hline
+{\em texture\+Cols} & the number of texture\textquotesingle{}s columns \\
+\hline
+{\em looped} & if looping through the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Animated\+Sprite.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_animated_sprite_abe23be53e97688105ce0e73376b7f1aa}{}\index{Animated\+Sprite@{Animated\+Sprite}!add\+Effect\+Animation@{add\+Effect\+Animation}}
+\index{add\+Effect\+Animation@{add\+Effect\+Animation}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{add\+Effect\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::add\+Effect\+Animation (
+\begin{DoxyParamCaption}
+\item[{{\bf Animation} $\ast$}]{new\+Effect\+Animation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_abe23be53e97688105ce0e73376b7f1aa}
+Add a new animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Effect\+Animation} & the new animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 128 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a9b3686a30256e69e35da3c066374bf30}{}\index{Animated\+Sprite@{Animated\+Sprite}!add\+Effect\+Animation@{add\+Effect\+Animation}}
+\index{add\+Effect\+Animation@{add\+Effect\+Animation}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{add\+Effect\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::add\+Effect\+Animation (
+\begin{DoxyParamCaption}
+\item[{float}]{coord\+X, }
+\item[{float}]{coord\+Y, }
+\item[{float}]{width, }
+\item[{float}]{height, }
+\item[{G\+Luint}]{texture, }
+\item[{int}]{duration, }
+\item[{int}]{texture\+Rows, }
+\item[{int}]{texture\+Cols, }
+\item[{bool}]{looped = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a9b3686a30256e69e35da3c066374bf30}
+Add a new animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+X} & the x coordinate \\
+\hline
+{\em coord\+Y} & the y coordinate \\
+\hline
+{\em width} & the width \\
+\hline
+{\em height} & the height \\
+\hline
+{\em texture} & the texture \\
+\hline
+{\em duration} & the duration of the animation \\
+\hline
+{\em texture\+Rows} & the number of texture\textquotesingle{}s rows \\
+\hline
+{\em texture\+Cols} & the number of texture\textquotesingle{}s columns \\
+\hline
+{\em looped} & if looping through the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_adb3abbec1ef8b02430eabb4ac7d9284f}{}\index{Animated\+Sprite@{Animated\+Sprite}!add\+Effect\+Animation@{add\+Effect\+Animation}}
+\index{add\+Effect\+Animation@{add\+Effect\+Animation}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{add\+Effect\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::add\+Effect\+Animation (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{coord\+X, }
+\item[{float $\ast$}]{coord\+Y, }
+\item[{float $\ast$}]{width, }
+\item[{float $\ast$}]{height, }
+\item[{G\+Luint}]{texture, }
+\item[{int}]{duration, }
+\item[{int}]{texture\+Rows, }
+\item[{int}]{texture\+Cols, }
+\item[{bool}]{looped = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_adb3abbec1ef8b02430eabb4ac7d9284f}
+Add a new animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+X} & the x coordinate \\
+\hline
+{\em coord\+Y} & the y coordinate \\
+\hline
+{\em width} & the width \\
+\hline
+{\em height} & the height \\
+\hline
+{\em texture} & the texture \\
+\hline
+{\em duration} & the duration of the animation \\
+\hline
+{\em texture\+Rows} & the number of texture\textquotesingle{}s rows \\
+\hline
+{\em texture\+Cols} & the number of texture\textquotesingle{}s columns \\
+\hline
+{\em looped} & if looping through the animation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a4992201e79a2c2b0c4b17a288193dca9}{}\index{Animated\+Sprite@{Animated\+Sprite}!draw@{draw}}
+\index{draw@{draw}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a4992201e79a2c2b0c4b17a288193dca9}
+Update the animations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a259fa1a5d07061e7fe726d5e39f46b24}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+Rectangle\+Pointer@{get\+Rectangle\+Pointer}}
+\index{get\+Rectangle\+Pointer@{get\+Rectangle\+Pointer}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+Rectangle\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape\+Rectangle}$\ast$ Animated\+Sprite\+::get\+Rectangle\+Pointer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a259fa1a5d07061e7fe726d5e39f46b24}
+Get the rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a5a6e251f4cc5a241972534701e8f90bb}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Animated\+Sprite\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a5a6e251f4cc5a241972534701e8f90bb}
+Get the x coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 230 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_abf1c1c5beaf1c2c9257d11698cb0afb6}{}\index{Animated\+Sprite@{Animated\+Sprite}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Animated\+Sprite\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_abf1c1c5beaf1c2c9257d11698cb0afb6}
+Get the y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_a628acd87e40dff70886864532ce9486c}{}\index{Animated\+Sprite@{Animated\+Sprite}!set\+Coords@{set\+Coords}}
+\index{set\+Coords@{set\+Coords}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{set\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::set\+Coords (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_a628acd87e40dff70886864532ce9486c}
+Set new coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 253 of file Animated\+Sprite.\+h.
+
+\hypertarget{class_animated_sprite_adc3e6d7cfb89df9ef4d2ae4f45a39703}{}\index{Animated\+Sprite@{Animated\+Sprite}!start@{start}}
+\index{start@{start}!Animated\+Sprite@{Animated\+Sprite}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void Animated\+Sprite\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_animated_sprite_adc3e6d7cfb89df9ef4d2ae4f45a39703}
+Start the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file Animated\+Sprite.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Alexandru/\+Desktop/\+Git/\+Project-\/\+Kitten-\/\+Renderer/\+Renderer/include/Animated\+Sprite.\+h\end{DoxyCompactItemize}

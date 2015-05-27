@@ -219,8 +219,8 @@ void TestingMethod(){
   //tx = TL -> getTexture(path);
   //tx2 = TL -> getTexture("Assets/effect6.png");
   //AudioEngine::playSound(Sounds::COOL_FLAC);
-  //AudioEngine::playSound("Assets/SoundTrack1.mp3");
-  AudioEngine::playSound("Assets/dddw.mp3");
+  AudioEngine::playSound("Assets/SoundTrack1.mp3");
+  //AudioEngine::playSound("Assets/dddw.mp3");
   //AudioEngine::playSound(Sounds::COOL_MP3, 1.0f);
   //GLUtils::loadTexture("img.png");
 

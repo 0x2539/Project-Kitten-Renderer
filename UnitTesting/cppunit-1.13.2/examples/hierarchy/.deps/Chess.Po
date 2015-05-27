@@ -1,0 +1,7 @@
+Chess.o: Chess.cpp /usr/include/stdc-predef.h Chess.h BoardGame.h
+
+/usr/include/stdc-predef.h:
+
+Chess.h:
+
+BoardGame.h:
